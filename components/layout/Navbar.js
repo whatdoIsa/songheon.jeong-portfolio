@@ -25,9 +25,9 @@ export default function Navbar() {
 
   const navLinks = [
     { name: t('nav.about'), href: `${basePath}/#about` },
+    { name: t('nav.cases'), href: `${basePath}/#cases` },
     { name: t('nav.skills'), href: `${basePath}/#skills` },
-    { name: t('nav.compare'), href: `${basePath}/#compare` },
-    { name: t('nav.projects'), href: `${basePath}/#projects` },
+    { name: t('nav.education'), href: `${basePath}/#education` },
     { name: t('nav.contact'), href: `${basePath}/#contact` },
   ];
 
@@ -56,7 +56,8 @@ export default function Navbar() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <span className="text-gradient gradient-ios">iOS Developer</span>
+            <span className="text-ios-gray-900 dark:text-white">정송헌</span>
+            <span className="text-sm font-medium text-ios-gray-400 ml-2">iOS Developer</span>
           </motion.a>
 
           {/* 데스크톱 네비게이션 */}
