@@ -5,7 +5,7 @@ export const caseStudies = [
   {
     slug: 'smartedge',
     name: 'SmartEdge',
-    icon: { text: 'SE', bg: '#191F28', color: '#FFFFFF' },
+    icon: { img: '/images/icons/smartedge.png', text: 'SE', bg: '#191F28', color: '#FFFFFF' },
     platform: 'macOS',
     featured: true,
     period: '2025.12 –',
@@ -108,7 +108,7 @@ export const caseStudies = [
   {
     slug: 'showx',
     name: 'Show(X)',
-    icon: { text: 'X', bg: '#3182F6', color: '#FFFFFF' },
+    icon: { img: '/images/icons/showx.png', text: 'X', bg: '#3182F6', color: '#FFFFFF' },
     platform: 'iOS',
     featured: true,
     period: '2025.09 – 2025.11',
@@ -187,7 +187,7 @@ export const caseStudies = [
   {
     slug: 'kip',
     name: 'kip!',
-    icon: { text: 'k!', bg: '#F5B301', color: '#191F28' },
+    icon: { img: '/images/icons/kip.png', text: 'k!', bg: '#F5B301', color: '#191F28' },
     platform: 'iOS',
     featured: true,
     period: '2025.09 – 2025.11',
@@ -267,7 +267,7 @@ export const caseStudies = [
     slug: 'retou',
     name: 'ReToU — 오늘의 넌',
     nameEn: 'ReToU',
-    icon: { text: '乚', bg: '#8B6F52', color: '#FFFFFF' },
+    icon: { img: '/images/icons/retou.png', text: '乚', bg: '#8B6F52', color: '#FFFFFF' },
     platform: 'iOS',
     featured: true,
     period: '2025.04 –',
@@ -352,7 +352,7 @@ export const caseStudies = [
   {
     slug: 'rootrip',
     name: 'Rootrip',
-    icon: { text: 'R', bg: '#FF6B4A', color: '#FFFFFF' },
+    icon: { img: '/images/icons/rootrip.png', text: 'R', bg: '#FF6B4A', color: '#FFFFFF' },
     platform: 'iPadOS',
     featured: false,
     period: '2025.07 – 2025.09',
@@ -388,7 +388,7 @@ export const caseStudies = [
   {
     slug: 'displaycut',
     name: 'DisplayCut',
-    icon: { text: 'DC', bg: '#4E5968', color: '#FFFFFF' },
+    icon: { img: '/images/icons/displaycut.png', text: 'DC', bg: '#4E5968', color: '#FFFFFF' },
     platform: 'macOS',
     featured: false,
     period: '2025.06 – 2025.08',

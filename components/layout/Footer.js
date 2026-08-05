@@ -38,7 +38,7 @@ export default function Footer() {
               <li>
                 <a
                   href={`${basePath}/#about`}
-                  className="text-ios-gray-600 dark:text-ios-gray-400 hover:text-ios-blue transition-colors"
+                  className="text-ios-gray-600 dark:text-ios-gray-400 hover:text-ios-gray-900 dark:hover:text-white transition-colors"
                 >
                   {t('nav.about')}
                 </a>
@@ -46,7 +46,7 @@ export default function Footer() {
               <li>
                 <a
                   href={`${basePath}/#cases`}
-                  className="text-ios-gray-600 dark:text-ios-gray-400 hover:text-ios-blue transition-colors"
+                  className="text-ios-gray-600 dark:text-ios-gray-400 hover:text-ios-gray-900 dark:hover:text-white transition-colors"
                 >
                   {t('nav.cases')}
                 </a>
@@ -54,7 +54,7 @@ export default function Footer() {
               <li>
                 <a
                   href={`${basePath}/#skills`}
-                  className="text-ios-gray-600 dark:text-ios-gray-400 hover:text-ios-blue transition-colors"
+                  className="text-ios-gray-600 dark:text-ios-gray-400 hover:text-ios-gray-900 dark:hover:text-white transition-colors"
                 >
                   {t('nav.skills')}
                 </a>
@@ -62,7 +62,7 @@ export default function Footer() {
               <li>
                 <a
                   href={`${basePath}/resume`}
-                  className="text-ios-gray-600 dark:text-ios-gray-400 hover:text-ios-blue transition-colors"
+                  className="text-ios-gray-600 dark:text-ios-gray-400 hover:text-ios-gray-900 dark:hover:text-white transition-colors"
                 >
                   {t('nav.resume')}
                 </a>
@@ -83,7 +83,7 @@ export default function Footer() {
                   aria-label={social.label}
                   whileHover={{ scale: 1.2, y: -2 }}
                   whileTap={{ scale: 0.9 }}
-                  className="text-ios-gray-600 dark:text-ios-gray-400 hover:text-ios-blue transition-colors"
+                  className="text-ios-gray-600 dark:text-ios-gray-400 hover:text-ios-gray-900 dark:hover:text-white transition-colors"
                 >
                   <social.icon size={24} />
                 </motion.a>

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useTranslation } from '@/lib/i18n';
 import { featuredCaseStudies, getCaseStudy } from '@/data/caseStudies';
 import { withBase } from '@/lib/basePath';
+import { AppIcon } from './CaseCard';
 
 // 시안 B(테크니컬 딥다이브 문서형): 사이드바 + 개요 표 → 문제 정의 → 아키텍처 → 트러블슈팅 → 성과
 export default function CaseDoc({ slug }) {
@@ -39,7 +40,7 @@ export default function CaseDoc({ slug }) {
                 href={`/case/${c.slug}`}
                 className={`flex justify-between items-center px-2.5 py-1.5 rounded-lg text-[13px] ${
                   c.slug === slug
-                    ? 'bg-ios-blue/10 text-ios-blue font-bold'
+                    ? 'bg-ios-gray-100 dark:bg-ios-gray-700 text-ios-gray-900 dark:text-white font-bold'
                     : 'text-ios-gray-600 dark:text-ios-gray-300 hover:bg-ios-gray-50 dark:hover:bg-ios-gray-800'
                 }`}
               >
@@ -62,19 +63,13 @@ export default function CaseDoc({ slug }) {
         {/* ===== 본문 ===== */}
         <main className="py-8 lg:pl-10 max-w-3xl">
           <p className="text-xs text-ios-gray-400 mb-2.5">
-            <Link href="/" className="hover:text-ios-blue">Case Studies</Link>
+            <Link href="/" className="hover:text-ios-gray-900 dark:hover:text-white">Case Studies</Link>
             {' / '}
-            <b className="text-ios-blue">{L === 'en' && cs.nameEn ? cs.nameEn : cs.name.split(' — ')[0]}</b>
+            <b className="text-ios-gray-900 dark:text-white">{L === 'en' && cs.nameEn ? cs.nameEn : cs.name.split(' — ')[0]}</b>
           </p>
 
           <h1 className="flex items-center gap-3 text-2xl font-extrabold tracking-tight">
-            <span
-              className="w-10 h-10 rounded-lg grid place-items-center text-base shrink-0"
-              style={{ background: cs.icon.bg, color: cs.icon.color }}
-              aria-hidden="true"
-            >
-              {cs.icon.text}
-            </span>
+            <AppIcon icon={cs.icon} size="w-10 h-10" rounded="rounded-lg" />
             {L === 'en' && cs.nameEn ? cs.nameEn : cs.name}
           </h1>
 
@@ -91,7 +86,7 @@ export default function CaseDoc({ slug }) {
               <MetaRow th={ko ? '링크' : 'Links'}>
                 <span className="flex flex-wrap gap-x-3 gap-y-1">
                   {Object.values(cs.links).map((link) => (
-                    <a key={link.url} href={link.url} target="_blank" rel="noopener noreferrer" className="text-ios-blue font-semibold hover:underline">
+                    <a key={link.url} href={link.url} target="_blank" rel="noopener noreferrer" className="text-ios-gray-700 dark:text-ios-gray-200 font-semibold underline underline-offset-4 decoration-ios-gray-300 hover:text-ios-gray-900">
                       {pick(link.label)} ↗
                     </a>
                   ))}
@@ -121,7 +116,7 @@ export default function CaseDoc({ slug }) {
               <DocH2 no={no()}>{ko ? '접근' : 'Approach'}</DocH2>
               <ul className="space-y-2 text-sm text-ios-gray-600 dark:text-ios-gray-300">
                 {pick(cs.actions).map((a, i) => (
-                  <li key={i} className="relative pl-4 before:content-[''] before:absolute before:left-0 before:top-[9px] before:w-[5px] before:h-[5px] before:rounded-full before:bg-ios-blue/50">
+                  <li key={i} className="relative pl-4 before:content-[''] before:absolute before:left-0 before:top-[9px] before:w-[5px] before:h-[5px] before:rounded-full before:bg-ios-gray-300">
                     {a}
                   </li>
                 ))}
@@ -148,10 +143,10 @@ export default function CaseDoc({ slug }) {
                 {ko ? '트러블슈팅 — ' : 'Troubleshooting — '}
                 {pick(ts.title)}
               </DocH2>
-              <Callout kind="problem" label={ko ? '문제 발견' : 'Found'}>{pick(ts.found)}</Callout>
-              <Callout kind="cause" label={ko ? '원인 분석' : 'Analysis'}>{pick(ts.analysis)}</Callout>
-              <Callout kind="solve" label={ko ? '해결' : 'Fix'}>{pick(ts.fix)}</Callout>
-              <Callout kind="learn" label={ko ? '배운 점' : 'Learned'}>{pick(ts.learned)}</Callout>
+              <Callout label={ko ? '문제 발견' : 'Found'}>{pick(ts.found)}</Callout>
+              <Callout label={ko ? '원인 분석' : 'Analysis'}>{pick(ts.analysis)}</Callout>
+              <Callout label={ko ? '해결' : 'Fix'}>{pick(ts.fix)}</Callout>
+              <Callout label={ko ? '배운 점' : 'Learned'}>{pick(ts.learned)}</Callout>
             </div>
           ))}
 
@@ -172,12 +167,12 @@ export default function CaseDoc({ slug }) {
           {/* 이전/다음 */}
           <div className="flex justify-between mt-10 pt-4 border-t border-ios-gray-100 dark:border-ios-gray-700 text-[13px] font-bold">
             {prev ? (
-              <Link href={`/case/${prev.slug}`} className="text-ios-blue hover:underline">
+              <Link href={`/case/${prev.slug}`} className="text-ios-gray-900 dark:text-white hover:underline underline-offset-4">
                 ← {L === 'en' && prev.nameEn ? prev.nameEn : prev.name.split(' — ')[0]}
               </Link>
             ) : <span />}
             {next ? (
-              <Link href={`/case/${next.slug}`} className="text-ios-blue hover:underline">
+              <Link href={`/case/${next.slug}`} className="text-ios-gray-900 dark:text-white hover:underline underline-offset-4">
                 {L === 'en' && next.nameEn ? next.nameEn : next.name.split(' — ')[0]} →
               </Link>
             ) : <span />}
@@ -200,24 +195,16 @@ function MetaRow({ th, children }) {
 function DocH2({ no, children }) {
   return (
     <h2 className="flex items-baseline gap-2 text-base font-extrabold mt-9 mb-3 pt-4 border-t-2 border-ios-gray-900 dark:border-ios-gray-100">
-      <span className="font-mono text-xs text-ios-blue">{no}</span>
+      <span className="font-mono text-xs text-ios-gray-400">{no}</span>
       {children}
     </h2>
   );
 }
 
-const calloutStyles = {
-  problem: { box: 'bg-red-50 dark:bg-red-950/30 border-red-100 dark:border-red-900', label: 'text-red-700 dark:text-red-400' },
-  cause: { box: 'bg-amber-50 dark:bg-amber-950/30 border-amber-100 dark:border-amber-900', label: 'text-amber-700 dark:text-amber-400' },
-  solve: { box: 'bg-green-50 dark:bg-green-950/30 border-green-100 dark:border-green-900', label: 'text-green-700 dark:text-green-400' },
-  learn: { box: 'bg-blue-50 dark:bg-blue-950/30 border-blue-100 dark:border-blue-900', label: 'text-blue-700 dark:text-blue-400' },
-};
-
-function Callout({ kind, label, children }) {
-  const s = calloutStyles[kind];
+function Callout({ label, children }) {
   return (
-    <div className={`border rounded-xl px-4 py-3.5 mb-3 ${s.box}`}>
-      <span className={`block text-[11px] font-extrabold tracking-wider mb-1.5 ${s.label}`}>{label}</span>
+    <div className="border-l-2 border-ios-gray-900 dark:border-ios-gray-100 bg-ios-gray-50 dark:bg-ios-gray-800 rounded-r-xl px-4 py-3.5 mb-3">
+      <span className="block text-[11.5px] font-extrabold tracking-wide text-ios-gray-400 mb-1.5">{label}</span>
       <p className="text-[13.5px] text-ios-gray-700 dark:text-ios-gray-200 m-0">{children}</p>
     </div>
   );

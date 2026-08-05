@@ -66,7 +66,7 @@ export default function Navbar() {
               <motion.a
                 key={link.name}
                 href={link.href}
-                className="text-ios-gray-600 dark:text-ios-gray-300 hover:text-ios-blue dark:hover:text-ios-blue transition-colors duration-200"
+                className="text-ios-gray-600 dark:text-ios-gray-300 hover:text-ios-gray-900 dark:hover:text-white transition-colors duration-200"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -75,7 +75,7 @@ export default function Navbar() {
             ))}
             <motion.a
               href={resumeLink.href}
-              className="text-ios-gray-600 dark:text-ios-gray-300 hover:text-ios-blue dark:hover:text-ios-blue transition-colors duration-200"
+              className="text-ios-gray-600 dark:text-ios-gray-300 hover:text-ios-gray-900 dark:hover:text-white transition-colors duration-200"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -108,7 +108,7 @@ export default function Navbar() {
               <a
                 key={link.name}
                 href={link.href}
-                className="block py-2 text-ios-gray-600 dark:text-ios-gray-300 hover:text-ios-blue transition-colors"
+                className="block py-2 text-ios-gray-600 dark:text-ios-gray-300 hover:text-ios-gray-900 dark:hover:text-white transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.name}
@@ -116,7 +116,7 @@ export default function Navbar() {
             ))}
             <a
               href={resumeLink.href}
-              className="block py-2 text-ios-gray-600 dark:text-ios-gray-300 hover:text-ios-blue transition-colors"
+              className="block py-2 text-ios-gray-600 dark:text-ios-gray-300 hover:text-ios-gray-900 dark:hover:text-white transition-colors"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               {resumeLink.name}

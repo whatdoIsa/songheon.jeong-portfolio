@@ -108,8 +108,13 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="grid sm:grid-cols-[1fr_auto] gap-6 pt-12 pb-8 items-start"
+            className="grid sm:grid-cols-[auto_1fr_auto] gap-6 pt-12 pb-8 items-start"
           >
+            <img
+              src={`${process.env.NODE_ENV === 'production' ? '/iOS-Portfolio' : ''}/images/profile.jpg`}
+              alt={ko ? '정송헌 프로필 사진' : 'Portrait of Songheon Jeong'}
+              className="hidden sm:block w-20 h-20 rounded-2xl object-cover object-top border border-ios-gray-100 dark:border-ios-gray-700"
+            />
             <div>
               <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight">
                 {ko ? '정송헌' : 'Songheon Jeong (Dean)'}
@@ -123,13 +128,13 @@ export default function Home() {
                 )}
               </p>
               <div className="flex flex-wrap gap-x-5 gap-y-1.5 mt-4 text-[13px] text-ios-gray-500 dark:text-ios-gray-400">
-                <span>📍 {ko ? '포항, 대한민국' : 'Pohang, South Korea'}</span>
-                <a href="mailto:gmlwns5504@naver.com" className="border-b border-ios-gray-200 hover:text-ios-blue hover:border-ios-blue">gmlwns5504@naver.com</a>
-                <a href="https://github.com/whatdoIsa" target="_blank" rel="noopener noreferrer" className="border-b border-ios-gray-200 hover:text-ios-blue hover:border-ios-blue">github.com/whatdoIsa</a>
+                <span>{ko ? '포항, 대한민국' : 'Pohang, South Korea'}</span>
+                <a href="mailto:gmlwns5504@naver.com" className="border-b border-ios-gray-200 hover:text-ios-gray-900 dark:hover:text-white hover:border-ios-gray-400">gmlwns5504@naver.com</a>
+                <a href="https://github.com/whatdoIsa" target="_blank" rel="noopener noreferrer" className="border-b border-ios-gray-200 hover:text-ios-gray-900 dark:hover:text-white hover:border-ios-gray-400">github.com/whatdoIsa</a>
               </div>
             </div>
             <div className="flex sm:flex-col gap-2">
-              <Link href="/resume" className="text-[13px] font-bold rounded-xl px-5 py-2.5 bg-ios-blue text-white text-center hover:bg-blue-600 transition-colors">
+              <Link href="/resume" className="text-[13px] font-bold rounded-xl px-5 py-2.5 bg-ios-gray-900 text-white dark:bg-white dark:text-ios-gray-900 text-center hover:opacity-85 transition-opacity">
                 {ko ? '이력서 보기 ↓' : 'Resume ↓'}
               </Link>
               <a href="https://github.com/whatdoIsa" target="_blank" rel="noopener noreferrer" className="text-[13px] font-bold rounded-xl px-5 py-2.5 border border-ios-gray-200 dark:border-ios-gray-600 text-ios-gray-600 dark:text-ios-gray-300 text-center">
@@ -142,7 +147,7 @@ export default function Home() {
           <div className="grid grid-cols-2 lg:grid-cols-4 border-t border-ios-gray-100 dark:border-ios-gray-700">
             {facts.map((f, i) => (
               <div key={i} className={`py-3.5 px-1 sm:px-4 ${i > 0 ? 'lg:border-l border-ios-gray-100 dark:border-ios-gray-700' : ''}`}>
-                <b className={`block text-base font-extrabold tabular-nums ${f.accent ? 'text-ios-blue' : 'text-ios-gray-900 dark:text-white'}`}>
+                <b className="block text-base font-extrabold tabular-nums text-ios-gray-900 dark:text-white">
                   {f.big}
                 </b>
                 <span className="text-[11.5px] text-ios-gray-400">{f.small}</span>
@@ -231,7 +236,7 @@ export default function Home() {
             {ko ? '채용·협업 문의는 이메일로 편하게 연락 주세요. 24시간 내 회신드립니다.' : 'For hiring or collaboration, email me — I reply within 24 hours.'}
           </p>
           <div className="flex flex-wrap justify-center gap-3 mt-7">
-            <a href="mailto:gmlwns5504@naver.com" className="text-sm font-bold rounded-xl px-6 py-3 bg-ios-blue text-white hover:bg-blue-600 transition-colors">
+            <a href="mailto:gmlwns5504@naver.com" className="text-sm font-bold rounded-xl px-6 py-3 bg-ios-gray-900 text-white dark:bg-white dark:text-ios-gray-900 hover:opacity-85 transition-opacity">
               {ko ? '이메일 보내기' : 'Send email'}
             </a>
             <a href="https://github.com/whatdoIsa" target="_blank" rel="noopener noreferrer" className="text-sm font-bold rounded-xl px-6 py-3 border border-ios-gray-200 dark:border-ios-gray-600 text-ios-gray-600 dark:text-ios-gray-300">
@@ -249,6 +254,6 @@ export default function Home() {
 
 function SectionLabel({ children }) {
   return (
-    <div className="text-[12px] font-extrabold tracking-[0.14em] uppercase text-ios-blue mb-2.5">{children}</div>
+    <div className="text-[12px] font-bold tracking-[0.14em] uppercase text-ios-gray-400 mb-2.5">{children}</div>
   );
 }
