@@ -44,37 +44,39 @@ export default function Home() {
           ],
     },
     {
-      title: 'Web Frontend',
+      title: 'Quality · AI Workflow',
       items: ko
         ? [
-            ['React · TypeScript', '풀스택 프로젝트 완성'],
-            ['Vue.js · Next.js · Remix.js', ''],
-            ['Tailwind CSS · CSS/Sass', ''],
-            ['선언형 UI 경험', 'SwiftUI 빠른 전환의 기반'],
+            ['QA·안정화 사이클', '실기기 QA, 현장 관찰 기반 5회 업데이트'],
+            ['시스템 로그 기반 진단', '샌드박스·TCC 무증상 실패 추적'],
+            ['AI 개발 도구 워크플로우', 'Claude Code 기반 개발·검증 자동화'],
+            ['버전 운영·유지보수', 'SmartEdge v1.1 · ReToU v2.0 라이브 운영'],
           ]
         : [
-            ['React · TypeScript', 'completed full-stack projects'],
-            ['Vue.js · Next.js · Remix.js', ''],
-            ['Tailwind CSS · CSS/Sass', ''],
-            ['Declarative UI background', 'the basis of a fast SwiftUI transition'],
+            ['QA & stabilization cycles', 'device QA, 5 field-driven updates'],
+            ['Log-based system diagnosis', 'tracing silent sandbox/TCC failures'],
+            ['AI-assisted dev workflow', 'build & verify pipeline on Claude Code'],
+            ['Version ops & maintenance', 'SmartEdge v1.1 · ReToU v2.0 live'],
           ],
     },
     {
       title: 'Product · Ops',
       items: ko
         ? [
-            ['App Store 심사·출시 11회', '리젝 대응 경험'],
+            ['App Store 심사·출시 11회', '리젝 대응·유지보수 경험'],
             ['사용자 인터뷰·피드백 반복 개선', '5회+ 반영'],
             ['StoreKit 2 수익화 · ASO', ''],
-            ['Git · GitHub Actions · Firebase', ''],
+            ['GitHub · GitHub Actions (CI)', ''],
+            ['Firebase', ''],
             ['Figma 기반 디자이너 협업', ''],
             ['KO·EN 로컬라이제이션', '영어 회화 가능'],
           ]
         : [
-            ['11 App Store releases', 'incl. rejection handling'],
+            ['11 App Store releases', 'incl. rejection handling & maintenance'],
             ['User-interview-driven iteration', '5+ feedback rounds shipped'],
             ['StoreKit 2 monetization · ASO', ''],
-            ['Git · GitHub Actions · Firebase', ''],
+            ['GitHub · GitHub Actions (CI)', ''],
+            ['Firebase', ''],
             ['Designer collaboration in Figma', ''],
             ['KO·EN localization', 'conversational English'],
           ],
@@ -115,9 +117,9 @@ export default function Home() {
               </h1>
               <p className="mt-2.5 text-[14.5px] text-ios-gray-600 dark:text-ios-gray-300 max-w-xl">
                 {ko ? (
-                  <>2년간 <b className="text-ios-gray-900 dark:text-white">11개 앱을 App Store에 출시</b>하고 SmartEdge·ReToU를 운영 중입니다. 시스템 제약(샌드박스·TCC·윈도우 레벨)을 분석해 해결하는 macOS/iOS 개발자입니다.</>
+                  <>2년간 <b className="text-ios-gray-900 dark:text-white">11개 앱을 App Store에 출시</b>하고, SmartEdge(v1.1)·ReToU(v2.0)의 <b className="text-ios-gray-900 dark:text-white">설계·개발·배포·운영 전 과정</b>을 직접 담당하고 있습니다. 시스템 제약(샌드박스·TCC·윈도우 레벨)을 분석해 해결하는 iOS/macOS 개발자입니다.</>
                 ) : (
-                  <>Shipped <b className="text-ios-gray-900 dark:text-white">11 apps to the App Store in 2 years</b>, currently operating SmartEdge and ReToU. A macOS/iOS developer who digs into system constraints — sandbox, TCC, window levels — and resolves them.</>
+                  <>Shipped <b className="text-ios-gray-900 dark:text-white">11 apps to the App Store in 2 years</b>, owning the <b className="text-ios-gray-900 dark:text-white">full cycle — design, development, release and operations</b> — of SmartEdge (v1.1) and ReToU (v2.0). An iOS/macOS developer who digs into system constraints — sandbox, TCC, window levels — and resolves them.</>
                 )}
               </p>
               <div className="flex flex-wrap gap-x-5 gap-y-1.5 mt-4 text-[13px] text-ios-gray-500 dark:text-ios-gray-400">

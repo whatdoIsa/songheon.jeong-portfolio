@@ -228,6 +228,22 @@
         ],
         "role": "iOS Developer (개인 프로젝트)",
         "duration": "2025.04 - 2025.06"
+      },
+      "SmartEdge": {
+        "description": "맥 노치를 음악·캘린더·파일 보관함·뽀모도로 허브로 바꾸는 macOS 메뉴바 앱. 무료 + Pro(일회성 구매) 모델로 Mac App Store 판매 중.",
+        "highlights": [
+          "Problem: 음악 확인·파일 공유·일정 확인마다 앱 전환이 필요했고, 노치는 죽은 공간이었다. 항상 최상위에 떠 있는 UI는 macOS 시스템 제약(샌드박스·TCC·윈도우 레벨)과 정면 충돌하는 영역.",
+          "Action: AppKit 윈도우 레벨 제어와 SwiftUI를 결합. 샌드박스가 Apple Events를 커널 수준에서 차단하는 문제를 타겟 예외 entitlement로 해결하고, 보관함 오픈 시 윈도우 레벨을 동적으로 낮춰 드래그 앤 드롭을 성립. StoreKit 2로 무료+Pro 수익 모델을 구현해 한/영으로 전 세계 출시.",
+          "Result: Mac App Store 심사 통과·출시, v1.1(전역 단축키·다중 파일 공유) 운영 중 — 기획→개발→심사→수익화→운영 전체 사이클을 혼자 완주."
+        ]
+      },
+      "DisplayCut": {
+        "description": "6가지 레이아웃 프리셋과 단축키 10개로 창을 정리하는 macOS 윈도우 관리 유틸리티.",
+        "highlights": [
+          "Problem: 멀티 윈도우 작업 시 윈도우 배치에 하루 평균 15분 소요. Mission Control 사용률 20% 미만.",
+          "Action: SwiftUI + AppKit으로 6가지 레이아웃 프리셋(2분할·3분할·가운데 집중 등) 구현. Accessibility API로 전체 활성 윈도우를 1초 내 배치하고, 단축키 10개로 키보드만으로 창 제어 가능하게 설계.",
+          "Result: 일일 윈도우 배치 시간 80% 감소(15분 → 3분). macOS Accessibility API와 윈도우 관리 메커니즘 이해 확보."
+        ]
       }
     },
     "projectDescriptions": {
@@ -268,13 +284,12 @@
       "achievements": "주요 성과"
     },
     "summary": {
-      "text1": "2024년 웹 프론트엔드 개발을 시작으로 React/TypeScript 풀스택 프로젝트를 완성한 후, 2025년 Apple Developer Academy @POSTECH을 통해 iOS 개발로 전환. 6개월 내 App Store에 4개 앱 출시(개인 2개, 팀 프로젝트 2개)하며 총 iOS 앱 8개, 웹 프로젝트 2개의 포트폴리오 보유.",
-      "text2": "주요 성과: SwiftUI·UIKit으로 iOS 앱 8개 개발 | 국내 최초 Apple Indoor Map 승인 구현 | macOS 윈도우 관리 서비스 개발 | 온디바이스 AI 및 위치 기반 서비스 구현"
+      "text1": "2년간 iOS/macOS 앱 11개를 App Store에 출시했으며, SmartEdge(v1.1)와 ReToU(v2.0)는 설계·개발·배포·운영 전 과정을 직접 담당하며 유지보수 중입니다. Apple Developer Academy @POSTECH에서 개발·디자인·기획·협업을 교육받았고, 팀 프로젝트 Show(X)에서는 개발 리드로 Apple Indoor Map 국내 최초 승인을 이끌었습니다.",
+      "text2": "주요 성과: App Store 출시 11회(심사·리젝 대응 포함) | Apple Indoor Map 국내 최초 승인 | App Store 내비게이션 #37 · 생산성 #66 | StoreKit 2 수익화 및 라이브 운영 | 온디바이스 AI·위치 기반 서비스 구현"
     },
     "skillCategories": {
       "ios": "iOS Development:",
-      "web": "Web Frontend:",
-      "tools": "Styling & Tools:"
+      "tools": "배포 · 인프라:"
     },
     "education": [
       {
@@ -313,7 +328,7 @@
       "Apple Maps Indoor Map 국내 최초 승인 및 개발 사례 (Show(X))",
       "Junction 2025 해커톤 트랙 3등 - AI 기반 산불 감지 시스템 개발",
       "8개 iOS 앱 개발 경험 (SwiftUI 6개, UIKit 2개)",
-      "웹에서 iOS로의 빠른 기술 전환 (선언형 UI 패턴 기반)"
+      "SmartEdge·ReToU 라이브 운영 — 배포·유지보수·버전 업데이트(v1.1/v2.0) 경험"
     ],
     "footer": {
       "portfolio": "포트폴리오:",

@@ -1,5 +1,41 @@
 export const projects = [
   {
+    id: 100,
+    title: 'SmartEdge',
+    category: 'macOS',
+    type: 'SwiftUI',
+    thumbnail: '/images/projects/smartedge/music.jpg',
+    description: 'macOS menu-bar app that turns the MacBook notch into a micro-workspace (music, calendar, file shelf, Pomodoro). Free + Pro IAP on the Mac App Store.',
+    techStack: ['SwiftUI', 'AppKit', 'App Sandbox', 'StoreKit 2', 'EventKit'],
+    github: null,
+    appstore: 'https://apps.apple.com/kr/app/smartedge/id6787634027?mt=12',
+    duration: '2025.12 - 현재',
+    role: 'Personal Project (Planning, Development, Design, Release & Ops 100%)',
+    highlights: [
+      'Problem: Checking music, sharing files and viewing schedules each required switching apps; the notch was dead space, and always-on-top UI collides with macOS system constraints (sandbox, TCC, window levels).',
+      'Action: Combined AppKit window-level control with SwiftUI; resolved kernel-level sandbox blocking of Apple Events via targeted exception entitlements and made drag & drop work by dynamically lowering the window level; built a free + Pro (non-consumable IAP) model with StoreKit 2 and shipped worldwide in KO/EN.',
+      'Result: Passed Mac App Store review and shipped; operating v1.1 with global hotkeys and multi-file sharing — completed the full cycle of planning → development → review → monetization → operations solo.'
+    ]
+  },
+  {
+    id: 101,
+    title: 'DisplayCut',
+    category: 'macOS',
+    type: 'SwiftUI',
+    thumbnail: null,
+    description: 'macOS window management utility with 6 layout presets and 10 hotkeys, arranging all active windows within a second via the Accessibility API.',
+    techStack: ['SwiftUI', 'AppKit', 'Accessibility API'],
+    github: null,
+    appstore: null,
+    duration: '2025.06 - 2025.08',
+    role: 'Personal Project (100%)',
+    highlights: [
+      'Problem: Multi-window work consumed ~15 minutes a day on window arrangement; Mission Control usage stayed under 20%.',
+      'Action: Implemented 6 layout presets (split, thirds, centered focus) with SwiftUI + AppKit; used the Accessibility API to arrange all active windows within 1 second; designed 10 hotkeys for keyboard-only control.',
+      'Result: Reduced daily window-arrangement time by 80% (15 → 3 min); built deep understanding of the macOS Accessibility API and window management mechanics.'
+    ]
+  },
+  {
     id: 1,
     title: 'kip!',
     category: 'iOS',

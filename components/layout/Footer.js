@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
-import { SiSwift, SiReact } from 'react-icons/si';
+import { SiSwift } from 'react-icons/si';
 import { useTranslation } from '@/lib/i18n';
 
 export default function Footer() {
@@ -22,8 +22,7 @@ export default function Footer() {
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <SiSwift className="text-ios-orange text-2xl" />
-              <span className="text-xl font-bold">+</span>
-              <SiReact className="text-ios-blue text-2xl" />
+              <span className="text-lg font-bold">정송헌 · iOS Developer</span>
             </div>
             <p className="text-ios-gray-600 dark:text-ios-gray-400 text-sm">
               {locale === 'en'

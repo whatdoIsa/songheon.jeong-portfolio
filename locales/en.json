@@ -228,6 +228,22 @@
         ],
         "role": "iOS Developer (Team Project / Development Lead)",
         "duration": "2025.07 - 2025.08"
+      },
+      "SmartEdge": {
+        "description": "macOS menu-bar app that turns the MacBook notch into a micro-workspace (music, calendar, file shelf, Pomodoro). Free + Pro IAP on the Mac App Store.",
+        "highlights": [
+          "Problem: Checking music, sharing files and viewing schedules each required switching apps; the notch was dead space, and always-on-top UI collides with macOS system constraints (sandbox, TCC, window levels).",
+          "Action: Combined AppKit window-level control with SwiftUI; resolved kernel-level sandbox blocking of Apple Events via targeted exception entitlements; made drag & drop work by dynamically lowering the window level; built a free + Pro IAP model with StoreKit 2 and shipped worldwide in KO/EN.",
+          "Result: Passed Mac App Store review and shipped; operating v1.1 with global hotkeys and multi-file sharing — completed the full planning → development → review → monetization → operations cycle solo."
+        ]
+      },
+      "DisplayCut": {
+        "description": "macOS window management utility with 6 layout presets and 10 hotkeys, arranging all active windows within a second via the Accessibility API.",
+        "highlights": [
+          "Problem: Multi-window work consumed ~15 minutes a day on window arrangement; Mission Control usage stayed under 20%.",
+          "Action: Implemented 6 layout presets with SwiftUI + AppKit; used the Accessibility API to arrange all active windows within 1 second; designed 10 hotkeys for keyboard-only control.",
+          "Result: Reduced daily window-arrangement time by 80% (15 → 3 min); built deep understanding of the macOS Accessibility API and window management mechanics."
+        ]
       }
     },
     "projectDescriptions": {
@@ -268,13 +284,12 @@
       "achievements": "Key Achievements"
     },
     "summary": {
-      "text1": "Began web frontend development in 2024, completing React/TypeScript full-stack projects before transitioning to iOS development through Apple Developer Academy @POSTECH in 2025. Published 4 apps on the App Store within 6 months (2 personal, 2 team projects), with a total portfolio of 8 iOS apps and 2 web projects.",
-      "text2": "Key Achievements: 8 iOS apps developed with SwiftUI and UIKit | First approved Apple Indoor Map implementation in Korea | macOS window management service development | On-device AI and location-based service implementation"
+      "text1": "Shipped 11 iOS/macOS apps to the App Store in two years; SmartEdge (v1.1) and ReToU (v2.0) are live products I design, build, release and maintain end-to-end. Trained in development, design, planning and collaboration at Apple Developer Academy @POSTECH, and led development on Show(X), earning Korea's first Apple Indoor Map approval.",
+      "text2": "Key achievements: 11 App Store releases (incl. review/rejection handling) | Korea's first Apple Indoor Map approval | App Store Navigation #37 · Productivity #66 | StoreKit 2 monetization in live operation | on-device AI and location-based services"
     },
     "skillCategories": {
       "ios": "iOS Development:",
-      "web": "Web Frontend:",
-      "tools": "Styling & Tools:"
+      "tools": "Release & Infra:"
     },
     "education": [
       {
@@ -313,7 +328,7 @@
       "First domestic approval and development case of Apple Maps Indoor Map (Show(X))",
       "3rd place in Junction 2025 hackathon track - AI-based wildfire detection system development",
       "Experience developing 8 iOS apps (6 SwiftUI, 2 UIKit)",
-      "Fast technology transition from web to iOS (based on declarative UI patterns)"
+      "Live operation of SmartEdge & ReToU — release, maintenance and version updates (v1.1/v2.0)"
     ],
     "footer": {
       "portfolio": "Portfolio:",
