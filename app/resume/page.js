@@ -38,37 +38,10 @@ export default function Resume() {
     loadResumeData();
   }, [locale]);
 
-  const handleDownloadPDF = async () => {
-    // 동적으로 html2pdf 라이브러리 로드 (클라이언트 사이드에서만 실행)
-    if (typeof window !== 'undefined') {
-      const html2pdf = (await import('html2pdf.js')).default;
-
-      const element = resumeRef.current;
-      const opt = {
-        margin: [15, 15, 15, 15],
-        filename: (locale || 'ko') === 'en' ? '[iOS]RESUME_JeongSongHeon.pdf' : '[iOS]정송헌_이력서.pdf',
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: {
-          scale: 2,
-          useCORS: true,
-          logging: false,
-          letterRendering: true
-        },
-        jsPDF: {
-          unit: 'mm',
-          format: 'a4',
-          orientation: 'portrait'
-        },
-        pagebreak: {
-          mode: ['avoid-all', 'css', 'legacy'],
-          before: '.page-break-before',
-          after: '.page-break-after',
-          avoid: '.page-break-avoid'
-        }
-      };
-
-      html2pdf().set(opt).from(element).save();
-    }
+  // 브라우저 인쇄 대화상자에서 "PDF로 저장" — 텍스트가 벡터로 유지되어
+  // 선택·검색·ATS 파싱이 가능하다 (캔버스 캡처 방식과의 차이).
+  const handleDownloadPDF = () => {
+    window.print();
   };
 
   return (
@@ -142,7 +115,7 @@ export default function Resume() {
         </section>
 
         {/* Experience / Projects */}
-        <section className="mb-8 page-break-before">
+        <section className="mb-8">
           <h2 className="text-2xl font-bold mb-4 border-b border-gray-300 pb-2">{t('resume.sections.projects')}</h2>
 
           <div className="space-y-6">
@@ -152,7 +125,7 @@ export default function Resume() {
                   <h3 className="text-lg font-bold">{project.title}</h3>
                   <span className="text-sm text-gray-600">{project.duration}</span>
                 </div>
-                <p className="text-sm text-gray-600 mb-2">{project.role}</p>
+                <p className="text-sm text-gray-600 mb-2">{(resumeData.projectDetails && resumeData.projectDetails[project.title]?.role) || project.role}</p>
                 <p className="text-gray-800 mb-2">
                   {resumeData.projectDetails && resumeData.projectDetails[project.title] 
                     ? resumeData.projectDetails[project.title].description 
@@ -191,7 +164,7 @@ export default function Resume() {
         </section>
 
         {/* Education */}
-        <section className="mb-8 page-break-before">
+        <section className="mb-8">
           <h2 className="text-2xl font-bold mb-4 border-b border-gray-300 pb-2">{t('resume.sections.education')}</h2>
           <div className="space-y-4">
             {resumeData.education.map((edu, index) => (
@@ -230,11 +203,11 @@ export default function Resume() {
         </footer>
       </div>
 
-      {/* PDF Download Button */}
-      <div className="fixed top-20 right-4">
+      {/* PDF 저장 버튼 (인쇄 시 숨김) */}
+      <div className="fixed top-20 right-4 print:hidden">
         <button
           onClick={handleDownloadPDF}
-          className="bg-gradient-to-r from-ios-blue via-ios-purple to-ios-pink text-white px-6 py-3 rounded-full shadow-lg font-medium transition-all duration-300 hover:shadow-xl hover:scale-105 active:scale-95"
+          className="bg-ios-gray-900 text-white dark:bg-white dark:text-ios-gray-900 px-5 py-2.5 rounded-xl shadow-lg text-sm font-bold hover:opacity-85 transition-opacity"
           title={t('resume.downloadHint')}
         >
           {t('resume.download')}
