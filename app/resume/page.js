@@ -14,20 +14,8 @@ export default function Resume() {
   useEffect(() => {
     setPhone(atob('MDEwLTI1MTQtMjQyNg=='));
   }, []);
-  // 직무 맞춤 프로필: /resume?profile=fodi-ios (정적 export이므로 마운트 후 URL에서 읽는다)
-  const [profile, setProfile] = useState('');
-  useEffect(() => {
-    const p = new URLSearchParams(window.location.search).get('profile') || '';
-    setProfile(p);
-  }, []);
-  const isFodi = profile === 'fodi-ios';
-
-  // iOS·macOS 출시 프로젝트 (웹 제외). FODI 프로필은 출시·운영 강조로 핵심 4개만, 우선순위 정렬.
-  const allIosProjects = projects.filter(p => ['iOS', 'macOS'].includes(p.category));
-  const fodiOrder = ['SmartEdge', 'Show(X)', 'kip!', 'ReToU (오늘의 넌)'];
-  const iosProjects = isFodi
-    ? fodiOrder.map(name => allIosProjects.find(p => p.title === name)).filter(Boolean)
-    : allIosProjects;
+  // iOS·macOS 프로젝트 (웹 제외).
+  const iosProjects = projects.filter(p => ['iOS', 'macOS'].includes(p.category));
   const ko = (locale || 'ko') === 'ko';
   const resumeRef = useRef(null);
 

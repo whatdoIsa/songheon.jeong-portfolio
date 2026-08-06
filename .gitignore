@@ -35,3 +35,6 @@ next-env.d.ts
 # local tools
 .playwright-mcp/
 *.backup
+
+# local-only (배포·커밋 제외)
+docs/*.local.md

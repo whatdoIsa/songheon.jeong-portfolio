@@ -110,6 +110,20 @@ export default function Home() {
     { name: 'SEED', platform: 'iOS', scopeKo: '개인 100% (개발 중)', scopeEn: 'Solo 100% (in progress)', released: false, operating: false, appstore: null, github: null },
   ];
 
+  // 일하는 방식 — 출시 품질(QA)과 AI 검증 워크플로. 회사 무관한 일반 강점.
+  const qaFlow = ko
+    ? ['요구사항·실패 조건 정의', '구현 단위 분리', '빌드·정적 오류 확인', '정상·예외·경계 점검', '실기기 테스트', 'App Store 심사 대응', '운영 피드백 → 수정·버전 업데이트']
+    : ['Define requirements & failure cases', 'Split into small units', 'Build & static-error check', 'Normal/exception/boundary checks', 'Real-device testing', 'App Store review handling', 'Feedback → fix & version update'];
+  const qaBasis = ko
+    ? '실제 근거: SmartEdge 실기기 QA·심사 대응, Show(X) 현장 관찰 5회 업데이트, ReToU 피드백 3회 반영.'
+    : 'From real work: SmartEdge device QA & review, 5 in-event Show(X) updates, 3 ReToU feedback rounds.';
+  const aiFlow = ko
+    ? ['요구사항 정리', '범위·영향 파일 분석', '작은 단위 구현', 'build/test 실행', 'diff 직접 검토', '아키텍처·예외 검증', '실기기 QA', '커밋/PR']
+    : ['Frame requirements', 'Scope & impacted files', 'Implement in small units', 'Run build/test', 'Review the diff myself', 'Verify architecture & edge cases', 'On-device QA', 'Commit/PR'];
+  const aiPrinciples = ko
+    ? ['생성 코드를 이해하지 못한 채 병합하지 않는다.', '빌드 성공만으로 완료 처리하지 않는다.', '개인정보·인증키·환경변수는 AI 문맥에 넣지 않는다.', '최종 품질 책임은 개발자에게 있다.']
+    : ['Never merge generated code I don\'t understand.', 'A passing build alone is not "done".', 'Keep personal data, secrets and env vars out of the AI context.', 'Final quality is the developer\'s responsibility.'];
+
   const education = ko
     ? [
         ['2025.03 – 2025.12', 'Apple Developer Academy 4기 @ POSTECH', 'Apple 생태계 집중 교육 — 개발·디자인·커뮤니케이션·기획. 6개 Challenge 프로젝트 완성 (Show(X), kip!, Rootrip, WAY GYM 등). 쇼케이스 현장 운영(200+명 응대)까지 담당.'],
@@ -292,6 +306,54 @@ export default function Home() {
                 </ul>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== 일하는 방식 (QA + AI 검증) ===== */}
+      <section id="process" className="py-14 bg-white dark:bg-ios-gray-800 border-y border-ios-gray-100 dark:border-ios-gray-700">
+        <div className="container-custom max-w-4xl">
+          <SectionLabel>How I work</SectionLabel>
+          <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight mb-1.5">
+            {ko ? '구현으로 끝내지 않고, 출시 가능한 상태까지' : 'Not just implemented — ready to ship'}
+          </h2>
+          <p className="text-[13.5px] text-ios-gray-500 dark:text-ios-gray-400 mb-7">
+            {ko ? '심사·안정화·운영을 개발의 일부로 봅니다. AI 도구는 쓰되 품질 책임은 직접 집니다.'
+                : 'Review, stabilization and operations are part of development. I use AI tools but own the quality.'}
+          </p>
+          <div className="grid md:grid-cols-2 gap-4">
+            {/* QA·릴리스 */}
+            <div className="bg-ios-gray-50 dark:bg-ios-gray-900/40 rounded-2xl p-5">
+              <h3 className="text-[12px] font-extrabold tracking-widest uppercase text-ios-gray-400 mb-3">
+                {ko ? '출시 품질을 만드는 과정' : 'Getting a build ready to ship'}
+              </h3>
+              <ol className="space-y-1.5">
+                {qaFlow.map((s, i) => (
+                  <li key={i} className="text-[13.5px] text-ios-gray-600 dark:text-ios-gray-300 flex gap-2.5">
+                    <span className="text-ios-gray-300 tabular-nums shrink-0">{i + 1}</span>{s}
+                  </li>
+                ))}
+              </ol>
+              <p className="mt-3.5 text-[12px] text-ios-gray-400">{qaBasis}</p>
+            </div>
+            {/* AI 워크플로 */}
+            <div className="bg-ios-gray-50 dark:bg-ios-gray-900/40 rounded-2xl p-5">
+              <h3 className="text-[12px] font-extrabold tracking-widest uppercase text-ios-gray-400 mb-3">
+                {ko ? 'AI를 쓰되 검증은 직접' : 'AI, but I verify'}
+              </h3>
+              <div className="flex flex-wrap gap-1.5 mb-3.5">
+                {aiFlow.map((s, i) => (
+                  <span key={i} className="text-[12px] text-ios-gray-600 dark:text-ios-gray-300 bg-white dark:bg-ios-gray-800 border border-ios-gray-100 dark:border-ios-gray-700 rounded-full px-2.5 py-1">
+                    {s}{i < aiFlow.length - 1 && <span className="text-ios-gray-300 ml-1.5" aria-hidden="true">→</span>}
+                  </span>
+                ))}
+              </div>
+              <ul className="space-y-1.5">
+                {aiPrinciples.map((p, i) => (
+                  <li key={i} className="text-[13px] text-ios-gray-600 dark:text-ios-gray-300 relative pl-4 before:content-['·'] before:absolute before:left-0 before:text-ios-gray-400">{p}</li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </section>
