@@ -108,7 +108,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="grid sm:grid-cols-[auto_1fr_auto] gap-6 pt-12 pb-8 items-start"
+            className="grid sm:grid-cols-[auto_1fr] gap-6 pt-12 pb-8 items-start"
           >
             <img
               src={`${process.env.NODE_ENV === 'production' ? '/iOS-Portfolio' : ''}/images/profile.jpg`}
@@ -122,9 +122,9 @@ export default function Home() {
               </h1>
               <p className="mt-2.5 text-[14.5px] text-ios-gray-600 dark:text-ios-gray-300 max-w-xl">
                 {ko ? (
-                  <>2년간 <b className="text-ios-gray-900 dark:text-white">11개 앱을 App Store에 출시</b>하고, SmartEdge(v1.1)·ReToU(v2.0)의 <b className="text-ios-gray-900 dark:text-white">설계·개발·배포·운영 전 과정</b>을 직접 담당하고 있습니다. 시스템 제약(샌드박스·TCC·윈도우 레벨)을 분석해 해결하는 iOS/macOS 개발자입니다.</>
+                  <>만들다 만 앱은 없는 앱과 같다고 생각합니다. 2년간 <b className="text-ios-gray-900 dark:text-white">11개 앱을 App Store 출시까지 끝까지 가져갔고</b>, 지금도 SmartEdge와 ReToU를 직접 업데이트하며 운영합니다. 에러 한 줄 없이 조용히 실패하는 문제를 <b className="text-ios-gray-900 dark:text-white">시스템 로그까지 파고들어 원인을 찾는 끈질김</b>, 그리고 사용자를 직접 관찰해 다음 버전에 반영하는 습관이 제 강점입니다.</>
                 ) : (
-                  <>Shipped <b className="text-ios-gray-900 dark:text-white">11 apps to the App Store in 2 years</b>, owning the <b className="text-ios-gray-900 dark:text-white">full cycle — design, development, release and operations</b> — of SmartEdge (v1.1) and ReToU (v2.0). An iOS/macOS developer who digs into system constraints — sandbox, TCC, window levels — and resolves them.</>
+                  <>I believe an app that never ships is no different from one that doesn&apos;t exist. Over two years I carried <b className="text-ios-gray-900 dark:text-white">11 apps all the way to the App Store</b>, and I still update and operate SmartEdge and ReToU myself. My strengths: <b className="text-ios-gray-900 dark:text-white">the persistence to chase a silent failure down to the system logs</b>, and the habit of watching real users and shipping what I learn.</>
                 )}
               </p>
               <div className="flex flex-wrap gap-x-5 gap-y-1.5 mt-4 text-[13px] text-ios-gray-500 dark:text-ios-gray-400">
@@ -132,14 +132,6 @@ export default function Home() {
                 <a href="mailto:gmlwns5504@naver.com" className="border-b border-ios-gray-200 hover:text-ios-gray-900 dark:hover:text-white hover:border-ios-gray-400">gmlwns5504@naver.com</a>
                 <a href="https://github.com/whatdoIsa" target="_blank" rel="noopener noreferrer" className="border-b border-ios-gray-200 hover:text-ios-gray-900 dark:hover:text-white hover:border-ios-gray-400">github.com/whatdoIsa</a>
               </div>
-            </div>
-            <div className="flex sm:flex-col gap-2">
-              <Link href="/resume" className="text-[13px] font-bold rounded-xl px-5 py-2.5 bg-ios-gray-900 text-white dark:bg-white dark:text-ios-gray-900 text-center hover:opacity-85 transition-opacity">
-                {ko ? '이력서 보기 ↓' : 'Resume ↓'}
-              </Link>
-              <a href="https://github.com/whatdoIsa" target="_blank" rel="noopener noreferrer" className="text-[13px] font-bold rounded-xl px-5 py-2.5 border border-ios-gray-200 dark:border-ios-gray-600 text-ios-gray-600 dark:text-ios-gray-300 text-center">
-                GitHub ↗
-              </a>
             </div>
           </motion.div>
 
