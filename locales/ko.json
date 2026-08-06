@@ -284,8 +284,8 @@
       "achievements": "주요 성과"
     },
     "summary": {
-      "text1": "2년간 iOS/macOS 앱 11개를 App Store에 출시했으며, SmartEdge(v1.1)와 ReToU(v2.0)는 설계·개발·배포·운영 전 과정을 직접 담당하며 유지보수 중입니다. Apple Developer Academy @POSTECH에서 개발·디자인·기획·협업을 교육받았고, 팀 프로젝트 Show(X)에서는 개발 리드로 Apple Indoor Map 국내 최초 승인을 이끌었습니다.",
-      "text2": "주요 성과: App Store 출시 11회(심사·리젝 대응 포함) | Apple Indoor Map 국내 최초 승인 | App Store 내비게이션 #37 · 생산성 #66 | StoreKit 2 수익화 및 라이브 운영 | 온디바이스 AI·위치 기반 서비스 구현"
+      "text1": "2년간 iOS/macOS 앱 7개를 출시했으며, SmartEdge(v1.1)와 ReToU(v2.0)는 설계·개발·배포·운영 전 과정을 직접 담당하며 유지보수 중입니다. Apple Developer Academy @POSTECH에서 개발·디자인·기획·협업을 교육받았고, 팀 프로젝트 Show(X)에서는 개발 리드로 Apple Indoor Map 국내 최초 승인을 이끌었습니다.",
+      "text2": "주요 성과: 앱 출시 7회(심사·리젝 대응 포함) | Apple Indoor Map 국내 최초 승인 | App Store 내비게이션 #37 · 생산성 #66 | StoreKit 2 수익화 및 라이브 운영 | 온디바이스 AI·위치 기반 서비스 구현"
     },
     "skillCategories": {
       "ios": "iOS Development:",

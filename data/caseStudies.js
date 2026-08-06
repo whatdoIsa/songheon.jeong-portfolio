@@ -350,6 +350,39 @@ export const caseStudies = [
   },
 
   {
+    slug: 'seed',
+    name: 'SEED',
+    icon: { img: '/images/icons/seed.png', text: 'S', bg: '#6B4EFF', color: '#FFFFFF' },
+    platform: 'iOS',
+    featured: false,
+    period: '2026 –',
+    status: { ko: '개인 프로젝트', en: 'Personal project' },
+    role: {
+      ko: '개인 프로젝트 — 기획·개발·디자인 100%',
+      en: 'Solo project — planning, development & design 100%',
+    },
+    oneLiner: {
+      ko: '가상 합성 시장에서 투자 습관을 훈련하는 주식 학습 앱. 종목 추천·수익 보장 없이, 광고·가입 없이 — "연습으로 지표를 보는 눈을 기른다"는 철학을 제품 전체에 관철.',
+      en: 'A stock-learning app that trains investing habits in a fully synthetic market — no stock picks, no profit promises, no ads, no sign-up. One philosophy carried through the whole product: practice builds the eye for the numbers.',
+    },
+    stack: ['SwiftUI', 'SwiftData · CloudKit', 'WidgetKit', 'StoreKit 2', 'Swift Package (엔진 분리)'],
+    shots: [],
+    links: {},
+    problem: {
+      ko: '',
+      en: '',
+    },
+    actions: { ko: [], en: [] },
+    result: {
+      ko: '호가창 매칭·수수료·상하한가 등 거래 제도 로직을 별도 Swift 패키지 엔진으로 분리하고 단위 테스트 102개로 검증. 12편 학습 커리큘럼과 위젯·iCloud 백업까지 갖춘 풀 사이즈 프로덕트.',
+      en: 'Split the trading engine (order-book matching, fees, price limits) into its own Swift package verified by 102 unit tests; a full-size product with a 12-lesson curriculum, widgets and iCloud backup.',
+    },
+    architecture: null,
+    troubleshooting: [],
+    resultTiles: [],
+  },
+
+  {
     slug: 'rootrip',
     name: 'Rootrip',
     icon: { img: '/images/icons/rootrip.png', text: 'R', bg: '#FF6B4A', color: '#FFFFFF' },

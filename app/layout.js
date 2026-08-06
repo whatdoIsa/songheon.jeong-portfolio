@@ -6,7 +6,7 @@ import { I18nProvider } from '@/lib/i18n';
 
 export const metadata = {
   title: '정송헌 (Dean) | iOS Developer',
-  description: '2년간 11개 앱을 App Store에 출시하고 SmartEdge·ReToU를 운영하는 iOS/macOS 개발자 정송헌입니다. 설계·개발·배포·운영 전 과정을 담당합니다.',
+  description: '2년간 7개 앱을 출시하고 SmartEdge·ReToU를 운영하는 iOS/macOS 개발자 정송헌입니다. 설계·개발·배포·운영 전 과정을 담당합니다.',
   keywords: [
     'iOS Developer',
     'SwiftUI',
@@ -32,7 +32,7 @@ export const metadata = {
   publisher: 'Dean',
   openGraph: {
     title: '정송헌 (Dean) | iOS Developer',
-    description: 'App Store 출시 11회 · SmartEdge·ReToU 운영 — iOS/macOS 개발자 정송헌',
+    description: '앱 출시 7회 · SmartEdge·ReToU 운영 — iOS/macOS 개발자 정송헌',
     type: 'website',
     locale: 'ko_KR',
     siteName: 'Dean Portfolio',

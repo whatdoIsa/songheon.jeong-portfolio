@@ -14,7 +14,7 @@ export default function Home() {
   const ko = L === 'ko';
 
   const facts = [
-    { big: ko ? '11개 출시' : '11 shipped', small: ko ? 'App Store (기획~운영)' : 'App Store (plan → ops)', accent: true },
+    { big: ko ? '7개 출시' : '7 shipped', small: ko ? '앱 (기획~운영)' : 'apps (plan → ops)', accent: true },
     { big: ko ? '국내 최초' : 'Korea-first', small: ko ? 'Apple Indoor Map 승인' : 'Apple Indoor Map approval', accent: false },
     { big: '#37 · #66', small: ko ? '내비게이션 · 생산성 차트' : 'Navigation · productivity charts', accent: true },
     { big: ko ? '지속률 70%' : '70% retention', small: ko ? 'ReToU 30일 (기존 대비 3배)' : 'ReToU 30-day (3× typical)', accent: false },
@@ -27,7 +27,7 @@ export default function Home() {
         ? [
             ['SwiftUI', '앱 6개 출시 경험'],
             ['UIKit · AppKit', '메뉴바 앱, 윈도우 레벨 제어'],
-            ['App Sandbox · TCC 권한', '시스템 제약 로그 기반 디버깅'],
+            ['App Sandbox · TCC 권한', '샌드박스·권한 제약 대응 (SmartEdge)'],
             ['MapKit', 'Indoor Positioning, GeoJSON'],
             ['PencilKit', '좌표계 변환, 드로잉 영속성'],
             ['Apple Intelligence · Vision', '온디바이스 분류 파이프라인'],
@@ -36,7 +36,7 @@ export default function Home() {
         : [
             ['SwiftUI', 'shipped 6 apps'],
             ['UIKit · AppKit', 'menu-bar apps, window-level control'],
-            ['App Sandbox · TCC', 'log-driven debugging of system constraints'],
+            ['App Sandbox · TCC', 'shipping within sandbox/permission constraints'],
             ['MapKit', 'Indoor Positioning, GeoJSON'],
             ['PencilKit', 'coordinate conversion, drawing persistence'],
             ['Apple Intelligence · Vision', 'on-device classification pipeline'],
@@ -48,13 +48,13 @@ export default function Home() {
       items: ko
         ? [
             ['QA·안정화 사이클', '실기기 QA, 현장 관찰 기반 5회 업데이트'],
-            ['시스템 로그 기반 진단', '샌드박스·TCC 무증상 실패 추적'],
+            ['시스템 제약 해결 경험', '샌드박스·TCC·윈도우 레벨 (SmartEdge)'],
             ['AI 개발 도구 워크플로우', 'Claude Code 기반 개발·검증 자동화'],
             ['버전 운영·유지보수', 'SmartEdge v1.1 · ReToU v2.0 라이브 운영'],
           ]
         : [
             ['QA & stabilization cycles', 'device QA, 5 field-driven updates'],
-            ['Log-based system diagnosis', 'tracing silent sandbox/TCC failures'],
+            ['System-constraint problem solving', 'sandbox · TCC · window levels (SmartEdge)'],
             ['AI-assisted dev workflow', 'build & verify pipeline on Claude Code'],
             ['Version ops & maintenance', 'SmartEdge v1.1 · ReToU v2.0 live'],
           ],
@@ -63,7 +63,7 @@ export default function Home() {
       title: 'Product · Ops',
       items: ko
         ? [
-            ['App Store 심사·출시 11회', '리젝 대응·유지보수 경험'],
+            ['앱 심사·출시 7회', '리젝 대응·유지보수 경험'],
             ['사용자 인터뷰·피드백 반복 개선', '5회+ 반영'],
             ['StoreKit 2 수익화 · ASO', ''],
             ['GitHub · GitHub Actions (CI)', ''],
@@ -72,7 +72,7 @@ export default function Home() {
             ['KO·EN 로컬라이제이션', '영어 회화 가능'],
           ]
         : [
-            ['11 App Store releases', 'incl. rejection handling & maintenance'],
+            ['7 app releases', 'incl. rejection handling & maintenance'],
             ['User-interview-driven iteration', '5+ feedback rounds shipped'],
             ['StoreKit 2 monetization · ASO', ''],
             ['GitHub · GitHub Actions (CI)', ''],
@@ -122,9 +122,9 @@ export default function Home() {
               </h1>
               <p className="mt-2.5 text-[14.5px] text-ios-gray-600 dark:text-ios-gray-300 max-w-xl">
                 {ko ? (
-                  <>만들다 만 앱은 없는 앱과 같다고 생각합니다. 2년간 <b className="text-ios-gray-900 dark:text-white">11개 앱을 App Store 출시까지 끝까지 가져갔고</b>, 지금도 SmartEdge와 ReToU를 직접 업데이트하며 운영합니다. 에러 한 줄 없이 조용히 실패하는 문제를 <b className="text-ios-gray-900 dark:text-white">시스템 로그까지 파고들어 원인을 찾는 끈질김</b>, 그리고 사용자를 직접 관찰해 다음 버전에 반영하는 습관이 제 강점입니다.</>
+                  <>만들다 만 앱은 없는 앱과 같다고 생각합니다. 2년간 <b className="text-ios-gray-900 dark:text-white">7개 앱을 출시까지 끝까지 가져갔고</b>, 지금도 SmartEdge와 ReToU를 직접 업데이트하며 운영합니다. 화려하게 타오르기보다 <b className="text-ios-gray-900 dark:text-white">뚝배기처럼 은근하게 오래 끓는 성격</b>이라, 한번 맡은 일은 수단과 방법을 가리지 않고 어떻게든 끝을 봅니다.</>
                 ) : (
-                  <>I believe an app that never ships is no different from one that doesn&apos;t exist. Over two years I carried <b className="text-ios-gray-900 dark:text-white">11 apps all the way to the App Store</b>, and I still update and operate SmartEdge and ReToU myself. My strengths: <b className="text-ios-gray-900 dark:text-white">the persistence to chase a silent failure down to the system logs</b>, and the habit of watching real users and shipping what I learn.</>
+                  <>I believe an app that never ships is no different from one that doesn&apos;t exist. Over two years I carried <b className="text-ios-gray-900 dark:text-white">7 apps all the way to release</b>, and I still update and operate SmartEdge and ReToU myself. I&apos;m the <b className="text-ios-gray-900 dark:text-white">slow-burning type — steady heat that lasts</b> — and once I take something on, I find whatever it takes to see it through.</>
                 )}
               </p>
               <div className="flex flex-wrap gap-x-5 gap-y-1.5 mt-4 text-[13px] text-ios-gray-500 dark:text-ios-gray-400">
