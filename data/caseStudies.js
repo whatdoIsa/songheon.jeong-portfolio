@@ -418,40 +418,6 @@ export const caseStudies = [
     resultTiles: [],
   },
 
-  {
-    slug: 'displaycut',
-    name: 'DisplayCut',
-    icon: { img: '/images/icons/displaycut.png', text: 'DC', bg: '#4E5968', color: '#FFFFFF' },
-    platform: 'macOS',
-    featured: false,
-    period: '2025.06 – 2025.08',
-    status: { ko: '출시', en: 'Live' },
-    role: {
-      ko: '개인 프로젝트 — 100%',
-      en: 'Solo project — 100%',
-    },
-    oneLiner: {
-      ko: '6가지 레이아웃 프리셋과 단축키 10개로 창을 정리하는 macOS 윈도우 관리 유틸리티. Accessibility API로 전체 활성 윈도우를 1초 내 배치 — 키보드만으로 창 제어가 가능하도록 설계.',
-      en: 'A macOS window manager with 6 layout presets and 10 hotkeys. Uses the Accessibility API to arrange every active window within a second — fully keyboard-drivable.',
-    },
-    stack: ['SwiftUI', 'AppKit', 'Accessibility API'],
-    shots: [],
-    links: {
-      intro: { url: 'https://www.arcseed.kr/ko/products/displaycut', label: { ko: '소개 페이지', en: 'Product page' } },
-    },
-    problem: {
-      ko: '멀티 윈도우 작업 시 윈도우 배치에 하루 평균 15분 소요. Mission Control 사용률 20% 미만.',
-      en: 'Multi-window work burned ~15 minutes a day on window arrangement; Mission Control usage sat under 20%.',
-    },
-    actions: { ko: [], en: [] },
-    result: {
-      ko: '일일 윈도우 배치 시간 80% 감소 (15분 → 3분). macOS Accessibility API와 윈도우 관리 메커니즘 이해 확보.',
-      en: 'Daily arrangement time down 80% (15 → 3 min); built deep understanding of the Accessibility API and macOS window management.',
-    },
-    architecture: null,
-    troubleshooting: [],
-    resultTiles: [],
-  },
 ];
 
 export const featuredCaseStudies = caseStudies.filter((c) => c.featured);
