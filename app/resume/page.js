@@ -46,8 +46,12 @@ export default function Resume() {
 
   // 브라우저 인쇄 대화상자에서 "PDF로 저장" — 텍스트가 벡터로 유지되어
   // 선택·검색·ATS 파싱이 가능하다 (캔버스 캡처 방식과의 차이).
+  // 저장되는 PDF 파일명은 document.title을 따르므로 인쇄 동안만 제목을 교체한다.
   const handleDownloadPDF = () => {
+    const previousTitle = document.title;
+    document.title = (locale || 'ko') === 'en' ? '[iOS Developer] SongheonJeong_Resume' : '[iOS 개발자] 정송헌_이력서';
     window.print();
+    document.title = previousTitle;
   };
 
   return (
