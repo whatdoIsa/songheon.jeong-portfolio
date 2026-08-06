@@ -176,3 +176,38 @@ html {
     line-clamp: 3;
   }
 }
+
+/* ===== 인쇄(PDF 저장) 스타일 — 이력서 페이지 ===== */
+@media print {
+  nav,
+  footer,
+  .fixed {
+    display: none !important;
+  }
+
+  body {
+    background: white !important;
+  }
+
+  .pt-20 {
+    padding-top: 0 !important;
+  }
+
+  .page-break-avoid {
+    break-inside: avoid;
+  }
+
+  .page-break-before {
+    break-before: page;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+@page {
+  size: A4;
+  margin: 14mm;
+}

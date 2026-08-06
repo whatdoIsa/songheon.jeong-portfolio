@@ -18,21 +18,32 @@ export const projects = [
     ]
   },
   {
-    id: 101,
-    title: 'DisplayCut',
-    category: 'macOS',
+    id: 2,
+    title: 'Show(X)',
+    category: 'iOS',
     type: 'SwiftUI',
-    thumbnail: null,
-    description: 'macOS window management utility with 6 layout presets and 10 hotkeys, arranging all active windows within a second via the Accessibility API.',
-    techStack: ['SwiftUI', 'AppKit', 'Accessibility API'],
+    thumbnail: '/images/projects/showx.jpg',
+    description: 'Indoor map app for Showcase 2025. Navigation and information app for Apple Developer Academy event participants.',
+    what_one_liner: "Indoor map navigation for event venues (MapKit + GeoJSON)",
+    problem: "200+ attendees struggled indoors, increasing on-site guidance load",
+    result: "Reduced guidance inquiries by 40%; achieved Apple Indoor Map approval",
+    techStack: ['SwiftUI', 'MapKit', 'Swift Data','Indoor Positioning', 'Localization'],
+    features: [
+      'Indoor map-based booth location and route guidance',
+      'Exhibition search with category-based filtering',
+      'Integrated event schedule and team project information',
+      'Korean/English multilingual support',
+      'App Store Navigation Chart #37'
+    ],
+    webConnection: 'Applied web map API experience to MapKit learning.',
     github: null,
-    appstore: null,
-    duration: '2025.06 - 2025.08',
-    role: 'Personal Project (100%)',
+    appstore: 'https://apps.apple.com/kr/app/showx/id6755496321',
+    duration: '2025.09 - 2025.11',
+    role: 'iOS Developer (Team Project - 6 people / Development Lead)',
     highlights: [
-      'Problem: Multi-window work consumed ~15 minutes a day on window arrangement; Mission Control usage stayed under 20%.',
-      'Action: Implemented 6 layout presets (split, thirds, centered focus) with SwiftUI + AppKit; used the Accessibility API to arrange all active windows within 1 second; designed 10 hotkeys for keyboard-only control.',
-      'Result: Reduced daily window-arrangement time by 80% (15 → 3 min); built deep understanding of the macOS Accessibility API and window management mechanics.'
+      'Problem: 200+ participants at Showcase event struggled with indoor navigation and booth locations, creating burden on guidance staff and dispersed event experience.',
+      'Action: Implemented floor/zone/booth level data modeling with MapKit Indoor Positioning API and GeoJSON-based custom overlays. Independently developed indoor map module in SwiftUI (handled 50% of total development), iterated 5 updates for improvement, and completed Korean/English localization through Figma-based collaboration with 6 planners and designers.',
+      'Result: 40% reduction in on-site guidance inquiries during Showcase period, achieved Korea\'s first approval for Apple Indoor Map. Secured indoor navigation domain expertise through 5 updates. Achieved App Store Navigation Chart #37.'
     ]
   },
   {
@@ -68,32 +79,32 @@ export const projects = [
     ]
   },
   {
-    id: 2,
-    title: 'Show(X)',
+    id: 4,
+    title: 'ReToU (오늘의 넌)',
     category: 'iOS',
     type: 'SwiftUI',
-    thumbnail: '/images/projects/showx.jpg',
-    description: 'Indoor map app for Showcase 2025. Navigation and information app for Apple Developer Academy event participants.',
-    what_one_liner: "Indoor map navigation for event venues (MapKit + GeoJSON)",
-    problem: "200+ attendees struggled indoors, increasing on-site guidance load",
-    result: "Reduced guidance inquiries by 40%; achieved Apple Indoor Map approval",
-    techStack: ['SwiftUI', 'MapKit', 'Swift Data','Indoor Positioning', 'Localization'],
+    thumbnail: '/images/projects/retou.jpg',
+    description: 'Daily one-line emotional reflection and self-reflection iOS app. Wellbeing application for organizing mind through daily emotional records.',
+    what_one_liner: "30-second daily reflection app with mood + context recall",
+    problem: "Journaling is heavy; mood apps lose context and churn quickly",
+    result: "Achieved 70% 30-day retention with privacy-first local storage",
+    techStack: ['SwiftUI', 'Face ID', 'Charts'],
     features: [
-      'Indoor map-based booth location and route guidance',
-      'Exhibition search with category-based filtering',
-      'Integrated event schedule and team project information',
-      'Korean/English multilingual support',
-      'App Store Navigation Chart #37'
+      'Consistent recording habit formation with once-daily reflection',
+      'Multilingual support for Korean and English',
+      'Monthly emotional statistics and feedback messages',
+      'Face ID/password security features',
+      'Light/dark mode support and local storage'
     ],
-    webConnection: 'Applied web map API experience to MapKit learning.',
-    github: null,
-    appstore: 'https://apps.apple.com/kr/app/showx/id6755496321',
-    duration: '2025.09 - 2025.11',
-    role: 'iOS Developer (Team Project - 6 people / Development Lead)',
+    webConnection: 'Natural transition from React useState pattern to SwiftUI @State. Applied component-based UI design experience.',
+    github: 'https://github.com/whatdoIsa/ReToU',
+    appstore: null,
+    duration: '2025.04 - 2025.06',
+    role: 'iOS Developer (Personal Project)',
     highlights: [
-      'Problem: 200+ participants at Showcase event struggled with indoor navigation and booth locations, creating burden on guidance staff and dispersed event experience.',
-      'Action: Implemented floor/zone/booth level data modeling with MapKit Indoor Positioning API and GeoJSON-based custom overlays. Independently developed indoor map module in SwiftUI (handled 50% of total development), iterated 5 updates for improvement, and completed Korean/English localization through Figma-based collaboration with 6 planners and designers.',
-      'Result: 40% reduction in on-site guidance inquiries during Showcase period, achieved Korea\'s first approval for Apple Indoor Map. Secured indoor navigation domain expertise through 5 updates. Achieved App Store Navigation Chart #37.'
+      'Problem: 8 out of 10 test users "couldn\'t sustain diary writing for more than 3 days due to burden", emotion check apps led to dropout with "can\'t recall reasons after 30 days".',
+      'Action: Designed UX with minimal input structure of "daily 1 question + emotion selection" (handled 100% of development) providing burden-free input experience with average 30-second writing time. Implemented date-wise and emotion-wise statistical visualization with Swift Charts. Ensured complete privacy with Face ID security and local storage. Reflected test user feedback 3 times for UI improvements.',
+      'Result: Achieved 70% 30-day retention rate (3x compared to existing diary apps). 85% satisfaction with "can see emotional patterns". Secured local data-based wellbeing app UX design and implementation experience.'
     ]
   },
   {
@@ -124,42 +135,8 @@ export const projects = [
       'Result: 60% reduction in route planning time for test users (20min → 8min). 90% satisfaction with "intuitive planning while viewing map". Secured complex domain (map, drawing, schedule) state management and Firebase integration experience.'
     ]
   },
-  {
-    id: 4,
-    title: 'ReToU (오늘의 넌)',
-    category: 'iOS',
-    type: 'SwiftUI',
-    thumbnail: '/images/projects/retou.jpg',
-    description: 'Daily one-line emotional reflection and self-reflection iOS app. Wellbeing application for organizing mind through daily emotional records.',
-    what_one_liner: "30-second daily reflection app with mood + context recall",
-    problem: "Journaling is heavy; mood apps lose context and churn quickly",
-    result: "Achieved 70% 30-day retention with privacy-first local storage",
-    techStack: ['SwiftUI', 'Face ID', 'Charts'],
-    features: [
-      'Consistent recording habit formation with once-daily reflection',
-      'Multilingual support for Korean and English',
-      'Monthly emotional statistics and feedback messages',
-      'Face ID/password security features',
-      'Light/dark mode support and local storage'
-    ],
-    webConnection: 'Natural transition from React useState pattern to SwiftUI @State. Applied component-based UI design experience.',
-    github: 'https://github.com/whatdoIsa/ReToU',
-    appstore: null,
-    duration: '2025.04 - 2025.06',
-    role: 'iOS Developer (Personal Project)',
-    highlights: [
-      'Problem: 8 out of 10 test users "couldn\'t sustain diary writing for more than 3 days due to burden", emotion check apps led to dropout with "can\'t recall reasons after 30 days".',
-      'Action: Designed UX with minimal input structure of "daily 1 question + emotion selection" (handled 100% of development) providing burden-free input experience with average 30-second writing time. Implemented date-wise and emotion-wise statistical visualization with Swift Charts. Ensured complete privacy with Face ID security and local storage. Reflected test user feedback 3 times for UI improvements.',
-      'Result: Achieved 70% 30-day retention rate (3x compared to existing diary apps). 85% satisfaction with "can see emotional patterns". Secured local data-based wellbeing app UX design and implementation experience.'
-    ]
-  }
 ];
 
-// Update project categories to reflect only the 4 projects
-export const projectCategories = [
-  { id: 'all', count: projects.length },
-  { id: 'iOS', count: projects.filter(p => p.category === 'iOS').length }
-];
 
 export const techStackIcons = {
   'SwiftUI': '🍎',

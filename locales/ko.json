@@ -172,11 +172,11 @@
           "App store 생산성 66등"
         ],
         "highlights": [
-          "Problem: 테스트 사용자 15명의 평균 스크린샷 저장 개수 300+, 필요한 정보를 찾는 데 평균 5분 소요. 클라우드 AI는 개인정보 우려로 사용 거부율 70%. 저장해둔 정보를 수시로 잊고 놓친 경우가 68%",
-          "Action: Apple Intelligence Writing Tools API와 Vision 프레임워크로 온디바이스 이미지 분류 파이프라인을 구현해(전체 개발의 40% 담당) 정확도 85% 달성. SwiftUI Combine으로 비동기 처리 최적화. SwiftData 기반 로컬 저장으로 완전한 프라이버시 보장 아키텍처 설계.",
-          "Result: 테스트 사용자 평균 스크린샷 정리 시간 60% 단축 (5분 → 2분). \"서버 전송 없어 안심된다\" 만족도 95%. 온디바이스 AI 설계·성능·프라이버시 균형 감각 확보. Apple Intelligence 불가한 경우 대비 Gemini & GPT 도입. App Store 생산성 66등 달성."
+          "Problem: 스크린샷 300+장에서 정보 찾기에 평균 5분 — 클라우드 AI는 프라이버시 우려로 기피율 70%.",
+          "Action: Vision + Apple Intelligence 온디바이스 분류 파이프라인 구현(개발 40%, 정확도 85%), SwiftData 로컬 저장으로 서버 전송 없는 구조 설계.",
+          "Result: 정리 시간 60% 단축(5분→2분) · 만족도 95% · 생산성 차트 #66."
         ],
-        "role": "iOS Developer (팀 프로젝트 - 6인 / 개발 3인 중 1인)",
+        "role": "팀 6인 / 개발 3인 중 1인 (개발 40%)",
         "duration": "2025.09 - 2025.11"
       },
       "Show(X)": {
@@ -189,11 +189,11 @@
           "App store 네비게이션 차트 37등"
         ],
         "highlights": [
-          "Problem: 쇼케이스 행사에서 200+ 명의 참가자들이 실내 동선, 부스 위치를 찾기 어려워 안내 인력에 부담이 커지고 행사 경험이 분산되는 문제가 있었다.",
-          "Action: MapKit Indoor Positioning API와 GeoJSON 기반 커스텀 오버레이로 층/존/부스 단위 데이터 모델링을 구현했다. 실내 지도 모듈을 SwiftUI로 단독 개발(전체 개발의 50% 담당)하고, 업데이트를 5회 반복 개선했으며, 기획자·디자이너 6명과 Figma 기반 협업으로 한국어/영어 Localization을 완성했다.",
-          "Result: 쇼케이스 기간 동안 현장 안내 문의 40% 감소, Apple Indoor Map 국내 최초 승인 획득. 5회 업데이트로 실내 내비게이션 도메인 전문성을 확보했다. App Store 네비게이션 차트 37등 달성."
+          "Problem: 실내 행사장에서 GPS 무력화 — 참가자 200+명의 길찾기 문의가 운영 병목.",
+          "Action: 층/구역/부스 GeoJSON 모델링으로 Apple Indoor Map 국내 최초 승인, 실내 지도 모듈 단독 개발(50%), 행사 중 5회 업데이트.",
+          "Result: 현장 안내 문의 40% 감소 · App Store 내비게이션 차트 #37."
         ],
-        "role": "iOS Developer (팀 프로젝트 - 6인 / 개발 담당)",
+        "role": "팀 6인 / 개발 리드 (개발 50%)",
         "duration": "2025.09 - 2025.11"
       },
       "Rootrip": {
@@ -205,11 +205,11 @@
           "단위 테스트 및 UI 테스트 구현"
         ],
         "highlights": [
-          "Problem: 테스트 사용자 8명이 여행 계획 시 평균 3개 앱(지도/메모/일정) 전환으로 동선 파악에 20분 소요.",
-          "Action: MapKit + PencilKit 결합으로 지도 위 직접 드로잉 가능한 인터랙션 구현(PencilKit + MapKit 개발 담당). StrokeData 모델 설계로 그리기 데이터 저장·복원. MVVM 아키텍처로 지도 상태/일정/북마크를 분리 설계하고, Firebase Firestore 연동으로 멀티 디바이스 동기화.",
-          "Result: 테스트 사용자 동선 계획 시간 60% 단축 (20분 → 8분). \"지도 보며 직관적 계획\" 만족도 90%. 복합 도메인(지도·드로잉·일정) 상태 관리와 Firebase 통합 경험 확보."
+          "Problem: 지도·메모·일정 앱 3개를 오가며 동선 파악에 평균 20분.",
+          "Action: PencilKit 드로잉 시스템 전담 — 캔버스→MapKit 좌표 변환, 닫힌 도형 감지, Undo/Redo, 드로잉 영속성.",
+          "Result: 경로 계획 시간 60% 단축(20분→8분) · 만족도 90%."
         ],
-        "role": "iOS Developer (팀 프로젝트 / 개발 담당)",
+        "role": "팀 6인 / PencilKit 드로잉 시스템 전담",
         "duration": "2025.07 - 2025.08"
       },
       "ReToU (오늘의 넌)": {
@@ -222,28 +222,21 @@
           "라이트/다크 모드 지원 및 로컬 저장소 사용"
         ],
         "highlights": [
-          "Problem: 테스트 사용자 10명 중 8명이 \"일기는 부담스러워 3일 이상 지속 못함\", 감정 체크 앱은 \"30일 후 이유를 떠올리지 못함\"으로 이탈.",
-          "Action: \"하루 1질문 + 감정 선택\" 최소 입력 구조로 UX 설계해(전체 개발의 100% 담당) 평균 작성 시간 30초로 부담감 없는 입력 경험 제공. Swift Charts로 날짜별·감정별 통계 시각화 구현. Face ID 보안과 로컬 저장으로 프라이버시 완전 보장. 테스트 사용자 피드백 3회 반영해 UI 개선.",
-          "Result: 30일 지속률 70% 달성 (기존 일기 앱 대비 3배). \"감정 패턴이 보인다\" 만족도 85%. 로컬 데이터 기반 웰빙 앱 UX 설계·구현 경험 확보."
+          "Problem: 10명 중 8명이 \"일기는 3일을 못 넘긴다\" — 입력 부담과 회고 가치가 반비례.",
+          "Action: 하루 1질문+감정 선택 30초 입력 UX 설계(100%), v2.0 '감정 인장' 리디자인, 로그인 없는 CloudKit 백업 + Face ID 잠금.",
+          "Result: 30일 지속률 70%(기존 대비 3배) · 1년간 v2.0까지 지속 운영."
         ],
-        "role": "iOS Developer (개인 프로젝트)",
+        "role": "개인 프로젝트 — 기획·개발·디자인 100%",
         "duration": "2025.04 - 2025.06"
       },
       "SmartEdge": {
         "description": "맥 노치를 음악·캘린더·파일 보관함·뽀모도로 허브로 바꾸는 macOS 메뉴바 앱. 무료 + Pro(일회성 구매) 모델로 Mac App Store 판매 중.",
         "highlights": [
-          "Problem: 음악 확인·파일 공유·일정 확인마다 앱 전환이 필요했고, 노치는 죽은 공간이었다. 항상 최상위에 떠 있는 UI는 macOS 시스템 제약(샌드박스·TCC·윈도우 레벨)과 정면 충돌하는 영역.",
-          "Action: AppKit 윈도우 레벨 제어와 SwiftUI를 결합. 샌드박스가 Apple Events를 커널 수준에서 차단하는 문제를 타겟 예외 entitlement로 해결하고, 보관함 오픈 시 윈도우 레벨을 동적으로 낮춰 드래그 앤 드롭을 성립. StoreKit 2로 무료+Pro 수익 모델을 구현해 한/영으로 전 세계 출시.",
-          "Result: Mac App Store 심사 통과·출시, v1.1(전역 단축키·다중 파일 공유) 운영 중 — 기획→개발→심사→수익화→운영 전체 사이클을 혼자 완주."
-        ]
-      },
-      "DisplayCut": {
-        "description": "6가지 레이아웃 프리셋과 단축키 10개로 창을 정리하는 macOS 윈도우 관리 유틸리티.",
-        "highlights": [
-          "Problem: 멀티 윈도우 작업 시 윈도우 배치에 하루 평균 15분 소요. Mission Control 사용률 20% 미만.",
-          "Action: SwiftUI + AppKit으로 6가지 레이아웃 프리셋(2분할·3분할·가운데 집중 등) 구현. Accessibility API로 전체 활성 윈도우를 1초 내 배치하고, 단축키 10개로 키보드만으로 창 제어 가능하게 설계.",
-          "Result: 일일 윈도우 배치 시간 80% 감소(15분 → 3분). macOS Accessibility API와 윈도우 관리 메커니즘 이해 확보."
-        ]
+          "Problem: 음악·일정·파일마다 앱을 오가는 전환 비용 — 노치는 매일 보지만 아무 기능이 없는 공간.",
+          "Action: AppKit 윈도우 레벨 제어 + SwiftUI로 노치 확장형 UI 구현, 샌드박스·TCC 제약 해결. StoreKit 2 무료+Pro 모델로 한/영 출시.",
+          "Result: Mac App Store 출시 후 v1.1 운영 중 — 기획→개발→심사→수익화→운영 전 사이클 완주."
+        ],
+        "role": "개인 프로젝트 — 기획·개발·디자인·출시·운영 100%"
       }
     },
     "projectDescriptions": {
@@ -284,8 +277,8 @@
       "achievements": "주요 성과"
     },
     "summary": {
-      "text1": "2년간 iOS/macOS 앱 7개를 출시했으며, SmartEdge(v1.1)와 ReToU(v2.0)는 설계·개발·배포·운영 전 과정을 직접 담당하며 유지보수 중입니다. Apple Developer Academy @POSTECH에서 개발·디자인·기획·협업을 교육받았고, 팀 프로젝트 Show(X)에서는 개발 리드로 Apple Indoor Map 국내 최초 승인을 이끌었습니다.",
-      "text2": "주요 성과: 앱 출시 7회(심사·리젝 대응 포함) | Apple Indoor Map 국내 최초 승인 | App Store 내비게이션 #37 · 생산성 #66 | StoreKit 2 수익화 및 라이브 운영 | 온디바이스 AI·위치 기반 서비스 구현"
+      "text1": "2년간 7개 앱을 기획부터 출시까지 완주했고, 그중 SmartEdge(macOS)와 ReToU(iOS)는 지금도 직접 업데이트하며 운영하는 라이브 서비스입니다. 국내 승인 선례가 없던 Apple Indoor Map을 팀 개발 리드로서 국내 최초로 승인받아 출시했고, 그 앱은 App Store 내비게이션 차트 37위에 올랐습니다. 설계부터 심사 대응, 수익화, 운영까지 — 앱의 전 생애주기를 혼자서도, 팀에서도 굴려본 개발자입니다.",
+      "text2": "주요 성과: 앱 출시 7회 (심사·리젝 대응 포함) | Apple Indoor Map 국내 최초 승인 (개발 리드) | App Store 내비게이션 #37 · 생산성 #66 | SmartEdge 무료+유료 Pro(인앱 구매) 모델을 직접 설계해 Mac App Store에서 판매 중 | ReToU 30일 지속률 70% (기존 일기 앱 대비 3배)"
     },
     "skillCategories": {
       "ios": "iOS Development:",
@@ -293,46 +286,46 @@
     },
     "education": [
       {
-        "name": "신라대학교 컴퓨터교육과",
-        "period": "2019.03 ~ 2025.02",
-        "description": "학사 학위 | 학점: 3.45/4.5"
-      },
-      {
         "name": "Apple Developer Academy @ POSTECH",
         "period": "2025.03 ~ 2025.12",
-        "description": "Apple 생태계 관련 개발 집중 교육 프로그램",
+        "description": "Apple 생태계 집중 교육 — 개발·디자인·커뮤니케이션·기획",
         "details": [
-          "6개의 Challenge 프로젝트 완성 (Show(X), kip!, Rootrip 등)",
-          "SwiftUI, UIKit, MapKit, PencilKit, Apple Intelligence 활용 앱 개발",
-          "Rootrip: PencilKit + MapKit 통합으로 지도 위 드로잉 인터랙션 개발 담당",
-          "팀 프로젝트 협업 및 Agile 개발 방법론 경험"
+          "6개 Challenge 프로젝트 완성 (Show(X), kip!, Rootrip 등) · 쇼케이스 현장 운영(200+명)"
         ]
       },
       {
         "name": "제로베이스 프론트엔드 스쿨",
-        "period": "2024.01 ~ 2024.07",
-        "description": "React/TypeScript 중심 프론트엔드 개발 부트캠프 23기 수료",
-        "details": [
-          "JavaScript, TypeScript, React, Vue.js 학습",
-          "Tailwind CSS, Firebase, Vercel 활용 프로젝트 배포",
-          "팀 프로젝트 2회 진행 및 개인 프로젝트 3개 완성"
-        ]
+        "period": "2024.02 ~ 2024.09",
+        "description": "React·TypeScript 기반 웹 개발 교육 — 컴포넌트 아키텍처, 팀 프로젝트 협업"
+      },
+      {
+        "name": "신라대학교 컴퓨터교육과",
+        "period": "2019.03 ~ 2025.02",
+        "description": "학사 졸업 | 학점 3.46/4.5"
+      },
+      {
+        "name": "캐나다 빅토리아대학교 어학연수",
+        "period": "2019.12 ~ 2020.02",
+        "description": "장학생 선발 | 영어 회화 가능"
+      },
+      {
+        "name": "병역",
+        "period": "2021.03 ~ 2022.09",
+        "description": "대한민국 육군 병장 만기제대"
       }
     ],
     "contact": {
       "location": "양주, 대한민국"
     },
     "achievements": [
-      "App Store 출시 팀 프로젝트 2개 앱 (Show(X), kip!) - 다운로드 200회 이상",
-      "App Store 출시 개인 프로젝트 2개 앱 (ReToU) - 다운로드 100회 이상",
-      "Apple Maps Indoor Map 국내 최초 승인 및 개발 사례 (Show(X))",
-      "Junction 2025 해커톤 트랙 3등 - AI 기반 산불 감지 시스템 개발",
-      "8개 iOS 앱 개발 경험 (SwiftUI 6개, UIKit 2개)",
-      "SmartEdge·ReToU 라이브 운영 — 배포·유지보수·버전 업데이트(v1.1/v2.0) 경험"
+      "앱 7개를 기획부터 출시까지 완주 — SmartEdge(v1.1)·ReToU(v2.0)는 현재 직접 운영·유지보수 중",
+      "Apple Indoor Map 국내 최초 승인 및 개발 (Show(X), 개발 리드)",
+      "App Store 내비게이션 차트 #37 (Show(X)) · 생산성 차트 #66 (kip!)",
+      "SmartEdge 무료+유료 Pro(인앱 구매) 모델 직접 설계 — Mac App Store에서 판매 중"
     ],
     "footer": {
       "portfolio": "포트폴리오:",
-      "downloadDescription": "우측 상단의 \"PDF로 저장\" 버튼을 클릭하면 바로 PDF 파일이 다운로드됩니다."
+      "downloadDescription": "우측 상단 'PDF로 저장'을 누르면 인쇄 대화상자에서 PDF로 저장할 수 있습니다."
     }
   },
   "footer": {

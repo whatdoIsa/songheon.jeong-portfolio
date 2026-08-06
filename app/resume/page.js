@@ -8,6 +8,12 @@ import { useTranslation } from '@/lib/i18n';
 export default function Resume() {
   const { t, locale } = useTranslation();
   const [resumeData, setResumeData] = useState({ education: [], achievements: [], projectDetails: {} });
+  // 전화번호는 정적 HTML·번들에 평문으로 남지 않도록 base64로 두고 마운트 후 디코드해
+  // 렌더링하며(수집 봇 차단), 화면에서는 숨긴 채 인쇄(PDF 저장) 시에만 표시한다.
+  const [phone, setPhone] = useState('');
+  useEffect(() => {
+    setPhone(atob('MDEwLTI1MTQtMjQyNg=='));
+  }, []);
   // iOS·macOS 출시 프로젝트 포함 (웹 프로젝트 제외)
   const iosProjects = projects.filter(p => ['iOS', 'macOS'].includes(p.category));
   const resumeRef = useRef(null);
@@ -38,37 +44,14 @@ export default function Resume() {
     loadResumeData();
   }, [locale]);
 
-  const handleDownloadPDF = async () => {
-    // 동적으로 html2pdf 라이브러리 로드 (클라이언트 사이드에서만 실행)
-    if (typeof window !== 'undefined') {
-      const html2pdf = (await import('html2pdf.js')).default;
-
-      const element = resumeRef.current;
-      const opt = {
-        margin: [15, 15, 15, 15],
-        filename: (locale || 'ko') === 'en' ? '[iOS]RESUME_JeongSongHeon.pdf' : '[iOS]정송헌_이력서.pdf',
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: {
-          scale: 2,
-          useCORS: true,
-          logging: false,
-          letterRendering: true
-        },
-        jsPDF: {
-          unit: 'mm',
-          format: 'a4',
-          orientation: 'portrait'
-        },
-        pagebreak: {
-          mode: ['avoid-all', 'css', 'legacy'],
-          before: '.page-break-before',
-          after: '.page-break-after',
-          avoid: '.page-break-avoid'
-        }
-      };
-
-      html2pdf().set(opt).from(element).save();
-    }
+  // 브라우저 인쇄 대화상자에서 "PDF로 저장" — 텍스트가 벡터로 유지되어
+  // 선택·검색·ATS 파싱이 가능하다 (캔버스 캡처 방식과의 차이).
+  // 저장되는 PDF 파일명은 document.title을 따르므로 인쇄 동안만 제목을 교체한다.
+  const handleDownloadPDF = () => {
+    const previousTitle = document.title;
+    document.title = (locale || 'ko') === 'en' ? '[iOS Developer] SongheonJeong_Resume' : '[iOS 개발자] 정송헌_이력서';
+    window.print();
+    document.title = previousTitle;
   };
 
   return (
@@ -96,6 +79,11 @@ export default function Resume() {
           </div>
 
           <div className="flex flex-wrap gap-4 text-sm">
+            {/* 화면에는 숨김 — 인쇄(PDF 저장) 시에만 표시 */}
+            <div className="hidden print:flex items-center gap-2">
+              <FaPhone />
+              <span>{phone}</span>
+            </div>
             <div className="flex items-center gap-2">
               <FaEnvelope />
               <a href="mailto:gmlwns5504@naver.com" className="hover:text-blue-600">gmlwns5504@naver.com</a>
@@ -126,23 +114,40 @@ export default function Resume() {
           </p>
         </section>
 
-        {/* Skills */}
+        {/* Skills — 카테고리별 구분 */}
         <section className="mb-8 page-break-avoid">
           <h2 className="text-2xl font-bold mb-4 border-b border-gray-300 pb-2">{t('resume.sections.skills')}</h2>
-          <div className="grid grid-cols-1 gap-3">
-            <div>
-              <span className="font-semibold">{t('resume.skillCategories.ios')}</span>
-              <span className="ml-2 text-gray-700">SwiftUI, UIKit, MapKit, PencilKit, Foundation Model, AppKit, Face ID, Swift Data, Apple Intelligence</span>
-            </div>
-            <div>
-              <span className="font-semibold">{t('resume.skillCategories.tools')}</span>
-              <span className="ml-2 text-gray-700">StoreKit 2, CloudKit, Git, GitHub Actions, Firebase, App Store Connect</span>
-            </div>
-          </div>
+          <table className="w-full text-sm">
+            <tbody>
+              {((locale || 'ko') === 'en'
+                ? [
+                    ['Language · UI', 'Swift · SwiftUI · UIKit · AppKit'],
+                    ['Data · Sync', 'SwiftData · CloudKit · Firebase'],
+                    ['System · Platform', 'App Sandbox · TCC · WidgetKit · Face ID · EventKit'],
+                    ['Maps · AI', 'MapKit (Indoor Positioning) · PencilKit · Apple Intelligence · Vision'],
+                    ['Release · Monetization', 'StoreKit 2 (IAP) · App Store Connect · ASO'],
+                    ['Collaboration · Tools', 'Git · GitHub Actions · Figma · Claude Code'],
+                  ]
+                : [
+                    ['언어 · UI', 'Swift · SwiftUI · UIKit · AppKit'],
+                    ['데이터 · 동기화', 'SwiftData · CloudKit · Firebase'],
+                    ['시스템 · 플랫폼', 'App Sandbox · TCC · WidgetKit · Face ID · EventKit'],
+                    ['지도 · AI', 'MapKit (Indoor Positioning) · PencilKit · Apple Intelligence · Vision'],
+                    ['배포 · 수익화', 'StoreKit 2 (인앱 구매) · App Store Connect · ASO'],
+                    ['협업 · 도구', 'Git · GitHub Actions · Figma · Claude Code'],
+                  ]
+              ).map(([category, items]) => (
+                <tr key={category} className="border-b border-gray-100 last:border-0">
+                  <th className="text-left align-top font-semibold text-gray-900 w-40 py-1.5 pr-4 whitespace-nowrap">{category}</th>
+                  <td className="py-1.5 text-gray-700">{items}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </section>
 
         {/* Experience / Projects */}
-        <section className="mb-8 page-break-before">
+        <section className="mb-8">
           <h2 className="text-2xl font-bold mb-4 border-b border-gray-300 pb-2">{t('resume.sections.projects')}</h2>
 
           <div className="space-y-6">
@@ -152,7 +157,7 @@ export default function Resume() {
                   <h3 className="text-lg font-bold">{project.title}</h3>
                   <span className="text-sm text-gray-600">{project.duration}</span>
                 </div>
-                <p className="text-sm text-gray-600 mb-2">{project.role}</p>
+                <p className="text-sm text-gray-600 mb-2">{(resumeData.projectDetails && resumeData.projectDetails[project.title]?.role) || project.role}</p>
                 <p className="text-gray-800 mb-2">
                   {resumeData.projectDetails && resumeData.projectDetails[project.title] 
                     ? resumeData.projectDetails[project.title].description 
@@ -191,7 +196,7 @@ export default function Resume() {
         </section>
 
         {/* Education */}
-        <section className="mb-8 page-break-before">
+        <section className="mb-8">
           <h2 className="text-2xl font-bold mb-4 border-b border-gray-300 pb-2">{t('resume.sections.education')}</h2>
           <div className="space-y-4">
             {resumeData.education.map((edu, index) => (
@@ -230,11 +235,11 @@ export default function Resume() {
         </footer>
       </div>
 
-      {/* PDF Download Button */}
-      <div className="fixed top-20 right-4">
+      {/* PDF 저장 버튼 (인쇄 시 숨김) */}
+      <div className="fixed top-20 right-4 print:hidden">
         <button
           onClick={handleDownloadPDF}
-          className="bg-gradient-to-r from-ios-blue via-ios-purple to-ios-pink text-white px-6 py-3 rounded-full shadow-lg font-medium transition-all duration-300 hover:shadow-xl hover:scale-105 active:scale-95"
+          className="bg-ios-gray-900 text-white dark:bg-white dark:text-ios-gray-900 px-5 py-2.5 rounded-xl shadow-lg text-sm font-bold hover:opacity-85 transition-opacity"
           title={t('resume.downloadHint')}
         >
           {t('resume.download')}

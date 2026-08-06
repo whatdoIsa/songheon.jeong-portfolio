@@ -79,7 +79,7 @@ export default function CaseCard({ cs }) {
             <details key={i} className="group border border-ios-gray-100 dark:border-ios-gray-700 rounded-xl overflow-hidden">
               <summary className="cursor-pointer list-none flex items-center justify-between gap-3 px-4 py-3 text-[13px] font-bold bg-ios-gray-50 dark:bg-ios-gray-700/60">
                 <span>
-                  {L === 'en' ? 'Troubleshooting — ' : '트러블슈팅 — '}
+                  {L === 'en' ? 'Troubleshooting: ' : '트러블슈팅 — '}
                   {pick(ts.title)}
                 </span>
                 <span className="text-[12px] text-ios-gray-400 shrink-0 group-open:hidden">＋</span>

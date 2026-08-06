@@ -19,7 +19,7 @@
       "line1": "Leveraging web frontend experience in declarative UI patterns,",
       "line2": "I'm a T-shaped iOS developer specializing in SwiftUI and UIKit."
     },
-    "intro": "Hello, I'm Dean (Jeong SongHeon).",
+    "intro": "Hello, I'm Songheon Jeong (Dean).",
     "values": {
       "declarative": "Declarative UI Master",
       "learning": "Fast Learning Ability",
@@ -33,7 +33,7 @@
   },
   "skills": {
     "title": "How Web Experience Accelerates iOS Development",
-    "subtitle": "More than just \"knowing both platforms\" —",
+    "subtitle": "More than just \"knowing both platforms.\"",
     "subtitleHighlight": "web development experience significantly accelerates iOS learning",
     "subtitleEnd": ".",
     "categories": {
@@ -172,11 +172,11 @@
           "App Store Navigation Chart #37"
         ],
         "highlights": [
-          "Problem: 200+ participants at Showcase event struggled with indoor navigation and booth locations, creating burden on guidance staff and dispersed event experience.",
-          "Action: Implemented floor/zone/booth level data modeling with MapKit Indoor Positioning API and GeoJSON-based custom overlays. Independently developed indoor map module in SwiftUI (handled 50% of total development), iterated 5 updates for improvement, and completed Korean/English localization through Figma-based collaboration with 6 planners and designers.",
-          "Result: 40% reduction in on-site guidance inquiries during Showcase period, achieved Korea's first approval for Apple Indoor Map. Secured indoor navigation domain expertise through 5 updates. Achieved App Store Navigation Chart #37."
+          "Problem: GPS fails indoors, so wayfinding questions from 200+ attendees bottlenecked operations.",
+          "Action: earned Korea's first Apple Indoor Map approval via floor/zone/booth GeoJSON modeling; solely built the indoor-map module (50%), 5 in-event updates.",
+          "Result: on-site inquiries down 40% · App Store Navigation chart #37."
         ],
-        "role": "iOS Developer (Team Project - 6 people / Development Lead)",
+        "role": "Team of 6 / development lead (50%)",
         "duration": "2025.09 - 2025.11"
       },
       "kip!": {
@@ -189,11 +189,11 @@
           "App Store Productivity #66"
         ],
         "highlights": [
-          "Problem: 15 test users averaged 300+ saved screenshots, taking average 5 minutes to find needed information. Cloud AI had 70% rejection rate due to privacy concerns. 68% frequently forgot and missed saved information.",
-          "Action: Implemented on-device image classification pipeline with Apple Intelligence Writing Tools API and Vision framework (handled 40% of total development) achieving 85% accuracy. Optimized asynchronous processing with SwiftUI Combine. Designed complete privacy-assured architecture with SwiftData-based local storage.",
-          "Result: 60% reduction in screenshot organization time for test users (5min → 2min). 95% satisfaction with \"no server transmission, feels secure\". Secured balance between on-device AI design, performance, and privacy. Introduced Gemini & GPT for Apple Intelligence unavailable cases. Achieved App Store Productivity #66."
+          "Problem: ~5 minutes to find anything in 300+ screenshots, and 70% rejected cloud AI over privacy.",
+          "Action: built an on-device Vision + Apple Intelligence classification pipeline (40% of dev, 85% accuracy) with a no-server SwiftData architecture.",
+          "Result: organizing time down 60% (5→2 min) · 95% satisfaction · Productivity chart #66."
         ],
-        "role": "iOS Developer (Team Project - 6 people / 1 of 3 developers)",
+        "role": "Team of 6 / 1 of 3 developers (40%)",
         "duration": "2025.09 - 2025.11"
       },
       "ReToU (오늘의 넌)": {
@@ -206,11 +206,11 @@
           "Light/dark mode support and local storage"
         ],
         "highlights": [
-          "Problem: 8 out of 10 test users \"couldn't sustain diary writing for more than 3 days due to burden\", emotion check apps led to dropout with \"can't recall reasons after 30 days\".",
-          "Action: Designed UX with minimal input structure of \"daily 1 question + emotion selection\" (handled 100% of development) providing burden-free input experience with average 30-second writing time. Implemented date-wise and emotion-wise statistical visualization with Swift Charts. Ensured complete privacy with Face ID security and local storage. Reflected test user feedback 3 times for UI improvements.",
-          "Result: Achieved 70% 30-day retention rate (3x compared to existing diary apps). 85% satisfaction with \"can see emotional patterns\". Secured local data-based wellbeing app UX design and implementation experience."
+          "Problem: 8 of 10 users drop journaling within 3 days; the input burden outweighs the reflective value.",
+          "Action: designed a 30-second one-question flow (100%), the v2.0 'emotion seal' redesign, login-free CloudKit backup + Face ID lock.",
+          "Result: 70% 30-day retention (3× typical) · operated through v2.0 for a year."
         ],
-        "role": "iOS Developer (Personal Project)",
+        "role": "Solo project. Planning, development and design, 100%.",
         "duration": "2025.04 - 2025.06"
       },
       "Rootrip": {
@@ -222,28 +222,21 @@
           "Unit testing and UI testing implementation"
         ],
         "highlights": [
-          "Problem: 8 test users spent 20 minutes understanding routes by switching between average 3 apps (map/memo/schedule) when planning trips.",
-          "Action: Implemented direct drawing interaction on maps by combining MapKit + PencilKit (handled PencilKit + MapKit development). Designed StrokeData model for drawing data save/restore. Separated map state/schedule/bookmarks with MVVM architecture, achieved multi-device sync with Firebase Firestore integration.",
-          "Result: 60% reduction in route planning time for test users (20min → 8min). 90% satisfaction with \"intuitive planning while viewing map\". Secured complex domain (map, drawing, schedule) state management and Firebase integration experience."
+          "Problem: ~20 minutes juggling map, notes and schedule apps to grasp a route.",
+          "Action: owned the PencilKit drawing system: canvas→MapKit coordinate conversion, closed-shape detection, undo/redo, persistence.",
+          "Result: route-planning time down 60% (20→8 min) · 90% satisfaction."
         ],
-        "role": "iOS Developer (Team Project / Development Lead)",
+        "role": "Team of 6 / owned the PencilKit drawing system",
         "duration": "2025.07 - 2025.08"
       },
       "SmartEdge": {
         "description": "macOS menu-bar app that turns the MacBook notch into a micro-workspace (music, calendar, file shelf, Pomodoro). Free + Pro IAP on the Mac App Store.",
         "highlights": [
-          "Problem: Checking music, sharing files and viewing schedules each required switching apps; the notch was dead space, and always-on-top UI collides with macOS system constraints (sandbox, TCC, window levels).",
-          "Action: Combined AppKit window-level control with SwiftUI; resolved kernel-level sandbox blocking of Apple Events via targeted exception entitlements; made drag & drop work by dynamically lowering the window level; built a free + Pro IAP model with StoreKit 2 and shipped worldwide in KO/EN.",
-          "Result: Passed Mac App Store review and shipped; operating v1.1 with global hotkeys and multi-file sharing — completed the full planning → development → review → monetization → operations cycle solo."
-        ]
-      },
-      "DisplayCut": {
-        "description": "macOS window management utility with 6 layout presets and 10 hotkeys, arranging all active windows within a second via the Accessibility API.",
-        "highlights": [
-          "Problem: Multi-window work consumed ~15 minutes a day on window arrangement; Mission Control usage stayed under 20%.",
-          "Action: Implemented 6 layout presets with SwiftUI + AppKit; used the Accessibility API to arrange all active windows within 1 second; designed 10 hotkeys for keyboard-only control.",
-          "Result: Reduced daily window-arrangement time by 80% (15 → 3 min); built deep understanding of the macOS Accessibility API and window management mechanics."
-        ]
+          "Problem: constant app-switching for music, schedule and files, while the notch sat unused.",
+          "Action: built the notch UI with AppKit window-level control + SwiftUI, resolving sandbox/TCC constraints; shipped KO/EN with a StoreKit 2 free+Pro model.",
+          "Result: live on the Mac App Store at v1.1, a full cycle from planning to operations, solo."
+        ],
+        "role": "Solo project. Planning, development, design, release and operations, 100%."
       }
     },
     "projectDescriptions": {
@@ -272,7 +265,7 @@
     }
   },
   "resume": {
-    "title": "Jeong SongHeon (Dean)",
+    "title": "Songheon Jeong (Dean)",
     "subtitle": "iOS Developer Creating Apps That Seamlessly Integrate into Daily Life",
     "download": "Save as PDF",
     "downloadHint": "Click to download PDF file immediately",
@@ -284,8 +277,8 @@
       "achievements": "Key Achievements"
     },
     "summary": {
-      "text1": "Shipped 7 iOS/macOS apps in two years; SmartEdge (v1.1) and ReToU (v2.0) are live products I design, build, release and maintain end-to-end. Trained in development, design, planning and collaboration at Apple Developer Academy @POSTECH, and led development on Show(X), earning Korea's first Apple Indoor Map approval.",
-      "text2": "Key achievements: 7 app releases (incl. review/rejection handling) | Korea's first Apple Indoor Map approval | App Store Navigation #37 · Productivity #66 | StoreKit 2 monetization in live operation | on-device AI and location-based services"
+      "text1": "Carried 7 apps from planning to release in two years. SmartEdge (macOS) and ReToU (iOS) are live services I still update and operate myself. As development lead I earned Korea's first-ever Apple Indoor Map approval and took the app to #37 on the App Store navigation chart. Across design, review handling, monetization and operations, I've run the full app lifecycle both solo and in teams.",
+      "text2": "Key achievements: 7 app releases (incl. review/rejection handling) | Korea's first Apple Indoor Map approval (dev lead) | App Store Navigation #37 · Productivity #66 | designed SmartEdge's free + paid Pro (in-app purchase) model, selling on the Mac App Store | ReToU 30-day retention 70% (3× typical journaling apps)"
     },
     "skillCategories": {
       "ios": "iOS Development:",
@@ -293,50 +286,51 @@
     },
     "education": [
       {
-        "name": "Silla University, Computer Education",
-        "period": "2019.03 ~ 2025.02",
-        "description": "Bachelor's Degree | GPA: 3.45/4.5"
-      },
-      {
         "name": "Apple Developer Academy @ POSTECH",
         "period": "2025.03 ~ 2025.12",
-        "description": "Intensive education program for Apple ecosystem development",
+        "description": "Intensive Apple-ecosystem program covering development, design, communication and planning",
         "details": [
-          "Completed 6 Challenge projects (Show(X), kip!, Rootrip, WAY GYM, etc.)",
-          "App development using SwiftUI, UIKit, MapKit, PencilKit, Apple Intelligence",
-          "Rootrip: Responsible for developing map drawing interactions integrating PencilKit + MapKit",
-          "Experience in team project collaboration and Agile development methodology"
+          "Completed 6 challenge projects (Show(X), kip!, Rootrip and more) · ran showcase operations for 200+ attendees"
         ]
       },
       {
         "name": "Zerobase Frontend School",
         "period": "2024.02 ~ 2024.09",
-        "description": "React, TypeScript-based web development education",
-        "details": [
-          "Learned React component-based architecture",
-          "Secured type safety using TypeScript and JavaScript",
-          "Experienced collaboration and communication methodologies through team projects"
-        ]
+        "description": "React/TypeScript web development: component architecture, team collaboration"
+      },
+      {
+        "name": "Silla University, Computer Education",
+        "period": "2019.03 ~ 2025.02",
+        "description": "B.S. | GPA 3.46/4.5"
+      },
+      {
+        "name": "University of Victoria, Canada (language program)",
+        "period": "2019.12 ~ 2020.02",
+        "description": "Scholarship selection | conversational English"
+      },
+      {
+        "name": "Military service",
+        "period": "2021.03 ~ 2022.09",
+        "description": "Republic of Korea Army, honorably discharged as sergeant"
       }
     ],
     "contact": {
       "location": "Yangju, South Korea"
     },
     "achievements": [
-      "Published 2 team project apps on App Store (Show(X), kip!) - Over 200 downloads",
-      "Published 2 personal project apps on App Store (ReToU, DisplayCut) - Over 100 downloads",
-      "First domestic approval and development case of Apple Maps Indoor Map (Show(X))",
-      "3rd place in Junction 2025 hackathon track - AI-based wildfire detection system development",
-      "Experience developing 8 iOS apps (6 SwiftUI, 2 UIKit)",
-      "Live operation of SmartEdge & ReToU — release, maintenance and version updates (v1.1/v2.0)"
+      "Carried 7 apps from planning to release; SmartEdge (v1.1) and ReToU (v2.0) in live operation and maintenance",
+      "Korea's first Apple Indoor Map approval and development (Show(X), development lead)",
+      "App Store Navigation chart #37 (Show(X)) · Productivity chart #66 (kip!)",
+      "Designed SmartEdge's free + paid Pro (in-app purchase) model, now selling on the Mac App Store"
     ],
     "footer": {
       "portfolio": "Portfolio:",
-      "downloadDescription": "Click the \"Save as PDF\" button in the top right to download the PDF file immediately."
-    }
+      "downloadDescription": "Click 'Save as PDF' (top right) and choose 'Save as PDF' in the print dialog."
+    },
+    "copyright": "© 2025 Songheon Jeong. All rights reserved."
   },
   "footer": {
-    "copyright": "© 2025 Jung Song-Heon (Dean). All rights reserved.",
+    "copyright": "© 2025 Songheon Jeong. All rights reserved.",
     "madeWith": "Built with Next.js"
   }
 }

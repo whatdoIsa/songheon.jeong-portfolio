@@ -92,9 +92,9 @@ export default function Home() {
         ['2021.03 – 2022.09', '병역', '대한민국 육군 병장 만기제대.'],
       ]
     : [
-        ['2025.03 – 2025.12', 'Apple Developer Academy 4th @ POSTECH', 'Intensive Apple-ecosystem program — development, design, communication and planning. Completed 6 challenge projects (Show(X), kip!, Rootrip, WAY GYM and more) and ran on-site showcase operations for 200+ attendees.'],
-        ['2024.02 – 2024.09', 'Zerobase Frontend School', 'React/TypeScript web development — component architecture, type safety, team collaboration.'],
-        ['2019.03 – 2025.02', 'Silla University, Computer Education', 'B.S. (GPA 3.46/4.5) · led college PR — grew SNS followers to 10k through content and events.'],
+        ['2025.03 – 2025.12', 'Apple Developer Academy 4th @ POSTECH', 'Intensive Apple-ecosystem program covering development, design, communication and planning. Completed 6 challenge projects (Show(X), kip!, Rootrip, WAY GYM and more) and ran on-site showcase operations for 200+ attendees.'],
+        ['2024.02 – 2024.09', 'Zerobase Frontend School', 'React/TypeScript web development: component architecture, type safety, team collaboration.'],
+        ['2019.03 – 2025.02', 'Silla University, Computer Education', 'B.S. (GPA 3.46/4.5) · led college PR, growing SNS followers to 10k through content and events.'],
         ['2019.12 – 2020.02', 'University of Victoria, Canada (language program)', 'Selected on scholarship · conversational English.'],
         ['2021.03 – 2022.09', 'Military service', 'Republic of Korea Army, honorably discharged as sergeant.'],
       ];
@@ -124,7 +124,7 @@ export default function Home() {
                 {ko ? (
                   <>만들다 만 앱은 없는 앱과 같다고 생각합니다. 2년간 <b className="text-ios-gray-900 dark:text-white">7개 앱을 출시까지 끝까지 가져갔고</b>, 지금도 SmartEdge와 ReToU를 직접 업데이트하며 운영합니다. 화려하게 타오르기보다 <b className="text-ios-gray-900 dark:text-white">뚝배기처럼 은근하게 오래 끓는 성격</b>이라, 한번 맡은 일은 수단과 방법을 가리지 않고 어떻게든 끝을 봅니다.</>
                 ) : (
-                  <>I believe an app that never ships is no different from one that doesn&apos;t exist. Over two years I carried <b className="text-ios-gray-900 dark:text-white">7 apps all the way to release</b>, and I still update and operate SmartEdge and ReToU myself. I&apos;m the <b className="text-ios-gray-900 dark:text-white">slow-burning type — steady heat that lasts</b> — and once I take something on, I find whatever it takes to see it through.</>
+                  <>I believe an app that never ships is no different from one that doesn&apos;t exist. Over two years I carried <b className="text-ios-gray-900 dark:text-white">7 apps all the way to release</b>, and I still update and operate SmartEdge and ReToU myself. I&apos;m the <b className="text-ios-gray-900 dark:text-white">slow-burning type, steady heat that lasts</b>, and once I take something on, I find whatever it takes to see it through.</>
                 )}
               </p>
               <div className="flex flex-wrap gap-x-5 gap-y-1.5 mt-4 text-[13px] text-ios-gray-500 dark:text-ios-gray-400">
@@ -179,7 +179,7 @@ export default function Home() {
         <div className="container-custom max-w-4xl">
           <SectionLabel>Skills</SectionLabel>
           <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight mb-7">
-            {ko ? '기술 스택 — 나열이 아니라 근거와 함께' : 'Tech stack — with evidence, not lists'}
+            {ko ? '기술 스택 — 나열이 아니라 근거와 함께' : 'Tech stack, with evidence not lists'}
           </h2>
           <div className="grid md:grid-cols-3 gap-4">
             {skillCols.map((col) => (
@@ -189,7 +189,7 @@ export default function Home() {
                   {col.items.filter(([name]) => name).map(([name, why]) => (
                     <li key={name}>
                       <b className="font-bold text-ios-gray-900 dark:text-white">{name}</b>
-                      {why && <span className="text-ios-gray-500 dark:text-ios-gray-400"> — {why}</span>}
+                      {why && <span className="text-ios-gray-500 dark:text-ios-gray-400">: {why}</span>}
                     </li>
                   ))}
                 </ul>
@@ -225,7 +225,7 @@ export default function Home() {
             {ko ? '함께 일할 준비가 되어 있습니다' : 'Ready to work together'}
           </h2>
           <p className="text-[14.5px] text-ios-gray-500 dark:text-ios-gray-400 mt-3">
-            {ko ? '채용·협업 문의는 이메일로 편하게 연락 주세요. 24시간 내 회신드립니다.' : 'For hiring or collaboration, email me — I reply within 24 hours.'}
+            {ko ? '채용·협업 문의는 이메일로 편하게 연락 주세요. 24시간 내 회신드립니다.' : 'For hiring or collaboration, email me. I reply within 24 hours.'}
           </p>
           <div className="flex flex-wrap justify-center gap-3 mt-7">
             <a href="mailto:gmlwns5504@naver.com" className="text-sm font-bold rounded-xl px-6 py-3 bg-ios-gray-900 text-white dark:bg-white dark:text-ios-gray-900 hover:opacity-85 transition-opacity">
