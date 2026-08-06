@@ -8,6 +8,12 @@ import { useTranslation } from '@/lib/i18n';
 export default function Resume() {
   const { t, locale } = useTranslation();
   const [resumeData, setResumeData] = useState({ education: [], achievements: [], projectDetails: {} });
+  // 전화번호는 정적 HTML·번들에 평문으로 남지 않도록 base64로 두고 마운트 후 디코드해
+  // 렌더링하며(수집 봇 차단), 화면에서는 숨긴 채 인쇄(PDF 저장) 시에만 표시한다.
+  const [phone, setPhone] = useState('');
+  useEffect(() => {
+    setPhone(atob('MDEwLTI1MTQtMjQyNg=='));
+  }, []);
   // iOS·macOS 출시 프로젝트 포함 (웹 프로젝트 제외)
   const iosProjects = projects.filter(p => ['iOS', 'macOS'].includes(p.category));
   const resumeRef = useRef(null);
@@ -69,9 +75,10 @@ export default function Resume() {
           </div>
 
           <div className="flex flex-wrap gap-4 text-sm">
-            <div className="flex items-center gap-2">
+            {/* 화면에는 숨김 — 인쇄(PDF 저장) 시에만 표시 */}
+            <div className="hidden print:flex items-center gap-2">
               <FaPhone />
-              <a href="tel:010-2514-2426" className="hover:text-blue-600">010-2514-2426</a>
+              <span>{phone}</span>
             </div>
             <div className="flex items-center gap-2">
               <FaEnvelope />
