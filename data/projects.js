@@ -110,7 +110,7 @@ export const projects = [
   {
     id: 3,
     title: 'Rootrip',
-    category: 'iOS',
+    category: 'iPadOS',
     type: 'SwiftUI',
     thumbnail: '/images/projects/rootrip.jpg',
     description: 'Travel planning and productivity app using MapKit and PencilKit. iPad OS app development based on MVVM architecture.',

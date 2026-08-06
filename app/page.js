@@ -42,7 +42,7 @@ export default function Home() {
       title: 'iOS · macOS',
       items: ko
         ? [
-            ['SwiftUI', '앱 6개 출시 경험'],
+            ['SwiftUI', '앱 7개 완주 (App Store 출시 4)'],
             ['UIKit · AppKit', '메뉴바 앱, 윈도우 레벨 제어'],
             ['App Sandbox · TCC 권한', '샌드박스·권한 제약 대응 (SmartEdge)'],
             ['MapKit', 'Indoor Positioning, GeoJSON'],
@@ -51,7 +51,7 @@ export default function Home() {
             ['SwiftData · CloudKit · StoreKit 2', '로컬 우선 저장·백업·수익화'],
           ]
         : [
-            ['SwiftUI', 'shipped 6 apps'],
+            ['SwiftUI', '7 apps built (4 on the App Store)'],
             ['UIKit · AppKit', 'menu-bar apps, window-level control'],
             ['App Sandbox · TCC', 'shipping within sandbox/permission constraints'],
             ['MapKit', 'Indoor Positioning, GeoJSON'],
@@ -80,7 +80,7 @@ export default function Home() {
       title: 'Product · Ops',
       items: ko
         ? [
-            ['앱 심사·출시 7회', '리젝 대응·유지보수 경험'],
+            ['앱 7개 완주 · App Store 출시 4', '심사·리젝 대응·유지보수 경험'],
             ['사용자 인터뷰·피드백 반복 개선', '5회+ 반영'],
             ['StoreKit 2 수익화 · ASO', ''],
             ['GitHub · GitHub Actions (CI)', ''],
@@ -89,7 +89,7 @@ export default function Home() {
             ['KO·EN 로컬라이제이션', '영어 회화 가능'],
           ]
         : [
-            ['7 app releases', 'incl. rejection handling & maintenance'],
+            ['7 apps built · 4 shipped', 'incl. review, rejection handling & maintenance'],
             ['User-interview-driven iteration', '5+ feedback rounds shipped'],
             ['StoreKit 2 monetization · ASO', ''],
             ['GitHub · GitHub Actions (CI)', ''],

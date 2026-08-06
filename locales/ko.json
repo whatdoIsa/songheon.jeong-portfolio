@@ -277,8 +277,8 @@
       "achievements": "주요 성과"
     },
     "summary": {
-      "text1": "2년간 7개 앱을 기획부터 출시까지 완주했고, 그중 SmartEdge(macOS)와 ReToU(iOS)는 지금도 직접 업데이트하며 운영하는 라이브 서비스입니다. 국내 승인 선례가 없던 Apple Indoor Map을 팀 개발 리드로서 국내 최초로 승인받아 출시했고, 그 앱은 App Store 내비게이션 차트 37위에 올랐습니다. 설계부터 심사 대응, 수익화, 운영까지 — 앱의 전 생애주기를 혼자서도, 팀에서도 굴려본 개발자입니다.",
-      "text2": "주요 성과: 앱 출시 7회 (심사·리젝 대응 포함) | Apple Indoor Map 국내 최초 승인 (개발 리드) | App Store 내비게이션 #37 · 생산성 #66 | SmartEdge 무료+유료 Pro(인앱 구매) 모델을 직접 설계해 App Store에서 판매 중 | ReToU 30일 지속률 70% (기존 일기 앱 대비 3배)"
+      "text1": "7개 앱을 기획부터 완주까지 이끌었습니다(4개 App Store 출시). SmartEdge(macOS)와 ReToU(iOS)는 지금도 직접 업데이트하며 운영하는 라이브 서비스입니다. 국내 승인 선례가 없던 Apple Indoor Map을 팀 개발 리드로서 국내 최초로 승인받아 출시했고, 그 앱은 App Store 내비게이션 차트 37위에 올랐습니다. 설계부터 심사 대응, 수익화, 운영까지 — 앱의 전 생애주기를 혼자서도, 팀에서도 굴려본 개발자입니다.",
+      "text2": "주요 성과: 앱 7개 완주 · App Store 출시 4 (심사·리젝 대응 포함) | Apple Indoor Map 국내 최초 승인 (개발 리드) | App Store 내비게이션 #37 · 생산성 #66 | SmartEdge 무료+유료 Pro(인앱 구매) 모델을 직접 설계해 App Store에서 판매 중 | ReToU 30일 지속률 70% (기존 일기 앱 대비 3배)"
     },
     "skillCategories": {
       "ios": "iOS Development:",
@@ -318,7 +318,7 @@
       "location": "양주, 대한민국"
     },
     "achievements": [
-      "앱 7개를 기획부터 출시까지 완주 — SmartEdge(v1.1)·ReToU(v2.0)는 현재 직접 운영·유지보수 중",
+      "앱 7개 완주 · App Store 출시 4 — SmartEdge(v1.1)·ReToU(v2.0)는 현재 직접 운영·유지보수 중",
       "Apple Indoor Map 국내 최초 승인 및 개발 (Show(X), 개발 리드)",
       "App Store 내비게이션 차트 #37 (Show(X)) · 생산성 차트 #66 (kip!)",
       "SmartEdge 무료+유료 Pro(인앱 구매) 모델 직접 설계 — App Store에서 판매 중"

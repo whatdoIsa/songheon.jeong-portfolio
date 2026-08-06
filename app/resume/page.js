@@ -14,8 +14,8 @@ export default function Resume() {
   useEffect(() => {
     setPhone(atob('MDEwLTI1MTQtMjQyNg=='));
   }, []);
-  // iOS·macOS 프로젝트 (웹 제외).
-  const iosProjects = projects.filter(p => ['iOS', 'macOS'].includes(p.category));
+  // iOS·iPadOS·macOS 프로젝트 (웹 제외).
+  const iosProjects = projects.filter(p => ['iOS', 'iPadOS', 'macOS'].includes(p.category));
   const ko = (locale || 'ko') === 'ko';
   const resumeRef = useRef(null);
 

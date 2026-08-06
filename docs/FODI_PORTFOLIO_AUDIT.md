@@ -29,7 +29,7 @@
 | AI 개발도구 (Claude Code) | SmartEdge·ReToU·SEED·포트폴리오 전부 Claude Code 병행 개발 (세션·프로젝트 메모리 실재) | 로컬 작업 이력 |
 | Firebase | Rootrip Firestore 동기화 (팀 repo 공개) | projects.js, GitHub |
 | Cloudflare | SEED `server/tutor-worker.js` — Cloudflare Workers 프록시 (로컬 저장소에 코드 실재, 배포 기록은 저장소 문서 기준) | 로컬 SEED 저장소 |
-| 스타트업형 실행력 | 1인 스튜디오 운영: 2년 7개 제품 완주, 2개 라이브 운영 | 전체 |
+| 스타트업형 실행력 | 1인 스튜디오 운영: 7개 제품 완주, 2개 라이브 운영 | 전체 |
 | 공연·행사 도메인 | Show(X) = 200+명 실내 행사 운영 앱 + 본인이 현장 운영 참여 | caseStudies, 이력서 |
 
 ## 3. 불일치·부족한 부분
