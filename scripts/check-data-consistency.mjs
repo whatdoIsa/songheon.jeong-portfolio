@@ -10,8 +10,9 @@ import { dirname, join } from 'node:path';
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const projects = readFileSync(join(root, 'data/projects.js'), 'utf8');
 const caseStudies = readFileSync(join(root, 'data/caseStudies.js'), 'utf8');
+const page = readFileSync(join(root, 'app/page.js'), 'utf8');
 
-// 출시된 4개 앱의 App Store 링크 — 두 소스가 동일하게 유지해야 하는 단일 진실.
+// 이력서(projects.js)와 케이스(caseStudies.js) 양쪽에 동일하게 유지해야 하는 출시작 링크.
 const SHIPPED = {
   SmartEdge: 'https://apps.apple.com/kr/app/smartedge/id6787634027?mt=12',
   'Show(X)': 'https://apps.apple.com/kr/app/showx/id6755496321',
@@ -19,11 +20,22 @@ const SHIPPED = {
   ReToU: 'https://apps.apple.com/kr/app/re-tou/id6745058969',
 };
 
+// SEED는 출시작이지만 이력서 카드(projects.js)에는 편입하지 않기로 함 →
+// 케이스(caseStudies.js)와 출시·운영 표(app/page.js)에서만 링크 일치를 검사한다.
+const SHIPPED_CASE_ONLY = {
+  SEED: 'https://apps.apple.com/kr/app/seed-%ED%88%AC%EC%9E%90-%EC%97%B0%EC%8A%B5%EC%9E%A5/id6789554674',
+};
+
 const errors = [];
 
 for (const [name, url] of Object.entries(SHIPPED)) {
   if (!projects.includes(url)) errors.push(`projects.js에 ${name} App Store 링크 누락/불일치: ${url}`);
   if (!caseStudies.includes(url)) errors.push(`caseStudies.js에 ${name} App Store 링크 누락/불일치: ${url}`);
+}
+
+for (const [name, url] of Object.entries(SHIPPED_CASE_ONLY)) {
+  if (!caseStudies.includes(url)) errors.push(`caseStudies.js에 ${name} App Store 링크 누락/불일치: ${url}`);
+  if (!page.includes(url)) errors.push(`app/page.js(출시·운영 표)에 ${name} App Store 링크 누락/불일치: ${url}`);
 }
 
 // 미검증으로 제거하기로 한 주장이 다시 들어오지 않았는지 가드.
