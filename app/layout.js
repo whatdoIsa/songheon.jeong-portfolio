@@ -4,35 +4,33 @@ import Footer from '@/components/layout/Footer';
 import ScrollProgress from '@/components/layout/ScrollProgress';
 import { I18nProvider } from '@/lib/i18n';
 
+const SITE_DESCRIPTION =
+  'SwiftUI로 iOS·macOS 앱을 설계하고 App Store 출시와 운영까지 책임지는 개발자 정송헌의 포트폴리오입니다. 앱 개발, QA, 배포, 유지보수와 AI 개발 워크플로 경험을 소개합니다.';
+
 export const metadata = {
-  title: '정송헌 (Dean) | iOS Developer',
-  description: '2년간 7개 앱을 출시하고 SmartEdge·ReToU를 운영하는 iOS/macOS 개발자 정송헌입니다. 설계·개발·배포·운영 전 과정을 담당합니다.',
+  title: '정송헌 (Dean) | iOS·macOS Developer',
+  description: SITE_DESCRIPTION,
   keywords: [
     'iOS Developer',
+    'macOS Developer',
     'SwiftUI',
     'UIKit',
-    'React',
-    'Vue.js',
-    'Next.js',
-    'Frontend Developer',
-    'Mobile Developer',
-    '정송헌',
-    'Dean',
-        '선언형 UI',
-    'Declarative UI',
-    'HealthKit',
+    'AppKit',
+    'StoreKit 2',
     'MapKit',
     'Firebase',
-    'Cross Platform',
-    '신입 iOS 개발자',
-    '포트폴리오'
+    'App Store 출시',
+    '앱 유지보수',
+    '정송헌',
+    'Dean',
+    '포트폴리오',
   ],
   authors: [{ name: 'Dean (정송헌)' }],
   creator: 'Dean',
   publisher: 'Dean',
   openGraph: {
-    title: '정송헌 (Dean) | iOS Developer',
-    description: '앱 출시 7회 · SmartEdge·ReToU 운영 — iOS/macOS 개발자 정송헌',
+    title: '정송헌 (Dean) | iOS·macOS Developer',
+    description: SITE_DESCRIPTION,
     type: 'website',
     locale: 'ko_KR',
     siteName: 'Dean Portfolio',
@@ -47,9 +45,6 @@ export const metadata = {
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
-  },
-  verification: {
-    google: 'your-google-verification-code',
   },
 };
 

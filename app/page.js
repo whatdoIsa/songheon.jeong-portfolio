@@ -13,11 +13,28 @@ export default function Home() {
   const L = locale === 'en' ? 'en' : 'ko';
   const ko = L === 'ko';
 
+  // 채용공고 요건을 첫 화면에서 10초 안에 보여주는 증거 5종 (기술명만이 아니라 실제 프로젝트로 연결)
+  const evidence = ko
+    ? [
+        ['SwiftUI 제품 개발', 'SmartEdge·Show(X)·kip!·ReToU를 SwiftUI로 설계. macOS는 AppKit 결합.'],
+        ['App Store 출시·업데이트', 'SmartEdge v1.1 · ReToU v2.0 · Show(X) · kip! 심사 통과·운영. 리젝 대응 경험.'],
+        ['QA·현장 안정화', 'Show(X) 행사 중 5회 반복 업데이트, SmartEdge 실기기 QA·시스템 제약 진단.'],
+        ['Claude Code 개발·검증', '요구사항→구현→빌드/테스트→diff 직접 리뷰까지 AI 도구를 검증과 함께 사용.'],
+        ['Firebase·로컬 우선 아키텍처', 'Rootrip Firestore 동기화, ReToU·kip! SwiftData 로컬 우선 저장.'],
+      ]
+    : [
+        ['SwiftUI product work', 'SmartEdge, Show(X), kip!, ReToU designed in SwiftUI; AppKit for macOS.'],
+        ['App Store ship & update', 'SmartEdge v1.1, ReToU v2.0, Show(X), kip! reviewed and operated; rejection handling.'],
+        ['QA & field stabilization', '5 in-event updates on Show(X); on-device QA and system-constraint diagnosis on SmartEdge.'],
+        ['Claude Code + verification', 'AI used with checks: requirements → build → run tests → review every diff myself.'],
+        ['Firebase / local-first', 'Firestore sync in Rootrip; SwiftData local-first storage in ReToU and kip!.'],
+      ];
+
   const facts = [
-    { big: ko ? '7개 출시' : '7 shipped', small: ko ? '앱 (기획~운영)' : 'apps (plan → ops)', accent: true },
-    { big: ko ? '국내 최초' : 'Korea-first', small: ko ? 'Apple Indoor Map 승인' : 'Apple Indoor Map approval', accent: false },
-    { big: '#37 · #66', small: ko ? '내비게이션 · 생산성 차트' : 'Navigation · productivity charts', accent: true },
-    { big: ko ? '지속률 70%' : '70% retention', small: ko ? 'ReToU 30일 (기존 대비 3배)' : 'ReToU 30-day (3× typical)', accent: false },
+    { big: ko ? '7개' : '7', small: ko ? '완주한 앱 (App Store 출시 4 포함)' : 'apps finished (4 on the App Store)', accent: true },
+    { big: ko ? '국내 최초¹' : 'Korea-first¹', small: ko ? 'Apple Indoor Map 승인 (Show(X))' : 'Apple Indoor Map approval (Show(X))', accent: false },
+    { big: '#37 · #66²', small: ko ? '내비게이션·생산성 차트' : 'Navigation · productivity charts', accent: true },
+    { big: ko ? '2개 라이브' : '2 live', small: ko ? '직접 운영 중 (SmartEdge·ReToU)' : 'in live operation (SmartEdge·ReToU)', accent: false },
   ];
 
   const skillCols = [
@@ -83,6 +100,16 @@ export default function Home() {
     },
   ];
 
+  // 출시·운영 현황 (G) — 출시 여부·운영 여부·담당 범위를 사실대로. 링크는 유효한 것만.
+  const operations = [
+    { name: 'SmartEdge', platform: 'macOS', scopeKo: '개인 100%', scopeEn: 'Solo 100%', released: true, operating: true, appstore: 'https://apps.apple.com/kr/app/smartedge/id6787634027?mt=12', github: null },
+    { name: 'ReToU', platform: 'iOS', scopeKo: '개인 100%', scopeEn: 'Solo 100%', released: true, operating: true, appstore: 'https://apps.apple.com/kr/app/re-tou/id6745058969', github: 'https://github.com/whatdoIsa/ReToU' },
+    { name: 'Show(X)', platform: 'iOS', scopeKo: '팀 6인 · 개발 리드(50%)', scopeEn: 'Team of 6 · lead (50%)', released: true, operating: false, appstore: 'https://apps.apple.com/kr/app/showx/id6755496321', github: null },
+    { name: 'kip!', platform: 'iOS', scopeKo: '팀 6인 · 개발 40%', scopeEn: 'Team of 6 · 40% of dev', released: true, operating: false, appstore: 'https://apps.apple.com/kr/app/kip/id6754709167', github: null },
+    { name: 'Rootrip', platform: 'iPadOS', scopeKo: '팀 6인 · PencilKit 전담', scopeEn: 'Team of 6 · owned PencilKit', released: false, operating: false, appstore: null, github: null },
+    { name: 'SEED', platform: 'iOS', scopeKo: '개인 100% (개발 중)', scopeEn: 'Solo 100% (in progress)', released: false, operating: false, appstore: null, github: null },
+  ];
+
   const education = ko
     ? [
         ['2025.03 – 2025.12', 'Apple Developer Academy 4기 @ POSTECH', 'Apple 생태계 집중 교육 — 개발·디자인·커뮤니케이션·기획. 6개 Challenge 프로젝트 완성 (Show(X), kip!, Rootrip, WAY GYM 등). 쇼케이스 현장 운영(200+명 응대)까지 담당.'],
@@ -118,13 +145,18 @@ export default function Home() {
             <div>
               <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight">
                 {ko ? '정송헌' : 'Songheon Jeong (Dean)'}
-                <span className="text-sm font-semibold text-ios-gray-400 ml-2.5">iOS Developer</span>
+                <span className="text-sm font-semibold text-ios-gray-400 ml-2.5">iOS·macOS Developer</span>
               </h1>
-              <p className="mt-2.5 text-[14.5px] text-ios-gray-600 dark:text-ios-gray-300 max-w-xl">
+              <p className="mt-2.5 text-[15px] font-semibold text-ios-gray-800 dark:text-ios-gray-100 max-w-xl">
+                {ko
+                  ? 'SwiftUI로 앱을 설계하고, App Store에 출시하고, 운영까지 책임져 온 iOS 개발자입니다.'
+                  : 'An iOS developer who designs apps in SwiftUI, ships them to the App Store, and owns them through operations.'}
+              </p>
+              <p className="mt-2 text-[14px] text-ios-gray-600 dark:text-ios-gray-300 max-w-xl">
                 {ko ? (
-                  <>만들다 만 앱은 없는 앱과 같다고 생각합니다. 2년간 <b className="text-ios-gray-900 dark:text-white">7개 앱을 출시까지 끝까지 가져갔고</b>, 지금도 SmartEdge와 ReToU를 직접 업데이트하며 운영합니다. 화려하게 타오르기보다 <b className="text-ios-gray-900 dark:text-white">뚝배기처럼 은근하게 오래 끓는 성격</b>이라, 한번 맡은 일은 수단과 방법을 가리지 않고 어떻게든 끝을 봅니다.</>
+                  <>개인·팀 프로젝트에서 <b className="text-ios-gray-900 dark:text-white">여러 앱을 출시</b>했고, 지금도 SmartEdge와 ReToU를 직접 업데이트하고 있습니다. 빠른 구현뿐 아니라 <b className="text-ios-gray-900 dark:text-white">심사·사용자 피드백·버전 업데이트·제품 안정성</b>까지 개발자의 책임이라고 생각합니다. 화려하게 타오르기보다 은근하게 오래 끓는 편이라, 맡은 일은 수단과 방법을 가리지 않고 끝을 봅니다.</>
                 ) : (
-                  <>I believe an app that never ships is no different from one that doesn&apos;t exist. Over two years I carried <b className="text-ios-gray-900 dark:text-white">7 apps all the way to release</b>, and I still update and operate SmartEdge and ReToU myself. I&apos;m the <b className="text-ios-gray-900 dark:text-white">slow-burning type, steady heat that lasts</b>, and once I take something on, I find whatever it takes to see it through.</>
+                  <>I have <b className="text-ios-gray-900 dark:text-white">shipped several apps</b> across solo and team projects, and I still update SmartEdge and ReToU myself. I treat not just fast implementation but <b className="text-ios-gray-900 dark:text-white">App Store review, user feedback, version updates and product stability</b> as the developer&apos;s responsibility. I run slow and steady rather than flashy, and I find whatever it takes to finish what I take on.</>
                 )}
               </p>
               <div className="flex flex-wrap gap-x-5 gap-y-1.5 mt-4 text-[13px] text-ios-gray-500 dark:text-ios-gray-400">
@@ -135,8 +167,18 @@ export default function Home() {
             </div>
           </motion.div>
 
+          {/* 증거 5종 — 채용 요건 10초 스캔 */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-px bg-ios-gray-100 dark:bg-ios-gray-700 border-y border-ios-gray-100 dark:border-ios-gray-700 rounded-xl overflow-hidden">
+            {evidence.map(([label, detail]) => (
+              <div key={label} className="bg-white dark:bg-ios-gray-800 p-4">
+                <b className="block text-[13px] font-bold text-ios-gray-900 dark:text-white">{label}</b>
+                <span className="block mt-1 text-[12px] leading-snug text-ios-gray-500 dark:text-ios-gray-400">{detail}</span>
+              </div>
+            ))}
+          </div>
+
           {/* 팩트 스트립 */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 border-t border-ios-gray-100 dark:border-ios-gray-700">
+          <div className="grid grid-cols-2 lg:grid-cols-4 border-t border-ios-gray-100 dark:border-ios-gray-700 mt-6">
             {facts.map((f, i) => (
               <div key={i} className={`py-3.5 px-1 sm:px-4 ${i > 0 ? 'lg:border-l border-ios-gray-100 dark:border-ios-gray-700' : ''}`}>
                 <b className="block text-base font-extrabold tabular-nums text-ios-gray-900 dark:text-white">
@@ -146,6 +188,11 @@ export default function Home() {
               </div>
             ))}
           </div>
+          <p className="text-[11px] text-ios-gray-400 pb-6 pt-2 leading-relaxed">
+            {ko
+              ? '¹ Apple Indoor Map 국내 최초 승인 — 아카데미 개발 당시 Apple Korea 확인. ² App Store 카테고리 차트 — 내비게이션 #37, 생산성 #66(2025년 12월 기준). 표본·측정 방법은 각 케이스 스터디에 표기.'
+              : '¹ First Apple Indoor Map approval in Korea (confirmed by Apple Korea during the academy). ² App Store category charts — Navigation #37, Productivity #66 (as of December 2025). Sample sizes and measurement are noted in the case studies.'}
+          </p>
         </div>
       </header>
 
@@ -174,8 +221,58 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ===== 출시·운영 현황 (G) ===== */}
+      <section id="operations" className="py-14 bg-white dark:bg-ios-gray-800 border-y border-ios-gray-100 dark:border-ios-gray-700">
+        <div className="container-custom max-w-4xl">
+          <SectionLabel>Ship & Operate</SectionLabel>
+          <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight mb-1.5">
+            {ko ? '출시 이후가 제품의 시작이라고 생각합니다' : 'Shipping is where the product begins'}
+          </h2>
+          <p className="text-[13.5px] text-ios-gray-500 dark:text-ios-gray-400 mb-6">
+            {ko ? '담당 범위·출시·현재 운영 여부를 한눈에. 출시되지 않은 프로젝트는 별도 표기합니다.'
+                : 'Scope, release and current operation at a glance. Unreleased projects are marked separately.'}
+          </p>
+          <div className="overflow-x-auto -mx-1 px-1">
+            <table className="w-full text-[13px] border-collapse min-w-[640px]">
+              <thead>
+                <tr className="text-left text-ios-gray-400 border-b border-ios-gray-200 dark:border-ios-gray-600">
+                  <th className="py-2 pr-3 font-semibold">{ko ? '앱' : 'App'}</th>
+                  <th className="py-2 pr-3 font-semibold">{ko ? '플랫폼' : 'Platform'}</th>
+                  <th className="py-2 pr-3 font-semibold">{ko ? '담당' : 'Scope'}</th>
+                  <th className="py-2 pr-3 font-semibold">{ko ? '출시' : 'Released'}</th>
+                  <th className="py-2 pr-3 font-semibold">{ko ? '운영' : 'Operating'}</th>
+                  <th className="py-2 font-semibold">{ko ? '링크' : 'Links'}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {operations.map((r) => (
+                  <tr key={r.name} className="border-b border-ios-gray-100 dark:border-ios-gray-700 align-top">
+                    <td className="py-2.5 pr-3 font-bold text-ios-gray-900 dark:text-white whitespace-nowrap">{r.name}</td>
+                    <td className="py-2.5 pr-3 text-ios-gray-500 dark:text-ios-gray-400 whitespace-nowrap">{r.platform}</td>
+                    <td className="py-2.5 pr-3 text-ios-gray-600 dark:text-ios-gray-300">{ko ? r.scopeKo : r.scopeEn}</td>
+                    <td className="py-2.5 pr-3 whitespace-nowrap">{r.released
+                      ? <span className="text-ios-green font-semibold">{ko ? '출시' : 'Yes'}</span>
+                      : <span className="text-ios-gray-400">{ko ? '미출시' : 'No'}</span>}</td>
+                    <td className="py-2.5 pr-3 whitespace-nowrap">{r.operating
+                      ? <span className="inline-flex items-center gap-1.5 font-semibold text-ios-gray-800 dark:text-ios-gray-100"><span className="w-1.5 h-1.5 rounded-full bg-ios-green" aria-hidden="true" />{ko ? '운영 중' : 'Live'}</span>
+                      : <span className="text-ios-gray-300" aria-hidden="true">·</span>}</td>
+                    <td className="py-2.5">
+                      <span className="flex flex-wrap gap-x-3 gap-y-0.5">
+                        {r.appstore && <a href={r.appstore} target="_blank" rel="noopener noreferrer" className="text-ios-gray-700 dark:text-ios-gray-200 underline underline-offset-2 decoration-ios-gray-300 hover:text-ios-gray-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ios-blue">App Store</a>}
+                        {r.github && <a href={r.github} target="_blank" rel="noopener noreferrer" className="text-ios-gray-700 dark:text-ios-gray-200 underline underline-offset-2 decoration-ios-gray-300 hover:text-ios-gray-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ios-blue">GitHub</a>}
+                        {!r.appstore && !r.github && <span className="text-ios-gray-300" aria-hidden="true">·</span>}
+                      </span>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
       {/* ===== Skills ===== */}
-      <section id="skills" className="py-14 bg-white dark:bg-ios-gray-800 border-y border-ios-gray-100 dark:border-ios-gray-700">
+      <section id="skills" className="py-14 bg-ios-gray-50 dark:bg-ios-gray-900">
         <div className="container-custom max-w-4xl">
           <SectionLabel>Skills</SectionLabel>
           <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight mb-7">
@@ -183,7 +280,7 @@ export default function Home() {
           </h2>
           <div className="grid md:grid-cols-3 gap-4">
             {skillCols.map((col) => (
-              <div key={col.title} className="bg-ios-gray-50 dark:bg-ios-gray-700/50 rounded-2xl p-5">
+              <div key={col.title} className="bg-white dark:bg-ios-gray-800 border border-ios-gray-100 dark:border-ios-gray-700 rounded-2xl p-5">
                 <h3 className="text-[12px] font-extrabold tracking-widest uppercase text-ios-gray-400 mb-3.5">{col.title}</h3>
                 <ul className="space-y-2 text-[13.5px] text-ios-gray-600 dark:text-ios-gray-300">
                   {col.items.filter(([name]) => name).map(([name, why]) => (
