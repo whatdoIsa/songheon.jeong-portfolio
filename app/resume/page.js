@@ -70,6 +70,10 @@ export default function Resume() {
 
           <div className="flex flex-wrap gap-4 text-sm">
             <div className="flex items-center gap-2">
+              <FaPhone />
+              <a href="tel:010-2514-2426" className="hover:text-blue-600">010-2514-2426</a>
+            </div>
+            <div className="flex items-center gap-2">
               <FaEnvelope />
               <a href="mailto:gmlwns5504@naver.com" className="hover:text-blue-600">gmlwns5504@naver.com</a>
             </div>
@@ -99,19 +103,36 @@ export default function Resume() {
           </p>
         </section>
 
-        {/* Skills */}
+        {/* Skills — 카테고리별 구분 */}
         <section className="mb-8 page-break-avoid">
           <h2 className="text-2xl font-bold mb-4 border-b border-gray-300 pb-2">{t('resume.sections.skills')}</h2>
-          <div className="grid grid-cols-1 gap-3">
-            <div>
-              <span className="font-semibold">{t('resume.skillCategories.ios')}</span>
-              <span className="ml-2 text-gray-700">SwiftUI, UIKit, MapKit, PencilKit, Foundation Model, AppKit, Face ID, Swift Data, Apple Intelligence</span>
-            </div>
-            <div>
-              <span className="font-semibold">{t('resume.skillCategories.tools')}</span>
-              <span className="ml-2 text-gray-700">StoreKit 2, CloudKit, Git, GitHub Actions, Firebase, App Store Connect</span>
-            </div>
-          </div>
+          <table className="w-full text-sm">
+            <tbody>
+              {((locale || 'ko') === 'en'
+                ? [
+                    ['Language · UI', 'Swift · SwiftUI · UIKit · AppKit'],
+                    ['Data · Sync', 'SwiftData · CloudKit · Firebase'],
+                    ['System · Platform', 'App Sandbox · TCC · WidgetKit · Face ID · EventKit'],
+                    ['Maps · AI', 'MapKit (Indoor Positioning) · PencilKit · Apple Intelligence · Vision'],
+                    ['Release · Monetization', 'StoreKit 2 (IAP) · App Store Connect · ASO'],
+                    ['Collaboration · Tools', 'Git · GitHub Actions · Figma · Claude Code'],
+                  ]
+                : [
+                    ['언어 · UI', 'Swift · SwiftUI · UIKit · AppKit'],
+                    ['데이터 · 동기화', 'SwiftData · CloudKit · Firebase'],
+                    ['시스템 · 플랫폼', 'App Sandbox · TCC · WidgetKit · Face ID · EventKit'],
+                    ['지도 · AI', 'MapKit (Indoor Positioning) · PencilKit · Apple Intelligence · Vision'],
+                    ['배포 · 수익화', 'StoreKit 2 (인앱 구매) · App Store Connect · ASO'],
+                    ['협업 · 도구', 'Git · GitHub Actions · Figma · Claude Code'],
+                  ]
+              ).map(([category, items]) => (
+                <tr key={category} className="border-b border-gray-100 last:border-0">
+                  <th className="text-left align-top font-semibold text-gray-900 w-40 py-1.5 pr-4 whitespace-nowrap">{category}</th>
+                  <td className="py-1.5 text-gray-700">{items}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </section>
 
         {/* Experience / Projects */}

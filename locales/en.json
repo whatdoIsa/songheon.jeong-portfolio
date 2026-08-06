@@ -277,8 +277,8 @@
       "achievements": "Key Achievements"
     },
     "summary": {
-      "text1": "Shipped 7 iOS/macOS apps in two years; SmartEdge (v1.1) and ReToU (v2.0) are live products I design, build, release and maintain end-to-end. Trained in development, design, planning and collaboration at Apple Developer Academy @POSTECH, and led development on Show(X), earning Korea's first Apple Indoor Map approval.",
-      "text2": "Key achievements: 7 app releases (incl. review/rejection handling) | Korea's first Apple Indoor Map approval | App Store Navigation #37 · Productivity #66 | StoreKit 2 monetization in live operation | on-device AI and location-based services"
+      "text1": "Carried 7 apps from planning to release in two years — SmartEdge (macOS) and ReToU (iOS) are live services I still update and operate myself. As development lead I earned Korea's first-ever Apple Indoor Map approval and took the app to #37 on the App Store navigation chart. Design, review handling, monetization, operations — I've run the full app lifecycle both solo and in teams.",
+      "text2": "Key achievements: 7 app releases (incl. review/rejection handling) | Korea's first Apple Indoor Map approval (dev lead) | App Store Navigation #37 · Productivity #66 | designed SmartEdge's free + paid Pro (in-app purchase) model, selling on the Mac App Store | ReToU 30-day retention 70% (3× typical journaling apps)"
     },
     "skillCategories": {
       "ios": "iOS Development:",
@@ -321,7 +321,7 @@
       "Carried 7 apps from planning to release — SmartEdge (v1.1) and ReToU (v2.0) in live operation and maintenance",
       "Korea's first Apple Indoor Map approval and development (Show(X), development lead)",
       "App Store Navigation chart #37 (Show(X)) · Productivity chart #66 (kip!)",
-      "Designed and operates StoreKit 2 IAP monetization (SmartEdge)",
+      "Designed SmartEdge's free + paid Pro (in-app purchase) model — selling on the Mac App Store",
       "Junction 2025 hackathon track 3rd place — AI wildfire detection system"
     ],
     "footer": {
