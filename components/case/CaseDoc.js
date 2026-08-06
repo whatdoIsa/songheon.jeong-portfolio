@@ -136,7 +136,28 @@ export default function CaseDoc({ slug }) {
             </>
           )}
 
-          {/* 04 트러블슈팅 */}
+          {/* 아키텍처 의사결정 (ADR) */}
+          {cs.decision && (
+            <>
+              <DocH2 no={no()}>{ko ? '아키텍처 의사결정' : 'Architecture decision'}</DocH2>
+              <dl className="border border-ios-gray-100 dark:border-ios-gray-700 rounded-xl divide-y divide-ios-gray-100 dark:divide-ios-gray-700 text-[13.5px]">
+                {[
+                  ['Context', ko ? '맥락' : 'Context', cs.decision.context],
+                  ['Decision', ko ? '결정' : 'Decision', cs.decision.decision],
+                  ['Alternatives', ko ? '대안' : 'Alternatives', cs.decision.alternatives],
+                  ['Trade-off', ko ? '트레이드오프' : 'Trade-off', cs.decision.tradeoff],
+                  ['Result', ko ? '결과' : 'Result', cs.decision.result],
+                ].map(([key, label, val]) => (
+                  <div key={key} className="grid sm:grid-cols-[120px_1fr] gap-1 sm:gap-4 px-4 py-3">
+                    <dt className="text-[11.5px] font-extrabold tracking-wide text-ios-gray-400 pt-0.5">{label}</dt>
+                    <dd className={`text-ios-gray-600 dark:text-ios-gray-300 ${key === 'Decision' ? 'font-semibold text-ios-gray-900 dark:text-white' : ''}`}>{pick(val)}</dd>
+                  </div>
+                ))}
+              </dl>
+            </>
+          )}
+
+          {/* 트러블슈팅 */}
           {cs.troubleshooting.map((ts, i) => (
             <div key={i}>
               <DocH2 no={no()}>

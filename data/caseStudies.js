@@ -16,8 +16,8 @@ export const caseStudies = [
       en: 'Solo project. Planning, development, design, release and operations, 100%.',
     },
     oneLiner: {
-      ko: 'MacBook 노치를 음악 컨트롤·캘린더·파일 보관함·뽀모도로 타이머를 모은 마이크로 워크스페이스로 바꾸는 메뉴바 앱. 무료 + Pro(일회성 구매) 모델로 Mac App Store에서 판매 중.',
-      en: 'A menu-bar app that turns the MacBook notch into a micro-workspace: music controls, calendar, file shelf and a Pomodoro timer. Sold on the Mac App Store as free + one-time Pro purchase.',
+      ko: 'MacBook 노치를 음악 컨트롤·캘린더·파일 보관함·뽀모도로 타이머를 모은 마이크로 워크스페이스로 바꾸는 메뉴바 앱. 무료 + Pro(일회성 구매) 모델로 App Store에서 판매 중.',
+      en: 'A menu-bar app that turns the MacBook notch into a micro-workspace: music controls, calendar, file shelf and a Pomodoro timer. Sold on the App Store as free + one-time Pro purchase.',
     },
     stack: ['SwiftUI', 'AppKit', 'App Sandbox · Entitlements', 'StoreKit 2', 'EventKit', 'Apple Music · Spotify'],
     shots: [
@@ -26,7 +26,7 @@ export const caseStudies = [
       { src: '/images/projects/smartedge/pomodoro.jpg', caption: { ko: '뽀모도로 — 노치 집중 타이머', en: 'Pomodoro: a focus timer in the notch' } },
     ],
     links: {
-      appstore: { url: 'https://apps.apple.com/kr/app/smartedge/id6787634027?mt=12', label: { ko: 'Mac App Store', en: 'Mac App Store' } },
+      appstore: { url: 'https://apps.apple.com/kr/app/smartedge/id6787634027?mt=12', label: { ko: 'App Store', en: 'App Store' } },
       intro: { url: 'https://www.arcseed.kr/ko/products/smartedge', label: { ko: '소개 페이지', en: 'Product page' } },
     },
     problem: {
@@ -46,8 +46,8 @@ export const caseStudies = [
       ],
     },
     result: {
-      ko: 'Mac App Store 심사 통과·출시, v1.1 업데이트로 전역 단축키·다중 파일 공유 확장. 기획→개발→심사→수익화→운영의 전체 제품 사이클을 혼자 완주.',
-      en: 'Passed Mac App Store review and shipped; v1.1 added global hotkeys and multi-file sharing. Completed the full product cycle (planning → development → review → monetization → operations) solo.',
+      ko: 'App Store 심사 통과·출시, v1.1 업데이트로 전역 단축키·다중 파일 공유 확장. 기획→개발→심사→수익화→운영의 전체 제품 사이클을 혼자 완주.',
+      en: 'Passed App Store review and shipped; v1.1 added global hotkeys and multi-file sharing. Completed the full product cycle (planning → development → review → monetization → operations) solo.',
     },
     architecture: {
       lines: [
@@ -58,6 +58,14 @@ export const caseStudies = [
         'SwiftUI Views (NotchView · ShelfView · SettingsView)',
       ],
     },
+    decision: {
+      context: { ko: '노치 위에 항상 떠 있는 UI가 필요했다. SwiftUI는 선언형 화면 구성엔 이상적이지만, 윈도우 레벨 지정과 Finder 드래그 대상 등록 같은 저수준 제어 수단이 없다.', en: 'A UI that stays on top of the notch was required. SwiftUI is ideal for declarative screens but lacks low-level control like window levels or registering as a Finder drag target.' },
+      decision: { ko: '화면은 SwiftUI로 그리고, 윈도우·드래그·이벤트 계층만 AppKit(NSPanel)로 분리해 이원 구조로 설계했다.', en: 'Draw the UI in SwiftUI, but split the window/drag/event layer into AppKit (NSPanel) — a two-layer design.' },
+      alternatives: { ko: '순수 SwiftUI(WindowGroup)만 사용 / 전체를 AppKit으로 구현.', en: 'Pure SwiftUI (WindowGroup) only, or building the whole thing in AppKit.' },
+      tradeoff: { ko: '두 프레임워크를 잇는 브리징 복잡도가 늘지만, 시스템 제약을 정확히 통제할 수 있다.', en: 'Bridging the two frameworks adds complexity, but gives precise control over system constraints.' },
+      result: { ko: '노치 확장 UI·드래그 앤 드롭·최상위 표시가 모두 성립했고 App Store에 출시했다.', en: 'The notch UI, drag & drop and always-on-top all worked, and it shipped on the App Store.' },
+    },
+
     troubleshooting: [
       {
         title: { ko: '샌드박스가 Apple Events를 커널에서 차단', en: 'The sandbox blocked Apple Events at the kernel' },
@@ -99,7 +107,7 @@ export const caseStudies = [
       },
     ],
     resultTiles: [
-      { big: { ko: '출시 + v1.1', en: 'Shipped + v1.1' }, small: { ko: 'Mac App Store 심사 통과, 운영 중', en: 'Passed review, in operation' } },
+      { big: { ko: '출시 + v1.1', en: 'Shipped + v1.1' }, small: { ko: 'App Store 심사 통과, 운영 중', en: 'Passed review, in operation' } },
       { big: { ko: 'IAP 수익화', en: 'IAP revenue' }, small: { ko: 'StoreKit 2 무료+Pro 모델', en: 'StoreKit 2 free + Pro model' } },
       { big: { ko: '2개 언어', en: '2 languages' }, small: { ko: '한/영 로컬라이제이션 전 세계 출시', en: 'KO/EN localization, worldwide' } },
     ],
@@ -156,6 +164,14 @@ export const caseStudies = [
         'SwiftUI MapView (custom overlays · search · schedule)',
       ],
     },
+    decision: {
+      context: { ko: '실내 행사장은 GPS가 무력하고, 부스 단위의 정밀한 위치 안내가 필요했다.', en: 'GPS is useless indoors, and the venue needed booth-level precise guidance.' },
+      decision: { ko: '일반 CLLocation 대신 MapKit Indoor Positioning과 GeoJSON(IMDF) 기반 실내 지도를 채택했다.', en: 'Chose MapKit Indoor Positioning with a GeoJSON (IMDF) indoor map instead of plain CLLocation.' },
+      alternatives: { ko: 'GPS + 수동 보정 / 별도 비콘 하드웨어 설치.', en: 'GPS with manual correction, or installing separate beacon hardware.' },
+      tradeoff: { ko: 'Apple 승인 절차와 데이터 모델링 비용이 크지만, 정밀한 실내 안내와 표준 지도 경험을 얻는다.', en: 'Apple\'s approval process and data modeling cost more, but you get precise indoor guidance and a standard map experience.' },
+      result: { ko: '국내 최초 Apple Indoor Map 승인을 받았고, 현장 안내 문의가 40% 줄었다.', en: 'Earned Korea\'s first Apple Indoor Map approval and cut on-site guidance inquiries by 40%.' },
+    },
+
     troubleshooting: [
       {
         title: { ko: '선례 없는 Indoor Map 승인 프로세스', en: 'An approval process with no precedent' },
@@ -235,6 +251,14 @@ export const caseStudies = [
         'SwiftData local store → notifications · search · collections',
       ],
     },
+    decision: {
+      context: { ko: '스크린샷 분류 정확도가 필요했지만, 사용자의 70%가 스크린샷의 클라우드 업로드를 강하게 기피했다.', en: 'Classification accuracy was needed, but 70% of users strongly rejected uploading screenshots to the cloud.' },
+      decision: { ko: '클라우드 모델 대신 온디바이스(Vision + Apple Intelligence)를 우선하고, 미지원 기기에서만 사용자가 명시적으로 선택할 때 외부 모델을 쓰게 했다.', en: 'Prioritized on-device (Vision + Apple Intelligence) over cloud models, using external models only as an explicit opt-in on unsupported devices.' },
+      alternatives: { ko: '클라우드 API 단일 구성 / 온디바이스 단일 구성.', en: 'A cloud-API-only design, or an on-device-only design.' },
+      tradeoff: { ko: '온디바이스는 기기별 편차와 정확도 상한이 있지만, 프라이버시를 정책이 아닌 아키텍처로 보장한다.', en: 'On-device has device variance and an accuracy ceiling, but it guarantees privacy through architecture, not policy.' },
+      result: { ko: '분류 정확도 85%를 확보했고 "서버 전송 없음" 만족도가 95%였다.', en: 'Reached 85% classification accuracy with 95% satisfaction on "nothing sent to a server."' },
+    },
+
     troubleshooting: [
       {
         title: { ko: '정확도와 프라이버시는 트레이드오프가 아니다', en: 'Accuracy vs privacy is a false trade-off' },
@@ -321,6 +345,14 @@ export const caseStudies = [
         'CloudKit backup (implicit Apple ID · local fallback) / Face ID + Keychain lock',
       ],
     },
+    decision: {
+      context: { ko: '서버 없는 프라이버시 일기라 백업은 필요했지만, 로그인 UI는 "완전히 사적인 일기"라는 제품 서사를 훼손한다.', en: 'As a serverless privacy diary, backup was needed — but a login UI would break the "completely private diary" narrative.' },
+      decision: { ko: '계정 시스템 대신 CloudKit(암묵적 Apple ID) 자동 백업 + 로컬 폴백 구조를 택했다.', en: 'Chose CloudKit automatic backup on the implicit Apple ID plus a local fallback, instead of an account system.' },
+      alternatives: { ko: '소셜 로그인 + 자체 서버 / 백업 미지원.', en: 'Social login with a backend, or no backup at all.' },
+      tradeoff: { ko: '미로그인·용량 부족 같은 실패 케이스를 직접 처리해야 하지만, 로그인 단계가 0이 된다.', en: 'You must handle failure cases like signed-out devices or full quotas, but the login step drops to zero.' },
+      result: { ko: '개인정보 "수집 없음"으로 심사를 통과했고, 로그인 없이 기기 간 동기화가 동작한다.', en: 'Passed review with a "no data collected" label, and cross-device sync works with no login.' },
+    },
+
     troubleshooting: [
       {
         title: { ko: '로그인 없이 백업하기 — 프라이버시 서사를 지키는 CloudKit', en: 'Backup without login: CloudKit that keeps the privacy story' },
@@ -400,10 +432,7 @@ export const caseStudies = [
     },
     stack: ['PencilKit', 'MapKit', 'SwiftUI', 'SwiftData', 'Firebase'],
     shots: [],
-    links: {
-      github: { url: 'https://github.com/DeveloperAcademy-POSTECH/2025-C4-M7-TPAP', label: { ko: 'GitHub', en: 'GitHub' } },
-      intro: { url: 'https://www.arcseed.kr/ko/products/rootrip', label: { ko: '소개 페이지', en: 'Product page' } },
-    },
+    links: {},
     problem: {
       ko: '여행 계획 시 지도·메모·일정 앱 3개를 오가며 동선 파악에 평균 20분 소요. 지도 위에 루트를 직관적으로 표현할 방법이 없음.',
       en: 'Trip planning meant juggling map, notes and schedule apps, about 20 minutes just to grasp a route, with no intuitive way to draw it on the map.',

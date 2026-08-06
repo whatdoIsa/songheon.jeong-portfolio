@@ -17,7 +17,7 @@
     },
     "subtitle": {
       "line1": "웹 프론트엔드의 선언형 UI 경험을 바탕으로",
-      "line2": "SwiftUI와 UIKit을 다루는 T자형 iOS 개발자입니다."
+      "line2": "SwiftUI로 앱을 설계·출시·운영하는 iOS·macOS 개발자입니다."
     },
     "intro": "안녕하세요, Dean (정송헌)입니다.",
     "values": {
@@ -49,7 +49,7 @@
     "stats": {
       "webProjects": "웹 프로젝트",
       "iosApps": "iOS 앱",
-      "capability": "T자형 역량"
+      "capability": "제품 완주 역량"
     },
     "insights": [
       {
@@ -230,11 +230,11 @@
         "duration": "2025.04 - 2025.06"
       },
       "SmartEdge": {
-        "description": "맥 노치를 음악·캘린더·파일 보관함·뽀모도로 허브로 바꾸는 macOS 메뉴바 앱. 무료 + Pro(일회성 구매) 모델로 Mac App Store 판매 중.",
+        "description": "맥 노치를 음악·캘린더·파일 보관함·뽀모도로 허브로 바꾸는 macOS 메뉴바 앱. 무료 + Pro(일회성 구매) 모델로 App Store 판매 중.",
         "highlights": [
           "Problem: 음악·일정·파일마다 앱을 오가는 전환 비용 — 노치는 매일 보지만 아무 기능이 없는 공간.",
           "Action: AppKit 윈도우 레벨 제어 + SwiftUI로 노치 확장형 UI 구현, 샌드박스·TCC 제약 해결. StoreKit 2 무료+Pro 모델로 한/영 출시.",
-          "Result: Mac App Store 출시 후 v1.1 운영 중 — 기획→개발→심사→수익화→운영 전 사이클 완주."
+          "Result: App Store 출시 후 v1.1 운영 중 — 기획→개발→심사→수익화→운영 전 사이클 완주."
         ],
         "role": "개인 프로젝트 — 기획·개발·디자인·출시·운영 100%"
       }
@@ -278,7 +278,7 @@
     },
     "summary": {
       "text1": "2년간 7개 앱을 기획부터 출시까지 완주했고, 그중 SmartEdge(macOS)와 ReToU(iOS)는 지금도 직접 업데이트하며 운영하는 라이브 서비스입니다. 국내 승인 선례가 없던 Apple Indoor Map을 팀 개발 리드로서 국내 최초로 승인받아 출시했고, 그 앱은 App Store 내비게이션 차트 37위에 올랐습니다. 설계부터 심사 대응, 수익화, 운영까지 — 앱의 전 생애주기를 혼자서도, 팀에서도 굴려본 개발자입니다.",
-      "text2": "주요 성과: 앱 출시 7회 (심사·리젝 대응 포함) | Apple Indoor Map 국내 최초 승인 (개발 리드) | App Store 내비게이션 #37 · 생산성 #66 | SmartEdge 무료+유료 Pro(인앱 구매) 모델을 직접 설계해 Mac App Store에서 판매 중 | ReToU 30일 지속률 70% (기존 일기 앱 대비 3배)"
+      "text2": "주요 성과: 앱 출시 7회 (심사·리젝 대응 포함) | Apple Indoor Map 국내 최초 승인 (개발 리드) | App Store 내비게이션 #37 · 생산성 #66 | SmartEdge 무료+유료 Pro(인앱 구매) 모델을 직접 설계해 App Store에서 판매 중 | ReToU 30일 지속률 70% (기존 일기 앱 대비 3배)"
     },
     "skillCategories": {
       "ios": "iOS Development:",
@@ -321,7 +321,7 @@
       "앱 7개를 기획부터 출시까지 완주 — SmartEdge(v1.1)·ReToU(v2.0)는 현재 직접 운영·유지보수 중",
       "Apple Indoor Map 국내 최초 승인 및 개발 (Show(X), 개발 리드)",
       "App Store 내비게이션 차트 #37 (Show(X)) · 생산성 차트 #66 (kip!)",
-      "SmartEdge 무료+유료 Pro(인앱 구매) 모델 직접 설계 — Mac App Store에서 판매 중"
+      "SmartEdge 무료+유료 Pro(인앱 구매) 모델 직접 설계 — App Store에서 판매 중"
     ],
     "footer": {
       "portfolio": "포트폴리오:",

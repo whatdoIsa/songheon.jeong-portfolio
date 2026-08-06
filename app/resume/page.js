@@ -14,8 +14,21 @@ export default function Resume() {
   useEffect(() => {
     setPhone(atob('MDEwLTI1MTQtMjQyNg=='));
   }, []);
-  // iOS·macOS 출시 프로젝트 포함 (웹 프로젝트 제외)
-  const iosProjects = projects.filter(p => ['iOS', 'macOS'].includes(p.category));
+  // 직무 맞춤 프로필: /resume?profile=fodi-ios (정적 export이므로 마운트 후 URL에서 읽는다)
+  const [profile, setProfile] = useState('');
+  useEffect(() => {
+    const p = new URLSearchParams(window.location.search).get('profile') || '';
+    setProfile(p);
+  }, []);
+  const isFodi = profile === 'fodi-ios';
+
+  // iOS·macOS 출시 프로젝트 (웹 제외). FODI 프로필은 출시·운영 강조로 핵심 4개만, 우선순위 정렬.
+  const allIosProjects = projects.filter(p => ['iOS', 'macOS'].includes(p.category));
+  const fodiOrder = ['SmartEdge', 'Show(X)', 'kip!', 'ReToU (오늘의 넌)'];
+  const iosProjects = isFodi
+    ? fodiOrder.map(name => allIosProjects.find(p => p.title === name)).filter(Boolean)
+    : allIosProjects;
+  const ko = (locale || 'ko') === 'ko';
   const resumeRef = useRef(null);
 
   useEffect(() => {
@@ -48,10 +61,16 @@ export default function Resume() {
   // 선택·검색·ATS 파싱이 가능하다 (캔버스 캡처 방식과의 차이).
   // 저장되는 PDF 파일명은 document.title을 따르므로 인쇄 동안만 제목을 교체한다.
   const handleDownloadPDF = () => {
+    // 인쇄 대화상자는 document.title을 파일명으로 쓴다. print() 직후 즉시 복원하면
+    // 대화상자가 열리기 전에 원래 제목으로 돌아가 버리므로, afterprint에서 복원한다.
     const previousTitle = document.title;
-    document.title = (locale || 'ko') === 'en' ? '[iOS Developer] SongheonJeong_Resume' : '[iOS 개발자] 정송헌_이력서';
+    document.title = ko ? '[iOS 개발자] 정송헌_이력서' : '[iOS Developer] SongheonJeong_Resume';
+    const restore = () => {
+      document.title = previousTitle;
+      window.removeEventListener('afterprint', restore);
+    };
+    window.addEventListener('afterprint', restore);
     window.print();
-    document.title = previousTitle;
   };
 
   return (

@@ -5,7 +5,7 @@ export const projects = [
     category: 'macOS',
     type: 'SwiftUI',
     thumbnail: '/images/projects/smartedge/music.jpg',
-    description: 'macOS menu-bar app that turns the MacBook notch into a micro-workspace (music, calendar, file shelf, Pomodoro). Free + Pro IAP on the Mac App Store.',
+    description: 'macOS menu-bar app that turns the MacBook notch into a micro-workspace (music, calendar, file shelf, Pomodoro). Free + Pro IAP on the App Store.',
     techStack: ['SwiftUI', 'AppKit', 'App Sandbox', 'StoreKit 2', 'EventKit'],
     github: null,
     appstore: 'https://apps.apple.com/kr/app/smartedge/id6787634027?mt=12',
@@ -14,7 +14,7 @@ export const projects = [
     highlights: [
       'Problem: Checking music, sharing files and viewing schedules each required switching apps; the notch was dead space, and always-on-top UI collides with macOS system constraints (sandbox, TCC, window levels).',
       'Action: Combined AppKit window-level control with SwiftUI; resolved kernel-level sandbox blocking of Apple Events via targeted exception entitlements and made drag & drop work by dynamically lowering the window level; built a free + Pro (non-consumable IAP) model with StoreKit 2 and shipped worldwide in KO/EN.',
-      'Result: Passed Mac App Store review and shipped; operating v1.1 with global hotkeys and multi-file sharing — completed the full cycle of planning → development → review → monetization → operations solo.'
+      'Result: Passed App Store review and shipped; operating v1.1 with global hotkeys and multi-file sharing — completed the full cycle of planning → development → review → monetization → operations solo.'
     ]
   },
   {
@@ -98,8 +98,8 @@ export const projects = [
     ],
     webConnection: 'Natural transition from React useState pattern to SwiftUI @State. Applied component-based UI design experience.',
     github: 'https://github.com/whatdoIsa/ReToU',
-    appstore: null,
-    duration: '2025.04 - 2025.06',
+    appstore: 'https://apps.apple.com/kr/app/re-tou/id6745058969',
+    duration: '2025.04 - 현재',
     role: 'iOS Developer (Personal Project)',
     highlights: [
       'Problem: 8 out of 10 test users "couldn\'t sustain diary writing for more than 3 days due to burden", emotion check apps led to dropout with "can\'t recall reasons after 30 days".',
@@ -117,18 +117,17 @@ export const projects = [
     what_one_liner: "iPad travel planner combining map + Pencil-based planning",
     problem: "Planning is fragmented across maps/notes/routes, slowing iteration",
     result: "Unified planning workflow to iterate itineraries faster",
-    techStack: ['Swift', 'SwiftUI', 'UIKit', 'PencilKit', 'MapKit', 'MVVM', 'Firebase', 'Gitmoji'],
+    techStack: ['Swift', 'SwiftUI', 'UIKit', 'PencilKit', 'MapKit', 'MVVM', 'Firebase'],
     features: [
       'PencilKit + MapKit integrated map drawing functionality',
       'MVVM/MVC/Clean Architecture application',
-      'Firebase backend integration',
-      'Unit testing and UI testing implementation'
+      'Firebase backend integration'
     ],
     webConnection: 'Extended React component architecture experience to SwiftUI MVVM pattern. Applied frontend state management concepts.',
-    github: 'https://github.com/DeveloperAcademy-POSTECH/2025-C4-M7-TPAP',
+    github: null,
     appstore: null,
-    duration: '2025.07 - 2025.08',
-    role: 'iOS Developer (Team Project / Development Lead)',
+    duration: '2025.07 - 2025.09',
+    role: 'iOS Developer (Team Project - 6 people / PencilKit drawing system)',
     highlights: [
       'Problem: 8 test users spent 20 minutes understanding routes by switching between average 3 apps (map/memo/schedule) when planning trips.',
       'Action: Implemented direct drawing interaction on maps by combining MapKit + PencilKit (handled PencilKit + MapKit development). Designed StrokeData model for drawing data save/restore. Separated map state/schedule/bookmarks with MVVM architecture, achieved multi-device sync with Firebase Firestore integration.',

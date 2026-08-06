@@ -230,11 +230,11 @@
         "duration": "2025.07 - 2025.08"
       },
       "SmartEdge": {
-        "description": "macOS menu-bar app that turns the MacBook notch into a micro-workspace (music, calendar, file shelf, Pomodoro). Free + Pro IAP on the Mac App Store.",
+        "description": "macOS menu-bar app that turns the MacBook notch into a micro-workspace (music, calendar, file shelf, Pomodoro). Free + Pro IAP on the App Store.",
         "highlights": [
           "Problem: constant app-switching for music, schedule and files, while the notch sat unused.",
           "Action: built the notch UI with AppKit window-level control + SwiftUI, resolving sandbox/TCC constraints; shipped KO/EN with a StoreKit 2 free+Pro model.",
-          "Result: live on the Mac App Store at v1.1, a full cycle from planning to operations, solo."
+          "Result: live on the App Store at v1.1, a full cycle from planning to operations, solo."
         ],
         "role": "Solo project. Planning, development, design, release and operations, 100%."
       }
@@ -278,7 +278,7 @@
     },
     "summary": {
       "text1": "Carried 7 apps from planning to release in two years. SmartEdge (macOS) and ReToU (iOS) are live services I still update and operate myself. As development lead I earned Korea's first-ever Apple Indoor Map approval and took the app to #37 on the App Store navigation chart. Across design, review handling, monetization and operations, I've run the full app lifecycle both solo and in teams.",
-      "text2": "Key achievements: 7 app releases (incl. review/rejection handling) | Korea's first Apple Indoor Map approval (dev lead) | App Store Navigation #37 · Productivity #66 | designed SmartEdge's free + paid Pro (in-app purchase) model, selling on the Mac App Store | ReToU 30-day retention 70% (3× typical journaling apps)"
+      "text2": "Key achievements: 7 app releases (incl. review/rejection handling) | Korea's first Apple Indoor Map approval (dev lead) | App Store Navigation #37 · Productivity #66 | designed SmartEdge's free + paid Pro (in-app purchase) model, selling on the App Store | ReToU 30-day retention 70% (3× typical journaling apps)"
     },
     "skillCategories": {
       "ios": "iOS Development:",
@@ -321,7 +321,7 @@
       "Carried 7 apps from planning to release; SmartEdge (v1.1) and ReToU (v2.0) in live operation and maintenance",
       "Korea's first Apple Indoor Map approval and development (Show(X), development lead)",
       "App Store Navigation chart #37 (Show(X)) · Productivity chart #66 (kip!)",
-      "Designed SmartEdge's free + paid Pro (in-app purchase) model, now selling on the Mac App Store"
+      "Designed SmartEdge's free + paid Pro (in-app purchase) model, now selling on the App Store"
     ],
     "footer": {
       "portfolio": "Portfolio:",
