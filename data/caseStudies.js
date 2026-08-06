@@ -388,7 +388,7 @@ export const caseStudies = [
     platform: 'iOS',
     featured: false,
     period: '2026 –',
-    status: { ko: '개인 프로젝트', en: 'Personal project' },
+    status: { ko: '출시 · 운영 중', en: 'Live' },
     role: {
       ko: '개인 프로젝트 — 기획·개발·디자인 100%',
       en: 'Solo project. Planning, development and design, 100%.',

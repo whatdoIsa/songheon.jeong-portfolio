@@ -30,7 +30,7 @@ export default function CaseDoc({ slug }) {
         <aside className="hidden lg:block border-r border-ios-gray-100 dark:border-ios-gray-700 py-8 pr-5">
           <div className="pb-4 mb-4 border-b border-ios-gray-100 dark:border-ios-gray-700">
             <Link href="/" className="font-extrabold text-[15px]">{ko ? '정송헌' : 'Dean Jeong'}</Link>
-            <p className="text-xs text-ios-gray-400">iOS Developer · {ko ? '완주 7 · 출시 4' : '7 built · 4 shipped'}</p>
+            <p className="text-xs text-ios-gray-400">iOS Developer · {ko ? '완주 7 · 출시 5' : '7 built · 5 shipped'}</p>
           </div>
           <p className="text-[10.5px] font-extrabold tracking-widest text-ios-gray-400 mb-2">CASE STUDIES</p>
           <nav className="space-y-0.5">

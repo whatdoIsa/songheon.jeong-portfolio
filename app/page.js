@@ -1,5 +1,6 @@
 'use client';
 
+import { Fragment } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { useTranslation } from '@/lib/i18n';
@@ -31,10 +32,10 @@ export default function Home() {
       ];
 
   const facts = [
-    { big: ko ? '7개' : '7', small: ko ? '완주한 앱 (App Store 출시 4 포함)' : 'apps finished (4 on the App Store)', accent: true },
+    { big: ko ? '7개' : '7', small: ko ? '완주한 앱 (App Store 출시 5 포함)' : 'apps finished (5 on the App Store)', accent: true },
     { big: ko ? '국내 최초¹' : 'Korea-first¹', small: ko ? 'Apple Indoor Map 승인 (Show(X))' : 'Apple Indoor Map approval (Show(X))', accent: false },
     { big: '#37 · #66²', small: ko ? '내비게이션·생산성 차트' : 'Navigation · productivity charts', accent: true },
-    { big: ko ? '2개 라이브' : '2 live', small: ko ? '직접 운영 중 (SmartEdge·ReToU)' : 'in live operation (SmartEdge·ReToU)', accent: false },
+    { big: ko ? '3개 라이브' : '3 live', small: ko ? '직접 운영 중 (SmartEdge·ReToU·SEED)' : 'in live operation (SmartEdge·ReToU·SEED)', accent: false },
   ];
 
   const skillCols = [
@@ -42,7 +43,7 @@ export default function Home() {
       title: 'iOS · macOS',
       items: ko
         ? [
-            ['SwiftUI', '앱 7개 완주 (App Store 출시 4)'],
+            ['SwiftUI', '앱 7개 완주 (App Store 출시 5)'],
             ['UIKit · AppKit', '메뉴바 앱, 윈도우 레벨 제어'],
             ['App Sandbox · TCC 권한', '샌드박스·권한 제약 대응 (SmartEdge)'],
             ['MapKit', 'Indoor Positioning, GeoJSON'],
@@ -51,7 +52,7 @@ export default function Home() {
             ['SwiftData · CloudKit · StoreKit 2', '로컬 우선 저장·백업·수익화'],
           ]
         : [
-            ['SwiftUI', '7 apps built (4 on the App Store)'],
+            ['SwiftUI', '7 apps built (5 on the App Store)'],
             ['UIKit · AppKit', 'menu-bar apps, window-level control'],
             ['App Sandbox · TCC', 'shipping within sandbox/permission constraints'],
             ['MapKit', 'Indoor Positioning, GeoJSON'],
@@ -80,7 +81,7 @@ export default function Home() {
       title: 'Product · Ops',
       items: ko
         ? [
-            ['앱 7개 완주 · App Store 출시 4', '심사·리젝 대응·유지보수 경험'],
+            ['앱 7개 완주 · App Store 출시 5', '심사·리젝 대응·유지보수 경험'],
             ['사용자 인터뷰·피드백 반복 개선', '5회+ 반영'],
             ['StoreKit 2 수익화 · ASO', ''],
             ['GitHub · GitHub Actions (CI)', ''],
@@ -89,7 +90,7 @@ export default function Home() {
             ['KO·EN 로컬라이제이션', '영어 회화 가능'],
           ]
         : [
-            ['7 apps built · 4 shipped', 'incl. review, rejection handling & maintenance'],
+            ['7 apps built · 5 shipped', 'incl. review, rejection handling & maintenance'],
             ['User-interview-driven iteration', '5+ feedback rounds shipped'],
             ['StoreKit 2 monetization · ASO', ''],
             ['GitHub · GitHub Actions (CI)', ''],
@@ -107,7 +108,7 @@ export default function Home() {
     { name: 'Show(X)', platform: 'iOS', scopeKo: '팀 6인 · 개발 리드(50%)', scopeEn: 'Team of 6 · lead (50%)', released: true, operating: false, appstore: 'https://apps.apple.com/kr/app/showx/id6755496321', github: null },
     { name: 'kip!', platform: 'iOS', scopeKo: '팀 6인 · 개발 40%', scopeEn: 'Team of 6 · 40% of dev', released: true, operating: false, appstore: 'https://apps.apple.com/kr/app/kip/id6754709167', github: null },
     { name: 'Rootrip', platform: 'iPadOS', scopeKo: '팀 6인 · PencilKit 전담', scopeEn: 'Team of 6 · owned PencilKit', released: false, operating: false, appstore: null, github: null },
-    { name: 'SEED', platform: 'iOS', scopeKo: '개인 100% (개발 중)', scopeEn: 'Solo 100% (in progress)', released: false, operating: false, appstore: null, github: null },
+    { name: 'SEED', platform: 'iOS', scopeKo: '개인 100%', scopeEn: 'Solo 100%', released: true, operating: true, appstore: null, github: null },
   ];
 
   // 일하는 방식 — 출시 품질(QA)과 AI 검증 워크플로. 회사 무관한 일반 강점.
@@ -341,11 +342,14 @@ export default function Home() {
               <h3 className="text-[12px] font-extrabold tracking-widest uppercase text-ios-gray-400 mb-3">
                 {ko ? 'AI를 쓰되 검증은 직접' : 'AI, but I verify'}
               </h3>
-              <div className="flex flex-wrap gap-1.5 mb-3.5">
+              <div className="flex flex-wrap items-center gap-x-1.5 gap-y-1.5 mb-3.5">
                 {aiFlow.map((s, i) => (
-                  <span key={i} className="text-[12px] text-ios-gray-600 dark:text-ios-gray-300 bg-white dark:bg-ios-gray-800 border border-ios-gray-100 dark:border-ios-gray-700 rounded-full px-2.5 py-1">
-                    {s}{i < aiFlow.length - 1 && <span className="text-ios-gray-300 ml-1.5" aria-hidden="true">→</span>}
-                  </span>
+                  <Fragment key={i}>
+                    <span className="text-[12px] text-ios-gray-600 dark:text-ios-gray-300 bg-white dark:bg-ios-gray-800 border border-ios-gray-100 dark:border-ios-gray-700 rounded-full px-2.5 py-1">
+                      {s}
+                    </span>
+                    {i < aiFlow.length - 1 && <span className="text-ios-gray-300 shrink-0" aria-hidden="true">→</span>}
+                  </Fragment>
                 ))}
               </div>
               <ul className="space-y-1.5">
