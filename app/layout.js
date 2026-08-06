@@ -5,8 +5,8 @@ import ScrollProgress from '@/components/layout/ScrollProgress';
 import { I18nProvider } from '@/lib/i18n';
 
 export const metadata = {
-  title: 'Dean (정송헌) | iOS Developer with Web Frontend Background',
-  description: 'React, Vue.js 등 웹 프론트엔드 경험을 SwiftUI/UIKit iOS 개발에 접목시키는 T자형 개발자. 선언형 UI 패턴의 본질을 이해하고 크로스 플랫폼 사고로 빠르게 성장하는 iOS 개발자 Dean (정송헌)입니다.',
+  title: '정송헌 (Dean) | iOS Developer',
+  description: '2년간 7개 앱을 출시하고 SmartEdge·ReToU를 운영하는 iOS/macOS 개발자 정송헌입니다. 설계·개발·배포·운영 전 과정을 담당합니다.',
   keywords: [
     'iOS Developer',
     'SwiftUI',
@@ -18,8 +18,7 @@ export const metadata = {
     'Mobile Developer',
     '정송헌',
     'Dean',
-    'T자형 개발자',
-    '선언형 UI',
+        '선언형 UI',
     'Declarative UI',
     'HealthKit',
     'MapKit',
@@ -32,8 +31,8 @@ export const metadata = {
   creator: 'Dean',
   publisher: 'Dean',
   openGraph: {
-    title: 'Dean (정송헌) | iOS Developer with Web Frontend Background',
-    description: 'React 경험을 바탕으로 SwiftUI를 빠르게 습득한 T자형 iOS 개발자',
+    title: '정송헌 (Dean) | iOS Developer',
+    description: '앱 출시 7회 · SmartEdge·ReToU 운영 — iOS/macOS 개발자 정송헌',
     type: 'website',
     locale: 'ko_KR',
     siteName: 'Dean Portfolio',

@@ -5,7 +5,9 @@
     "compare": "비교",
     "projects": "프로젝트",
     "contact": "연락",
-    "resume": "이력서"
+    "resume": "이력서",
+    "cases": "케이스 스터디",
+    "education": "교육"
   },
   "hero": {
     "title": {
@@ -36,7 +38,7 @@
     "subtitleEnd": "시킵니다.",
     "categories": {
       "ios": "iOS Development",
-      "web": "Web Frontend", 
+      "web": "Web Frontend",
       "tools": "Styling & Tools"
     },
     "transferTitle": "웹 → iOS 지식 전환 맵",
@@ -153,29 +155,30 @@
     "techStack": "기술 스택",
     "duration": "기간",
     "role": "역할",
-    "projectDescriptions": {
-      "Show(X)": "Showcase 2025 행사용 실내 지도 앱. Apple Developer Academy 참가자들을 위한 내비게이션 및 정보 제공 앱.",
-      "kip!": "온디바이스 AI 기반 스크린샷 자동 정리 생산성 앱. 개인정보 보호를 위한 로컬 AI 처리.",
-      "ReToU (오늘의 넌)": "SwiftUI의 선언형 UI 패턴을 활용한 스마트 일상 루틴 및 습관 추적 앱.",
-      "DisplayCut": "생산성 향상을 위한 macOS 윈도우 관리 유틸리티 앱.",
-      "Rootrip": "MapKit에서 PencilKit 드로잉 기능을 통합한 여행 루트 계획 앱.",
-      "WAY GYM": "피트니스 애호가를 위한 헬스장 운동 추적 및 관리 앱.",
-      "MyLoveCoffee (myCafe)": "위치 기반 카페 검색 및 리뷰 플랫폼. Kakao Map API를 활용한 지도 기반 웹 애플리케이션.",
-      "React-shop": "React 기반 쇼핑몰 프로젝트. Vite + Tailwind CSS를 활용한 모던 웹 개발."
-    },
-    "projectConnections": {
-      "Show(X)": "웹 지도 API 경험을 MapKit 학습에 적용.",
-      "kip!": "React 컴포넌트 재사용성 개념을 SwiftUI View Modifier로 확장. 웹 UX 패턴을 네이티브 앱에 적용.",
-      "ReToU (오늘의 넌)": "React 상태 관리 패턴을 SwiftUI 데이터 플로우에 적용.",
-      "DisplayCut": "macOS 앱 아키텍처에 웹 개발 워크플로 지식 활용.",
-      "Rootrip": "웹 지도 상호작용 경험과 네이티브 드로잉 기능의 결합.",
-      "WAY GYM": "반응형 웹 디자인 원칙을 적응형 iOS 레이아웃에 적용.",
-      "HOTSPOT": "React의 실시간 데이터 처리 경험을 SwiftUI Combine으로 전환. 웹 지도 API 경험을 MapKit 활용에 적용.",
-      "SleepTrain": "React의 데이터 시각화 라이브러리 경험을 Swift Charts로 전환. 상태 관리 패턴 활용.",
-      "MyLoveCoffee (myCafe)": "이 웹 프로젝트의 지도 및 위치 기반 검색 경험을 iOS MapKit 학습에 활용. API 통신 패턴을 URLSession으로 전환.",
-      "React-shop": "React의 컴포넌트 설계 경험을 SwiftUI View 구조에 직접 적용. useState 패턴이 @State 학습을 가속화."
+    "labels": {
+      "what": "무엇:",
+      "problem": "문제:",
+      "solution": "해결방법:",
+      "result": "결과:"
     },
     "projectDetails": {
+      "kip!": {
+        "description": "온디바이스 AI 기반 스크린샷 자동 정리 생산성 앱. 개인정보 보호를 고려한 로컬 AI 처리.",
+        "features": [
+          "Share Sheet 연동 빠른 저장 기능",
+          "온디바이스 AI로 날짜/시간/메모 자동 추출",
+          "스마트 위치 인식 및 리마인더 알림",
+          "개인정보 로컬 처리 (서버 전송 없음)",
+          "App store 생산성 66등"
+        ],
+        "highlights": [
+          "Problem: 테스트 사용자 15명의 평균 스크린샷 저장 개수 300+, 필요한 정보를 찾는 데 평균 5분 소요. 클라우드 AI는 개인정보 우려로 사용 거부율 70%. 저장해둔 정보를 수시로 잊고 놓친 경우가 68%",
+          "Action: Apple Intelligence Writing Tools API와 Vision 프레임워크로 온디바이스 이미지 분류 파이프라인을 구현해(전체 개발의 40% 담당) 정확도 85% 달성. SwiftUI Combine으로 비동기 처리 최적화. SwiftData 기반 로컬 저장으로 완전한 프라이버시 보장 아키텍처 설계.",
+          "Result: 테스트 사용자 평균 스크린샷 정리 시간 60% 단축 (5분 → 2분). \"서버 전송 없어 안심된다\" 만족도 95%. 온디바이스 AI 설계·성능·프라이버시 균형 감각 확보. Apple Intelligence 불가한 경우 대비 Gemini & GPT 도입. App Store 생산성 66등 달성."
+        ],
+        "role": "iOS Developer (팀 프로젝트 - 6인 / 개발 3인 중 1인)",
+        "duration": "2025.09 - 2025.11"
+      },
       "Show(X)": {
         "description": "쇼케이스 2025 전용 실내지도 앱. Apple Developer Academy 행사 참가자들을 위한 네비게이션 및 정보 제공 앱.",
         "features": [
@@ -193,22 +196,21 @@
         "role": "iOS Developer (팀 프로젝트 - 6인 / 개발 담당)",
         "duration": "2025.09 - 2025.11"
       },
-      "kip!": {
-        "description": "온디바이스 AI 기반 스크린샷 자동 정리 생산성 앱. 개인정보 보호를 고려한 로컬 AI 처리.",
+      "Rootrip": {
+        "description": "MapKit과 PencilKit을 이용한 여행 계획 및 생산성 앱. MVVM 아키텍처 기반 iPad OS 앱 개발.",
         "features": [
-          "Share Sheet 연동 빠른 저장 기능",
-          "온디바이스 AI로 날짜/시간/메모 자동 추출",
-          "스마트 위치 인식 및 리마인더 알림",
-          "개인정보 로컬 처리 (서버 전송 없음)",
-          "App store 생산성 66등"
+          "PencilKit + MapKit 통합 지도 드로잉 기능",
+          "MVVM/MVC/Clean Architecture 적용",
+          "Firebase 백엔드 통합",
+          "단위 테스트 및 UI 테스트 구현"
         ],
         "highlights": [
-          "Problem: 테스트 사용자 15명의 평균 스크린샷 저장 개수 300+, 필요한 정보를 찾는 데 평균 5분 소요. 클라우드 AI는 개인정보 우려로 사용 거부율 70%. 저장해둔 정보를 수시로 잊고 놓친 경우가 68%",
-          "Action: Apple Intelligence Writing Tools API와 Vision 프레임워크로 온디바이스 이미지 분류 파이프라인을 구현해(전체 개발의 40% 담당) 정확도 85% 달성. SwiftUI Combine으로 비동기 처리 최적화. SwiftData 기반 로컬 저장으로 완전한 프라이버시 보장 아키텍처 설계.",
-          "Result: 테스트 사용자 평균 스크린샷 정리 시간 60% 단축 (5분 → 2분). \"서버 전송 없어 안심된다\" 만족도 95%. 온디바이스 AI 설계·성능·프라이버시 균형 감각 확보. Apple Intelligence 불가한 경우 대비 Gemini & GPT 도입. App Store 생산성 66등 달성."
+          "Problem: 테스트 사용자 8명이 여행 계획 시 평균 3개 앱(지도/메모/일정) 전환으로 동선 파악에 20분 소요.",
+          "Action: MapKit + PencilKit 결합으로 지도 위 직접 드로잉 가능한 인터랙션 구현(PencilKit + MapKit 개발 담당). StrokeData 모델 설계로 그리기 데이터 저장·복원. MVVM 아키텍처로 지도 상태/일정/북마크를 분리 설계하고, Firebase Firestore 연동으로 멀티 디바이스 동기화.",
+          "Result: 테스트 사용자 동선 계획 시간 60% 단축 (20분 → 8분). \"지도 보며 직관적 계획\" 만족도 90%. 복합 도메인(지도·드로잉·일정) 상태 관리와 Firebase 통합 경험 확보."
         ],
-        "role": "iOS Developer (팀 프로젝트 - 6인 / 개발 3인 중 1인)",
-        "duration": "2025.09 - 2025.11"
+        "role": "iOS Developer (팀 프로젝트 / 개발 담당)",
+        "duration": "2025.07 - 2025.08"
       },
       "ReToU (오늘의 넌)": {
         "description": "하루 한 줄 감정 회고 및 자기 성찰 iOS 앱. 일일 감정 기록으로 마음을 정리하는 웰빙 애플리케이션.",
@@ -227,128 +229,41 @@
         "role": "iOS Developer (개인 프로젝트)",
         "duration": "2025.04 - 2025.06"
       },
+      "SmartEdge": {
+        "description": "맥 노치를 음악·캘린더·파일 보관함·뽀모도로 허브로 바꾸는 macOS 메뉴바 앱. 무료 + Pro(일회성 구매) 모델로 Mac App Store 판매 중.",
+        "highlights": [
+          "Problem: 음악 확인·파일 공유·일정 확인마다 앱 전환이 필요했고, 노치는 죽은 공간이었다. 항상 최상위에 떠 있는 UI는 macOS 시스템 제약(샌드박스·TCC·윈도우 레벨)과 정면 충돌하는 영역.",
+          "Action: AppKit 윈도우 레벨 제어와 SwiftUI를 결합. 샌드박스가 Apple Events를 커널 수준에서 차단하는 문제를 타겟 예외 entitlement로 해결하고, 보관함 오픈 시 윈도우 레벨을 동적으로 낮춰 드래그 앤 드롭을 성립. StoreKit 2로 무료+Pro 수익 모델을 구현해 한/영으로 전 세계 출시.",
+          "Result: Mac App Store 심사 통과·출시, v1.1(전역 단축키·다중 파일 공유) 운영 중 — 기획→개발→심사→수익화→운영 전체 사이클을 혼자 완주."
+        ]
+      },
       "DisplayCut": {
-        "description": "생산성 향상을 위한 macOS 윈도우 관리 유틸리티 앱.",
-        "features": [
-          "6가지 레이아웃 프리셋 (2분할, 3분할, 가운데 집중 등)",
-          "Accessibility API 기반 정확한 윈도우 배치",
-          "단축키 10개로 완전한 키보드 제어",
-          "1초 내 빠른 윈도우 정렬"
-        ],
+        "description": "6가지 레이아웃 프리셋과 단축키 10개로 창을 정리하는 macOS 윈도우 관리 유틸리티.",
         "highlights": [
-          "Problem: 개발자 본인의 멀티 윈도우 작업 시 윈도우 배치에 하루 평균 15분 소요. Mission Control 사용률 20% 미만.",
-          "Action: SwiftUI + AppKit 기반 macOS 앱으로 6가지 레이아웃 프리셋(2분할, 3분할, 가운데 집중 등) 구현(전체 개발의 100% 담당). Accessibility API로 현재 활성 윈도우를 1초 내 정확한 좌표·크기로 배치. 단축키 10개 설정으로 키보드만으로 완전 제어 가능하도록 설계.",
-          "Result: 본인 사용 기준 윈도우 배치 시간 80% 감소 (15분 → 3분/일). macOS Accessibility API와 윈도우 관리 메커니즘 이해. SwiftUI 데스크톱 앱 설계·배포 경험 확보."
-        ],
-        "role": "iOS Developer (개인 프로젝트)",
-        "duration": "2025.06 - 2025.08"
-      },
-      "HOTSPOT": {
-        "description": "AI 기반 산불 조기 감지 및 커뮤니티 알림 시스템. Junction 2025 해커톤 프로젝트로 시민 제보와 AI 예측을 결합한 산불 대응 앱.",
-        "features": [
-          "즉시 카메라 실행으로 산불 신속 제보",
-          "10km 반경 커뮤니티 자동 알림 시스템",
-          "3단계 대피 가이드 (즉시대피/준비/모니터링)",
-          "레이더형 산불 근접도 시각화",
-          "대피소 위치 안내 및 지도 앱 연동",
-          "AI 정확도 향상 (지역 위험 지수 + 위성 데이터)"
-        ],
-        "highlights": [
-          "Problem: 경상북도 연평균 산불 발생 300+ 건, 정보 채널 5개 이상 분산으로 골든타임 평균 20분 지연. 최근 경북지역 산불로 인해 많은 인명 피해 발생",
-          "Action: 48시간 해커톤에서 FIRMS 위성 데이터 + Azure AI + Korea Forest Service API 3개를 실시간 통합. MapKit으로 10km 반경 커뮤니티 알림 시스템 구현(전체 iOS 개발의 100% 담당). SwiftUI + Combine으로 비동기 데이터 스트림 처리해 MVP 완성. 4인 팀에서 iOS 개발 60% 담당.",
-          "Result: Junction 2025 해커톤 데모에서 \"현장 적용 가능성\" 멘토 피드백. 외부 API 3개를 48시간 내 통합하며 빠른 프로토타이핑과 데이터 파이프라인 설계 역량 확보."
-        ],
-        "role": "iOS Developer (팀 프로젝트 / 개발 담당)",
-        "duration": "2025 (Junction Hackathon)"
-      },
-      "SleepTrain": {
-        "description": "스크린타임 수면유도 애플리케이션. 스크린타임 강제를 통한 수면 유도 앱.",
-        "features": [
-          "일일/주간/월간 스크린타임 추적",
-          "앱별 사용 시간 분석 및 시각화",
-          "사용 습관 개선을 위한 인사이트 제공",
-          "목표 설정 및 알림 기능"
-        ],
-        "highlights": [
-          "Problem: 테스트 사용자 12명의 평균 수면 시간 오전 2시, 자기 전 스마트폰 사용 평균 90분으로 수면 부족 발생. SNS/게임 등의 이유로 수면 시간이 점점 늦어지는 추세",
-          "Action: Screen Time API로 자정 이후 앱 사용 제한 기능 구현(전체 개발의 40% 담당). Swift Charts로 일일/주간/월간 사용 패턴 시각화. 테스트 사용자 피드백 \"강제 차단 스트레스\"를 반영해 점진적 알림·제안 UX로 2회 개선.",
-          "Result: 테스트 사용자 자정 이후 화면 사용 시간 45% 감소 (90분 → 50분). \"NFC 태그로 스크린 잠금\" 만족도 80%. 행동 변화 유도 UX와 데이터 피드백 설계 경험 확보."
-        ],
-        "role": "iOS Developer (팀 프로젝트 / 개발 담당)",
-        "duration": "2025.09"
-      },
-      "Rootrip": {
-        "description": "MapKit과 PencilKit을 이용한 여행 계획 및 생산성 앱. MVVM 아키텍처 기반 iPad OS 앱 개발.",
-        "features": [
-          "PencilKit + MapKit 통합 지도 드로잉 기능",
-          "MVVM/MVC/Clean Architecture 적용",
-          "Firebase 백엔드 통합",
-          "단위 테스트 및 UI 테스트 구현"
-        ],
-        "highlights": [
-          "Problem: 테스트 사용자 8명이 여행 계획 시 평균 3개 앱(지도/메모/일정) 전환으로 동선 파악에 20분 소요.",
-          "Action: MapKit + PencilKit 결합으로 지도 위 직접 드로잉 가능한 인터랙션 구현(PencilKit + MapKit 개발 담당). StrokeData 모델 설계로 그리기 데이터 저장·복원. MVVM 아키텍처로 지도 상태/일정/북마크를 분리 설계하고, Firebase Firestore 연동으로 멀티 디바이스 동기화.",
-          "Result: 테스트 사용자 동선 계획 시간 60% 단축 (20분 → 8분). \"지도 보며 직관적 계획\" 만족도 90%. 복합 도메인(지도·드로잉·일정) 상태 관리와 Firebase 통합 경험 확보."
-        ],
-        "role": "iOS Developer (팀 프로젝트 / 개발 담당)",
-        "duration": "2025.07 - 2025.08"
-      },
-      "WAY GYM": {
-        "description": "위치 기반 영역 점령 게임 앱. Apple Developer Academy @ POSTECH Challenge 3 프로젝트.",
-        "features": [
-          "실시간 위치 추적 및 영역 점령 메커니즘",
-          "지도 기반 게이미피케이션",
-          "사용자 간 경쟁 및 순위 시스템",
-          "영역 확장 전략 게임플레이"
-        ],
-        "highlights": [
-          "Problem: 테스트 사용자 1명의 주간 평균 운동 시간 30분, \"운동 재미없음\", \"시간 부족\", \"게임 중독\"으로 운동 시작 장벽 높음.",
-          "Action: CoreLocation + MapKit으로 걸은 영역을 실시간 색칠하는 영역 점령 메커니즘 구현(PM 및 디자인 담당). CLLocationManager로 배터리 소모 최적화 (위치 업데이트 주기 조정으로 40% 절감). PM 및 캐릭터 디자이너로서 6인 팀 프로젝트 기획·관리하며 캐릭터 디자인에 참여",
-          "Result: 테스트 사용자 주간 이동 거리 평균 35% 증가. \"게임하러 나간다\" 만족도 85%. 헬스케어 도메인 게임화 UX와 배터리 최적화 경험 확보."
-        ],
-        "role": "Project Manager (팀 프로젝트 - 3인 / PM 및 디자인 담당)",
-        "duration": "2025.06 - 2025.07"
-      },
-      "MyLoveCoffee (myCafe)": {
-        "description": "위치 기반 카페 검색 및 리뷰 플랫폼. Kakao Map API를 활용한 지도 기반 웹 애플리케이션.",
-        "features": [
-          "현재 위치 기반 주변 카페 검색 및 필터링",
-          "카페 리뷰 작성/수정 및 베스트 리뷰어 TOP 10 선정",
-          "Kakao Mobility API 연동 자동차 길찾기",
-          "전국 지역별 카페 검색 기능",
-          "Remix.js + Prisma + SQLite 풀스택 구현"
-        ],
-        "highlights": [
-          "Problem: 테스트 사용자 20명이 \"분위기 좋은 카페 찾기\" 위해 평균 3개 앱 사용, 검색 시간 평균 10분 소요.",
-          "Action: Kakao Map API 연동으로 현재 위치 기반 카페 검색·필터링 구현(전체 개발의 100% 담당). TypeScript로 타입 안정성 확보하고, Remix.js + Prisma + SQLite로 풀스택 아키텍처 설계. 카페 리뷰 CRUD와 베스트 리뷰어 TOP 10 집계 로직 구현. Tailwind CSS로 모바일·데스크톱 반응형 UI 완성.",
-          "Result: \"지도+리뷰 통합으로 선택이 즐겁다\" 만족도 85%. 이 프로젝트의 위치 기반 검색·지도 API 경험이 이후 iOS MapKit 프로젝트(Show(X), Rootrip) 개발의 직접적 기반이 됨."
-        ],
-        "role": "Full-stack Developer (개인 프로젝트)",
-        "duration": "2024.06"
-      },
-      "React-shop": {
-        "description": "React 기반 쇼핑몰 프로젝트. Vite + Tailwind CSS를 활용한 모던 웹 개발.",
-        "features": [
-          "React 컴포넌트 기반 쇼핑몰 UI",
-          "Vite를 활용한 빠른 개발 환경",
-          "Tailwind CSS로 반응형 디자인 구현",
-          "Vercel 배포 자동화"
-        ],
-        "highlights": [
-          "Problem: React 학습 과정에서 컴포넌트 설계, 상태 관리, 라우팅을 실제 서비스 수준으로 연습할 프로젝트 필요.",
-          "Action: React + Vite + Tailwind CSS로 상품 목록·상세·장바구니·필터/정렬 기능 구현(전체 개발의 100% 담당). 15+ 개 컴포넌트를 작은 단위로 분리해 재사용성 확보. useState/useContext로 전역 상태 관리 실습. Vercel 배포 자동화 설정.",
-          "Result: React 컴포넌트 기반 아키텍처와 상태 관리 개념을 실전 적용. 이 경험이 SwiftUI View 계층 구조와 @State/@ObservedObject 학습을 3배 가속화. 웹 선언형 UI 경험을 iOS로 자연스럽게 전환하는 기반 확보."
-        ],
-        "role": "Frontend Developer (개인 프로젝트)",
-        "duration": "2024.04"
+          "Problem: 멀티 윈도우 작업 시 윈도우 배치에 하루 평균 15분 소요. Mission Control 사용률 20% 미만.",
+          "Action: SwiftUI + AppKit으로 6가지 레이아웃 프리셋(2분할·3분할·가운데 집중 등) 구현. Accessibility API로 전체 활성 윈도우를 1초 내 배치하고, 단축키 10개로 키보드만으로 창 제어 가능하게 설계.",
+          "Result: 일일 윈도우 배치 시간 80% 감소(15분 → 3분). macOS Accessibility API와 윈도우 관리 메커니즘 이해 확보."
+        ]
       }
+    },
+    "projectDescriptions": {
+      "kip!": "온디바이스 AI 기반 스크린샷 자동 정리 생산성 앱. 개인정보 보호를 위한 로컬 AI 처리.",
+      "Show(X)": "Showcase 2025 행사용 실내 지도 앱. Apple Developer Academy 참가자들을 위한 내비게이션 및 정보 제공 앱.",
+      "Rootrip": "MapKit에서 PencilKit 드로잉 기능을 통합한 여행 루트 계획 앱.",
+      "ReToU (오늘의 넌)": "SwiftUI의 선언형 UI 패턴을 활용한 스마트 일상 루틴 및 습관 추적 앱."
+    },
+    "projectConnections": {
+      "kip!": "React 컴포넌트 재사용성 개념을 SwiftUI View Modifier로 확장. 웹 UX 패턴을 네이티브 앱에 적용.",
+      "Show(X)": "웹 지도 API 경험을 MapKit 학습에 적용.",
+      "Rootrip": "웹 지도 상호작용 경험과 네이티브 드로잉 기능의 결합.",
+      "ReToU (오늘의 넌)": "React 상태 관리 패턴을 SwiftUI 데이터 플로우에 적용."
     },
     "emphasisText": "모든 iOS 프로젝트에 React/Vue.js 경험이 녹아있습니다"
   },
   "contact": {
     "title": "함께 일하고 싶으신가요?",
     "description": {
-      "line1": "웹 개발 경험을 iOS 개발에 접목시키는 T자형 개발자와 함께하세요.",
+      "line1": "출시와 운영으로 검증된 iOS/macOS 개발자와 함께하세요.",
       "line2": "새로운 기회와 협업을 기다립니다."
     },
     "buttons": {
@@ -358,24 +273,23 @@
   },
   "resume": {
     "title": "정송헌 (Dean)",
-    "subtitle": "사용자의 일상에 스며드는 '쓰게 되는 앱'을 만드는 iOS 개발자",
+    "subtitle": "일상에 자연스럽게 스며드는 앱을 만드는 iOS 개발자",
     "download": "PDF로 저장",
-    "downloadHint": "클릭하면 바로 PDF 파일이 다운로드됩니다",
+    "downloadHint": "클릭하면 PDF 파일이 바로 다운로드됩니다",
     "sections": {
-      "summary": "Summary",
-      "skills": "Technical Skills",
-      "projects": "Projects",
-      "education": "Education & Training",
-      "achievements": "Key Achievements"
+      "summary": "요약",
+      "skills": "기술 스택",
+      "projects": "프로젝트",
+      "education": "교육 및 훈련",
+      "achievements": "주요 성과"
     },
     "summary": {
-      "text1": "2024년 웹 프론트엔드 개발을 시작해 React/TypeScript 기반 풀스택 프로젝트를 완성한 후, 2025년 Apple Developer Academy @POSTECH를 통해 iOS 개발로 전환했습니다. 6개월 만에 App Store에 개인앱 2개 팀 프로젝트 앱 2개를 출시하고, 총 8개의 iOS 앱과 2개의 웹 프로젝트를 완성했습니다.",
-      "text2": "주요 성과: SwiftUI와 UIKit 기반 iOS 앱 8개 개발 | Apple Indoor Map 국내 최초 승인 및 개발 사례 | Mac OS 윈도우 관리 서비스 구현 경험 | 온디바이스 AI 및 위치 기반 서비스 구현 경험"
+      "text1": "2년간 iOS/macOS 앱 7개를 출시했으며, SmartEdge(v1.1)와 ReToU(v2.0)는 설계·개발·배포·운영 전 과정을 직접 담당하며 유지보수 중입니다. Apple Developer Academy @POSTECH에서 개발·디자인·기획·협업을 교육받았고, 팀 프로젝트 Show(X)에서는 개발 리드로 Apple Indoor Map 국내 최초 승인을 이끌었습니다.",
+      "text2": "주요 성과: 앱 출시 7회(심사·리젝 대응 포함) | Apple Indoor Map 국내 최초 승인 | App Store 내비게이션 #37 · 생산성 #66 | StoreKit 2 수익화 및 라이브 운영 | 온디바이스 AI·위치 기반 서비스 구현"
     },
     "skillCategories": {
       "ios": "iOS Development:",
-      "web": "Web Frontend:",
-      "tools": "Styling & Tools:"
+      "tools": "배포 · 인프라:"
     },
     "education": [
       {
@@ -388,33 +302,33 @@
         "period": "2025.03 ~ 2025.12",
         "description": "Apple 생태계 관련 개발 집중 교육 프로그램",
         "details": [
-          "6개의 Challenge 프로젝트 완성 (Show(X), kip!, Rootrip, WAY GYM 등)",
+          "6개의 Challenge 프로젝트 완성 (Show(X), kip!, Rootrip 등)",
           "SwiftUI, UIKit, MapKit, PencilKit, Apple Intelligence 활용 앱 개발",
           "Rootrip: PencilKit + MapKit 통합으로 지도 위 드로잉 인터랙션 개발 담당",
           "팀 프로젝트 협업 및 Agile 개발 방법론 경험"
         ]
       },
       {
-        "name": "Zerobase 프론트엔드 스쿨",
-        "period": "2024.02 ~ 2024.09",
-        "description": "React, TypeScript 기반 웹 개발 교육",
+        "name": "제로베이스 프론트엔드 스쿨",
+        "period": "2024.01 ~ 2024.07",
+        "description": "React/TypeScript 중심 프론트엔드 개발 부트캠프 23기 수료",
         "details": [
-          "React 컴포넌트 기반 아키텍처 학습",
-          "TypeScript, JavaScript를 활용한 타입 안정성 확보",
-          "팀 프로젝트를 통해 협업 및 소통 방법론 경험"
+          "JavaScript, TypeScript, React, Vue.js 학습",
+          "Tailwind CSS, Firebase, Vercel 활용 프로젝트 배포",
+          "팀 프로젝트 2회 진행 및 개인 프로젝트 3개 완성"
         ]
       }
     ],
     "contact": {
-      "location": "포항, 대한민국"
+      "location": "양주, 대한민국"
     },
     "achievements": [
       "App Store 출시 팀 프로젝트 2개 앱 (Show(X), kip!) - 다운로드 200회 이상",
-      "App Store 출시 개인 프로젝트 2개 앱 (ReToU, DisplayCut) - 다운로드 100회 이상",
+      "App Store 출시 개인 프로젝트 2개 앱 (ReToU) - 다운로드 100회 이상",
       "Apple Maps Indoor Map 국내 최초 승인 및 개발 사례 (Show(X))",
       "Junction 2025 해커톤 트랙 3등 - AI 기반 산불 감지 시스템 개발",
       "8개 iOS 앱 개발 경험 (SwiftUI 6개, UIKit 2개)",
-      "웹에서 iOS로의 빠른 기술 전환 (선언형 UI 패턴 기반)"
+      "SmartEdge·ReToU 라이브 운영 — 배포·유지보수·버전 업데이트(v1.1/v2.0) 경험"
     ],
     "footer": {
       "portfolio": "포트폴리오:",

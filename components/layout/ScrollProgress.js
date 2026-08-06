@@ -36,7 +36,7 @@ export default function ScrollProgress() {
     <>
       {/* 스크롤 진행 바 */}
       <motion.div
-        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-ios-blue via-ios-purple to-ios-pink origin-left z-50"
+        className="fixed top-0 left-0 right-0 h-1 bg-ios-gray-900 dark:bg-white origin-left z-50"
         style={{ scaleX }}
       />
 
@@ -47,7 +47,7 @@ export default function ScrollProgress() {
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0 }}
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 p-4 bg-ios-blue text-white rounded-full shadow-lg hover:bg-blue-600 transition-colors z-40"
+          className="fixed bottom-8 right-8 p-4 bg-ios-gray-900 text-white dark:bg-white dark:text-ios-gray-900 rounded-full shadow-lg hover:opacity-85 transition-opacity z-40"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
         >

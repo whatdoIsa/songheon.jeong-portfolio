@@ -8,9 +8,8 @@ import { useTranslation } from '@/lib/i18n';
 export default function Resume() {
   const { t, locale } = useTranslation();
   const [resumeData, setResumeData] = useState({ education: [], achievements: [], projectDetails: {} });
-  // 모든 iOS 프로젝트들 포함
-  const iosProjects = projects.filter(p => p.category === 'iOS');
-  const webProjects = projects.filter(p => p.category === 'Web');
+  // iOS·macOS 출시 프로젝트 포함 (웹 프로젝트 제외)
+  const iosProjects = projects.filter(p => ['iOS', 'macOS'].includes(p.category));
   const resumeRef = useRef(null);
 
   useEffect(() => {
@@ -136,12 +135,8 @@ export default function Resume() {
               <span className="ml-2 text-gray-700">SwiftUI, UIKit, MapKit, PencilKit, Foundation Model, AppKit, Face ID, Swift Data, Apple Intelligence</span>
             </div>
             <div>
-              <span className="font-semibold">{t('resume.skillCategories.web')}</span>
-              <span className="ml-2 text-gray-700">React, Vue.js, JavaScript, TypeScript, Next.js, Remix.js</span>
-            </div>
-            <div>
               <span className="font-semibold">{t('resume.skillCategories.tools')}</span>
-              <span className="ml-2 text-gray-700">Tailwind CSS, CSS/Sass, Git, GitHub Actions, Firebase, Vercel</span>
+              <span className="ml-2 text-gray-700">StoreKit 2, CloudKit, Git, GitHub Actions, Firebase, App Store Connect</span>
             </div>
           </div>
         </section>
@@ -151,8 +146,8 @@ export default function Resume() {
           <h2 className="text-2xl font-bold mb-4 border-b border-gray-300 pb-2">{t('resume.sections.projects')}</h2>
 
           <div className="space-y-6">
-            {[...iosProjects, ...webProjects].map((project, index) => (
-              <div key={project.id} className={`page-break-avoid ${index !== iosProjects.length + webProjects.length - 1 ? 'border-b border-gray-200 pb-4' : ''}`}>
+            {iosProjects.map((project, index) => (
+              <div key={project.id} className={`page-break-avoid ${index !== iosProjects.length - 1 ? 'border-b border-gray-200 pb-4' : ''}`}>
                 <div className="flex justify-between items-start mb-2">
                   <h3 className="text-lg font-bold">{project.title}</h3>
                   <span className="text-sm text-gray-600">{project.duration}</span>

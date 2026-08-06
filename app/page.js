@@ -1,212 +1,251 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { FaApple, FaReact } from 'react-icons/fa';
-import { SiSwift, SiJavascript } from 'react-icons/si';
-import { HiLightningBolt, HiCube, HiRefresh } from 'react-icons/hi';
-import Skills from '@/components/sections/Skills';
-import CodeCompare from '@/components/sections/CodeCompare';
-import Projects from '@/components/sections/Projects';
+import Link from 'next/link';
 import { useTranslation } from '@/lib/i18n';
+import { featuredCaseStudies, miniCaseStudies } from '@/data/caseStudies';
+import CaseCard from '@/components/case/CaseCard';
+import MiniCard from '@/components/case/MiniCard';
 
+// 시안 C(하이브리드): 10초 스캔 헤더 → 케이스 스터디(P-A-R + 딥다이브) → Skills → Education → Contact
 export default function Home() {
-  const { t, locale } = useTranslation();
+  const { locale } = useTranslation();
+  const L = locale === 'en' ? 'en' : 'ko';
+  const ko = L === 'ko';
+
+  const facts = [
+    { big: ko ? '7개 출시' : '7 shipped', small: ko ? '앱 (기획~운영)' : 'apps (plan → ops)', accent: true },
+    { big: ko ? '국내 최초' : 'Korea-first', small: ko ? 'Apple Indoor Map 승인' : 'Apple Indoor Map approval', accent: false },
+    { big: '#37 · #66', small: ko ? '내비게이션 · 생산성 차트' : 'Navigation · productivity charts', accent: true },
+    { big: ko ? '지속률 70%' : '70% retention', small: ko ? 'ReToU 30일 (기존 대비 3배)' : 'ReToU 30-day (3× typical)', accent: false },
+  ];
+
+  const skillCols = [
+    {
+      title: 'iOS · macOS',
+      items: ko
+        ? [
+            ['SwiftUI', '앱 6개 출시 경험'],
+            ['UIKit · AppKit', '메뉴바 앱, 윈도우 레벨 제어'],
+            ['App Sandbox · TCC 권한', '샌드박스·권한 제약 대응 (SmartEdge)'],
+            ['MapKit', 'Indoor Positioning, GeoJSON'],
+            ['PencilKit', '좌표계 변환, 드로잉 영속성'],
+            ['Apple Intelligence · Vision', '온디바이스 분류 파이프라인'],
+            ['SwiftData · CloudKit · StoreKit 2', '로컬 우선 저장·백업·수익화'],
+          ]
+        : [
+            ['SwiftUI', 'shipped 6 apps'],
+            ['UIKit · AppKit', 'menu-bar apps, window-level control'],
+            ['App Sandbox · TCC', 'shipping within sandbox/permission constraints'],
+            ['MapKit', 'Indoor Positioning, GeoJSON'],
+            ['PencilKit', 'coordinate conversion, drawing persistence'],
+            ['Apple Intelligence · Vision', 'on-device classification pipeline'],
+            ['SwiftData · CloudKit · StoreKit 2', 'local-first storage, backup, monetization'],
+          ],
+    },
+    {
+      title: 'Quality · AI Workflow',
+      items: ko
+        ? [
+            ['QA·안정화 사이클', '실기기 QA, 현장 관찰 기반 5회 업데이트'],
+            ['시스템 제약 해결 경험', '샌드박스·TCC·윈도우 레벨 (SmartEdge)'],
+            ['AI 개발 도구 워크플로우', 'Claude Code 기반 개발·검증 자동화'],
+            ['버전 운영·유지보수', 'SmartEdge v1.1 · ReToU v2.0 라이브 운영'],
+          ]
+        : [
+            ['QA & stabilization cycles', 'device QA, 5 field-driven updates'],
+            ['System-constraint problem solving', 'sandbox · TCC · window levels (SmartEdge)'],
+            ['AI-assisted dev workflow', 'build & verify pipeline on Claude Code'],
+            ['Version ops & maintenance', 'SmartEdge v1.1 · ReToU v2.0 live'],
+          ],
+    },
+    {
+      title: 'Product · Ops',
+      items: ko
+        ? [
+            ['앱 심사·출시 7회', '리젝 대응·유지보수 경험'],
+            ['사용자 인터뷰·피드백 반복 개선', '5회+ 반영'],
+            ['StoreKit 2 수익화 · ASO', ''],
+            ['GitHub · GitHub Actions (CI)', ''],
+            ['Firebase', ''],
+            ['Figma 기반 디자이너 협업', ''],
+            ['KO·EN 로컬라이제이션', '영어 회화 가능'],
+          ]
+        : [
+            ['7 app releases', 'incl. rejection handling & maintenance'],
+            ['User-interview-driven iteration', '5+ feedback rounds shipped'],
+            ['StoreKit 2 monetization · ASO', ''],
+            ['GitHub · GitHub Actions (CI)', ''],
+            ['Firebase', ''],
+            ['Designer collaboration in Figma', ''],
+            ['KO·EN localization', 'conversational English'],
+          ],
+    },
+  ];
+
+  const education = ko
+    ? [
+        ['2025.03 – 2025.12', 'Apple Developer Academy 4기 @ POSTECH', 'Apple 생태계 집중 교육 — 개발·디자인·커뮤니케이션·기획. 6개 Challenge 프로젝트 완성 (Show(X), kip!, Rootrip, WAY GYM 등). 쇼케이스 현장 운영(200+명 응대)까지 담당.'],
+        ['2024.02 – 2024.09', 'Zerobase 프론트엔드 스쿨', 'React·TypeScript 기반 웹 개발 교육. 컴포넌트 아키텍처, 타입 안정성, 팀 프로젝트 협업.'],
+        ['2019.03 – 2025.02', '신라대학교 컴퓨터교육과', '학사 졸업 (3.46/4.5) · 사범대 학생회 홍보부장 — 콘텐츠·이벤트 기획으로 SNS 팔로워 1만 명 성장.'],
+        ['2019.12 – 2020.02', '캐나다 빅토리아대학교 어학연수', '장학생 선발 · 영어 회화 가능.'],
+        ['2021.03 – 2022.09', '병역', '대한민국 육군 병장 만기제대.'],
+      ]
+    : [
+        ['2025.03 – 2025.12', 'Apple Developer Academy 4th @ POSTECH', 'Intensive Apple-ecosystem program — development, design, communication and planning. Completed 6 challenge projects (Show(X), kip!, Rootrip, WAY GYM and more) and ran on-site showcase operations for 200+ attendees.'],
+        ['2024.02 – 2024.09', 'Zerobase Frontend School', 'React/TypeScript web development — component architecture, type safety, team collaboration.'],
+        ['2019.03 – 2025.02', 'Silla University, Computer Education', 'B.S. (GPA 3.46/4.5) · led college PR — grew SNS followers to 10k through content and events.'],
+        ['2019.12 – 2020.02', 'University of Victoria, Canada (language program)', 'Selected on scholarship · conversational English.'],
+        ['2021.03 – 2022.09', 'Military service', 'Republic of Korea Army, honorably discharged as sergeant.'],
+      ];
 
   return (
-    <div className="pt-16">
-      {/* Hero Section */}
-      <section id="about" className="min-h-screen flex items-center bg-gradient-to-b from-white to-ios-gray-50 dark:from-ios-gray-900 dark:to-ios-gray-800">
-        <div className="container-custom w-full">
+    <div className="pt-16 bg-ios-gray-50 dark:bg-ios-gray-900 min-h-screen">
+      {/* ===== 10초 스캔 헤더 ===== */}
+      <header id="about" className="bg-white dark:bg-ios-gray-800 border-b border-ios-gray-100 dark:border-ios-gray-700">
+        <div className="container-custom">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center max-w-4xl mx-auto"
+            transition={{ duration: 0.6 }}
+            className="grid sm:grid-cols-[auto_1fr] gap-6 pt-12 pb-8 items-start"
           >
-            {/* 아이콘 배지 */}
-            <motion.div
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
-              transition={{ delay: 0.2, type: 'spring', stiffness: 200 }}
-              className="flex justify-center items-center space-x-4 mb-8"
-            >
-              <motion.div
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-                className="flex items-center space-x-2 bg-white dark:bg-ios-gray-800 px-4 py-2 rounded-full shadow-lg"
-              >
-                <FaApple className="text-ios-gray-900 dark:text-white text-2xl" />
-                <SiSwift className="text-ios-orange text-2xl" />
-              </motion.div>
-              <span className="text-2xl font-bold">+</span>
-              <motion.div
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
-                className="flex items-center space-x-2 bg-white dark:bg-ios-gray-800 px-4 py-2 rounded-full shadow-lg"
-              >
-                <FaReact className="text-ios-blue text-2xl" />
-                <SiJavascript className="text-ios-yellow text-2xl" />
-              </motion.div>
-            </motion.div>
-
-            {/* 메인 타이틀 */}
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.8 }}
-              className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
-            >
-              {t('hero.title.line1')}
-              <br />
-              <span className="text-gradient gradient-ios">{t('hero.title.line2')}</span>
-              {t('hero.title.suffix') && <span>{t('hero.title.suffix')}</span>}
-            </motion.h1>
-
-            {/* 서브 타이틀 */}
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.8 }}
-              className="text-lg sm:text-xl text-ios-gray-600 dark:text-ios-gray-400 mb-4 leading-relaxed"
-            >
-              {t('hero.subtitle.line1')}
-              <br />
-              <strong className="text-ios-blue">{t('hero.subtitle.line2')}</strong>
-            </motion.p>
-
-            {/* 이름 소개 */}
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6, duration: 0.8 }}
-              className="text-base text-ios-gray-500 dark:text-ios-gray-500 mb-8"
-            >
-              {(locale || 'ko') === 'ko' 
-                ? <>안녕하세요, <strong className="text-gradient gradient-ios">Dean</strong> (정송헌)입니다.</>
-                : <>Hello, I'm <strong className="text-gradient gradient-ios">Dean</strong> (Jeong SongHeon).</>
-              }
-            </motion.p>
-
-            {/* 핵심 가치 제안 */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.7, duration: 0.8 }}
-              className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8 max-w-3xl mx-auto"
-            >
-              {[
-                { Icon: HiCube, text: t('hero.values.declarative'), color: 'text-ios-blue' },
-                { Icon: HiLightningBolt, text: t('hero.values.learning'), color: 'text-ios-yellow' },
-                { Icon: HiRefresh, text: t('hero.values.crossPlatform'), color: 'text-ios-green' }
-              ].map((item, idx) => (
-                <motion.div
-                  key={idx}
-                  whileHover={{ scale: 1.05 }}
-                  className="bg-white dark:bg-ios-gray-800 rounded-xl p-4 shadow-lg"
-                >
-                  <item.Icon className={`text-4xl mb-2 ${item.color} mx-auto`} />
-                  <p className="text-sm font-medium">{item.text}</p>
-                </motion.div>
-              ))}
-            </motion.div>
-
-            {/* CTA 버튼 */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8, duration: 0.8 }}
-              className="flex flex-col sm:flex-row justify-center gap-4"
-            >
-              <motion.a
-                href="#projects"
-                className="btn-primary"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                {t('hero.buttons.projects')}
-              </motion.a>
-              <motion.a
-                href="#compare"
-                className="btn-secondary"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                {t('hero.buttons.compare')}
-              </motion.a>
-            </motion.div>
-
-            {/* 스크롤 다운 인디케이터 */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1.3 }}
-              className="mt-16"
-            >
-              <motion.div
-                animate={{ y: [0, 10, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity }}
-                className="inline-block"
-              >
-                <a href="#skills" className="text-ios-gray-400 hover:text-ios-blue transition-colors">
-                  <svg className="w-6 h-6 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                  </svg>
-                  <span className="text-xs mt-2 block">{t('hero.scroll')}</span>
-                </a>
-              </motion.div>
-            </motion.div>
+            <img
+              src={`${process.env.NODE_ENV === 'production' ? '/iOS-Portfolio' : ''}/images/profile.jpg`}
+              alt={ko ? '정송헌 프로필 사진' : 'Portrait of Songheon Jeong'}
+              className="hidden sm:block w-32 h-32 rounded-2xl object-cover object-top border border-ios-gray-100 dark:border-ios-gray-700"
+            />
+            <div>
+              <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight">
+                {ko ? '정송헌' : 'Songheon Jeong (Dean)'}
+                <span className="text-sm font-semibold text-ios-gray-400 ml-2.5">iOS Developer</span>
+              </h1>
+              <p className="mt-2.5 text-[14.5px] text-ios-gray-600 dark:text-ios-gray-300 max-w-xl">
+                {ko ? (
+                  <>만들다 만 앱은 없는 앱과 같다고 생각합니다. 2년간 <b className="text-ios-gray-900 dark:text-white">7개 앱을 출시까지 끝까지 가져갔고</b>, 지금도 SmartEdge와 ReToU를 직접 업데이트하며 운영합니다. 화려하게 타오르기보다 <b className="text-ios-gray-900 dark:text-white">뚝배기처럼 은근하게 오래 끓는 성격</b>이라, 한번 맡은 일은 수단과 방법을 가리지 않고 어떻게든 끝을 봅니다.</>
+                ) : (
+                  <>I believe an app that never ships is no different from one that doesn&apos;t exist. Over two years I carried <b className="text-ios-gray-900 dark:text-white">7 apps all the way to release</b>, and I still update and operate SmartEdge and ReToU myself. I&apos;m the <b className="text-ios-gray-900 dark:text-white">slow-burning type — steady heat that lasts</b> — and once I take something on, I find whatever it takes to see it through.</>
+                )}
+              </p>
+              <div className="flex flex-wrap gap-x-5 gap-y-1.5 mt-4 text-[13px] text-ios-gray-500 dark:text-ios-gray-400">
+                <span>{ko ? '양주, 대한민국' : 'Yangju, South Korea'}</span>
+                <a href="mailto:gmlwns5504@naver.com" className="border-b border-ios-gray-200 hover:text-ios-gray-900 dark:hover:text-white hover:border-ios-gray-400">gmlwns5504@naver.com</a>
+                <a href="https://github.com/whatdoIsa" target="_blank" rel="noopener noreferrer" className="border-b border-ios-gray-200 hover:text-ios-gray-900 dark:hover:text-white hover:border-ios-gray-400">github.com/whatdoIsa</a>
+              </div>
+            </div>
           </motion.div>
+
+          {/* 팩트 스트립 */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 border-t border-ios-gray-100 dark:border-ios-gray-700">
+            {facts.map((f, i) => (
+              <div key={i} className={`py-3.5 px-1 sm:px-4 ${i > 0 ? 'lg:border-l border-ios-gray-100 dark:border-ios-gray-700' : ''}`}>
+                <b className="block text-base font-extrabold tabular-nums text-ios-gray-900 dark:text-white">
+                  {f.big}
+                </b>
+                <span className="text-[11.5px] text-ios-gray-400">{f.small}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </header>
+
+      {/* ===== 케이스 스터디 ===== */}
+      <section id="cases" className="py-14">
+        <div className="container-custom max-w-4xl">
+          <SectionLabel>Case Studies</SectionLabel>
+          <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight mb-1.5">
+            {ko ? '문제를 정의하고, 만들고, 검증한 프로젝트' : 'Projects: problem defined, built, validated'}
+          </h2>
+          <p className="text-[13.5px] text-ios-gray-500 dark:text-ios-gray-400 mb-7">
+            {ko
+              ? '요약은 Problem → Action → Result, 깊이는 트러블슈팅 딥다이브로. 수치는 실제 테스트/운영 데이터 기준입니다.'
+              : 'Skim with Problem → Action → Result; go deep with the troubleshooting sections. Figures come from real test/operations data.'}
+          </p>
+
+          {featuredCaseStudies.map((cs) => (
+            <CaseCard key={cs.slug} cs={cs} />
+          ))}
+
+          <div className="grid sm:grid-cols-2 gap-4 mt-6">
+            {miniCaseStudies.map((cs) => (
+              <MiniCard key={cs.slug} cs={cs} />
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Skills Section */}
-      <Skills />
+      {/* ===== Skills ===== */}
+      <section id="skills" className="py-14 bg-white dark:bg-ios-gray-800 border-y border-ios-gray-100 dark:border-ios-gray-700">
+        <div className="container-custom max-w-4xl">
+          <SectionLabel>Skills</SectionLabel>
+          <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight mb-7">
+            {ko ? '기술 스택 — 나열이 아니라 근거와 함께' : 'Tech stack — with evidence, not lists'}
+          </h2>
+          <div className="grid md:grid-cols-3 gap-4">
+            {skillCols.map((col) => (
+              <div key={col.title} className="bg-ios-gray-50 dark:bg-ios-gray-700/50 rounded-2xl p-5">
+                <h3 className="text-[12px] font-extrabold tracking-widest uppercase text-ios-gray-400 mb-3.5">{col.title}</h3>
+                <ul className="space-y-2 text-[13.5px] text-ios-gray-600 dark:text-ios-gray-300">
+                  {col.items.filter(([name]) => name).map(([name, why]) => (
+                    <li key={name}>
+                      <b className="font-bold text-ios-gray-900 dark:text-white">{name}</b>
+                      {why && <span className="text-ios-gray-500 dark:text-ios-gray-400"> — {why}</span>}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-      {/* Code Compare Section */}
-      <CodeCompare />
+      {/* ===== Education ===== */}
+      <section id="education" className="py-14">
+        <div className="container-custom max-w-4xl">
+          <SectionLabel>Education & Training</SectionLabel>
+          <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight mb-5">{ko ? '교육 · 기타' : 'Education & more'}</h2>
+          <div className="bg-white dark:bg-ios-gray-800 border border-ios-gray-100 dark:border-ios-gray-700 rounded-2xl px-6 divide-y divide-ios-gray-100 dark:divide-ios-gray-700">
+            {education.map(([time, title, desc]) => (
+              <div key={title} className="grid sm:grid-cols-[170px_1fr] gap-1 sm:gap-4 py-5">
+                <time className="text-[12.5px] text-ios-gray-400 tabular-nums pt-0.5">{time}</time>
+                <div>
+                  <h3 className="text-[15px] font-bold">{title}</h3>
+                  <p className="text-[13px] text-ios-gray-500 dark:text-ios-gray-400 mt-1">{desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-      {/* Projects Section */}
-      <Projects />
-
-      {/* Contact Section */}
-      <section id="contact" className="section-padding bg-gradient-to-b from-white to-ios-gray-50 dark:from-ios-gray-900 dark:to-ios-gray-800">
+      {/* ===== Contact ===== */}
+      <section id="contact" className="py-16 bg-white dark:bg-ios-gray-800 border-t border-ios-gray-100 dark:border-ios-gray-700">
         <div className="container-custom text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-              {t('contact.title')}
-            </h2>
-            <p className="text-lg text-ios-gray-600 dark:text-ios-gray-400 mb-8 max-w-2xl mx-auto">
-              {t('contact.description.line1')}
-              <br />
-              {t('contact.description.line2')}
-            </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <motion.a
-                href="mailto:gmlwns5504@naver.com"
-                className="btn-primary"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                {t('contact.buttons.email')}
-              </motion.a>
-              <motion.a
-                href="https://github.com/whatdoIsa"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-secondary"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                {t('contact.buttons.github')}
-              </motion.a>
-            </div>
-          </motion.div>
+          <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight">
+            {ko ? '함께 일할 준비가 되어 있습니다' : 'Ready to work together'}
+          </h2>
+          <p className="text-[14.5px] text-ios-gray-500 dark:text-ios-gray-400 mt-3">
+            {ko ? '채용·협업 문의는 이메일로 편하게 연락 주세요. 24시간 내 회신드립니다.' : 'For hiring or collaboration, email me — I reply within 24 hours.'}
+          </p>
+          <div className="flex flex-wrap justify-center gap-3 mt-7">
+            <a href="mailto:gmlwns5504@naver.com" className="text-sm font-bold rounded-xl px-6 py-3 bg-ios-gray-900 text-white dark:bg-white dark:text-ios-gray-900 hover:opacity-85 transition-opacity">
+              {ko ? '이메일 보내기' : 'Send email'}
+            </a>
+            <a href="https://github.com/whatdoIsa" target="_blank" rel="noopener noreferrer" className="text-sm font-bold rounded-xl px-6 py-3 border border-ios-gray-200 dark:border-ios-gray-600 text-ios-gray-600 dark:text-ios-gray-300">
+              GitHub ↗
+            </a>
+            <Link href="/resume" className="text-sm font-bold rounded-xl px-6 py-3 border border-ios-gray-200 dark:border-ios-gray-600 text-ios-gray-600 dark:text-ios-gray-300">
+              {ko ? '이력서' : 'Resume'}
+            </Link>
+          </div>
         </div>
       </section>
     </div>
+  );
+}
+
+function SectionLabel({ children }) {
+  return (
+    <div className="text-[12px] font-bold tracking-[0.14em] uppercase text-ios-gray-400 mb-2.5">{children}</div>
   );
 }

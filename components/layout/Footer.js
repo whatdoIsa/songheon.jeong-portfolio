@@ -2,11 +2,12 @@
 
 import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
-import { SiSwift, SiReact } from 'react-icons/si';
+import { SiSwift } from 'react-icons/si';
 import { useTranslation } from '@/lib/i18n';
 
 export default function Footer() {
-  const { t } = useTranslation();
+  const { t, locale } = useTranslation();
+  const basePath = process.env.NODE_ENV === 'production' ? '/iOS-Portfolio' : '';
   const socialLinks = [
     { icon: FaGithub, href: 'https://github.com/whatdoIsa', label: 'GitHub' },
     { icon: FaLinkedin, href: 'https://www.linkedin.com/in/송헌-정-04a44b331/', label: 'LinkedIn' },
@@ -21,11 +22,12 @@ export default function Footer() {
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <SiSwift className="text-ios-orange text-2xl" />
-              <span className="text-xl font-bold">+</span>
-              <SiReact className="text-ios-blue text-2xl" />
+              <span className="text-lg font-bold">정송헌 · iOS Developer</span>
             </div>
             <p className="text-ios-gray-600 dark:text-ios-gray-400 text-sm">
-              {t('hero.title.line1')} {t('hero.title.line2')}{t('hero.title.suffix')}
+              {locale === 'en'
+                ? '7 apps shipped — SmartEdge · ReToU in operation.'
+                : '앱 7개 출시 — SmartEdge · ReToU 운영 중.'}
             </p>
           </div>
 
@@ -35,26 +37,34 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <a
-                  href="#about"
-                  className="text-ios-gray-600 dark:text-ios-gray-400 hover:text-ios-blue transition-colors"
+                  href={`${basePath}/#about`}
+                  className="text-ios-gray-600 dark:text-ios-gray-400 hover:text-ios-gray-900 dark:hover:text-white transition-colors"
                 >
                   {t('nav.about')}
                 </a>
               </li>
               <li>
                 <a
-                  href="#projects"
-                  className="text-ios-gray-600 dark:text-ios-gray-400 hover:text-ios-blue transition-colors"
+                  href={`${basePath}/#cases`}
+                  className="text-ios-gray-600 dark:text-ios-gray-400 hover:text-ios-gray-900 dark:hover:text-white transition-colors"
                 >
-                  {t('nav.projects')}
+                  {t('nav.cases')}
                 </a>
               </li>
               <li>
                 <a
-                  href="#compare"
-                  className="text-ios-gray-600 dark:text-ios-gray-400 hover:text-ios-blue transition-colors"
+                  href={`${basePath}/#skills`}
+                  className="text-ios-gray-600 dark:text-ios-gray-400 hover:text-ios-gray-900 dark:hover:text-white transition-colors"
                 >
-                  {t('nav.compare')}
+                  {t('nav.skills')}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`${basePath}/resume`}
+                  className="text-ios-gray-600 dark:text-ios-gray-400 hover:text-ios-gray-900 dark:hover:text-white transition-colors"
+                >
+                  {t('nav.resume')}
                 </a>
               </li>
             </ul>
@@ -73,7 +83,7 @@ export default function Footer() {
                   aria-label={social.label}
                   whileHover={{ scale: 1.2, y: -2 }}
                   whileTap={{ scale: 0.9 }}
-                  className="text-ios-gray-600 dark:text-ios-gray-400 hover:text-ios-blue transition-colors"
+                  className="text-ios-gray-600 dark:text-ios-gray-400 hover:text-ios-gray-900 dark:hover:text-white transition-colors"
                 >
                   <social.icon size={24} />
                 </motion.a>

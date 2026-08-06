@@ -5,7 +5,9 @@
     "compare": "Compare",
     "projects": "Projects",
     "contact": "Contact",
-    "resume": "Resume"
+    "resume": "Resume",
+    "cases": "Case Studies",
+    "education": "Education"
   },
   "hero": {
     "title": {
@@ -153,27 +155,11 @@
     "techStack": "Tech Stack",
     "duration": "Duration",
     "role": "Role",
-    "projectDescriptions": {
-      "Show(X)": "Indoor map app for Showcase 2025. Navigation and information app for Apple Developer Academy event participants.",
-      "kip!": "On-device AI-based screenshot auto-organization productivity app. Local AI processing with privacy protection.",
-      "ReToU (오늘의 넌)": "Smart daily routine and habit tracking app using SwiftUI's declarative UI patterns.",
-      "DisplayCut": "macOS window management utility app for enhanced productivity.",
-      "Rootrip": "Travel route planning app with PencilKit drawing integration on MapKit.",
-      "WAY GYM": "Gym workout tracking and management app for fitness enthusiasts.",
-      "MyLoveCoffee (myCafe)": "Location-based cafe search and review platform. Map-based web application using Kakao Map API.",
-      "React-shop": "React-based shopping mall project. Modern web development using Vite + Tailwind CSS."
-    },
-    "projectConnections": {
-      "Show(X)": "Applied web map API experience to MapKit learning.",
-      "kip!": "Extended React component reusability concept to SwiftUI View Modifier. Applied web UX patterns to native apps.",
-      "ReToU (오늘의 넌)": "Applied React state management patterns to SwiftUI data flow.",
-      "DisplayCut": "Utilized web development workflow knowledge for macOS app architecture.",
-      "Rootrip": "Combined web map interaction experience with native drawing capabilities.",
-      "WAY GYM": "Applied responsive web design principles to adaptive iOS layouts.",
-      "HOTSPOT": "Transitioned React real-time data processing experience to SwiftUI Combine. Applied web map API experience to MapKit utilization.",
-      "SleepTrain": "Transitioned React data visualization library experience to Swift Charts. Utilized state management patterns.",
-      "MyLoveCoffee (myCafe)": "Leveraged map and location-based search experience from this web project for iOS MapKit learning. Transitioned API communication patterns to URLSession.",
-      "React-shop": "Directly applied React component design experience to SwiftUI View structure. useState patterns accelerated @State learning."
+    "labels": {
+      "what": "What:",
+      "problem": "Problem:",
+      "solution": "Solution:",
+      "result": "Result:"
     },
     "projectDetails": {
       "Show(X)": {
@@ -227,56 +213,6 @@
         "role": "iOS Developer (Personal Project)",
         "duration": "2025.04 - 2025.06"
       },
-      "DisplayCut": {
-        "description": "macOS window management utility app for enhanced productivity.",
-        "features": [
-          "6 layout presets (split-half, split-third, center focus, etc.)",
-          "Precise window positioning with Accessibility API",
-          "Complete keyboard control with 10 shortcuts",
-          "Fast 1-second window arrangement"
-        ],
-        "highlights": [
-          "Problem: Developer personally spent average 15 minutes daily on window arrangement during multi-window work. Mission Control usage below 20%.",
-          "Action: Implemented 6 layout presets (split-half, split-third, center focus, etc.) with SwiftUI + AppKit-based macOS app (handled 100% of development). Positioned active windows with precise coordinates and sizes within 1 second using Accessibility API. Designed complete keyboard-only control with 10 shortcut settings.",
-          "Result: 80% reduction in window arrangement time based on personal usage (15min → 3min/day). Understanding of macOS Accessibility API and window management mechanisms. Secured SwiftUI desktop app design and deployment experience."
-        ],
-        "role": "iOS Developer (Personal Project)",
-        "duration": "2025.06 - 2025.08"
-      },
-      "HOTSPOT": {
-        "description": "AI-based wildfire early detection and community alert system. Junction 2025 hackathon project combining citizen reports with AI predictions for wildfire response.",
-        "features": [
-          "Instant camera launch for swift wildfire reporting",
-          "10km radius automatic community alert system",
-          "3-level evacuation guide (immediate/prepare/monitor)",
-          "Radar-style wildfire proximity visualization",
-          "Shelter location guidance and map app integration",
-          "AI accuracy improvement (regional risk index + satellite data)"
-        ],
-        "highlights": [
-          "Problem: 300+ annual wildfire incidents in Gyeongsangbuk-do, average 20-minute golden time delay due to information scattered across 5+ channels. Recent wildfires in Gyeongbuk region caused significant casualties.",
-          "Action: Real-time integration of 3 sources: FIRMS satellite data + Azure AI + Korea Forest Service API during 48-hour hackathon. Implemented 10km radius community alert system with MapKit (handled 100% of iOS development). Completed MVP with SwiftUI + Combine asynchronous data stream processing. Handled 60% of iOS development in 4-person team.",
-          "Result: \"Field applicability\" mentor feedback at Junction 2025 hackathon demo. Secured rapid prototyping and data pipeline design capabilities by integrating 3 external APIs within 48 hours."
-        ],
-        "role": "iOS Developer (Team Project / Development Lead)",
-        "duration": "2025 (Junction Hackathon)"
-      },
-      "SleepTrain": {
-        "description": "Screen time sleep induction application. Sleep induction app through screen time enforcement.",
-        "features": [
-          "Daily/weekly/monthly screen time tracking",
-          "App-specific usage time analysis and visualization",
-          "Insights for usage habit improvement",
-          "Goal setting and notification features"
-        ],
-        "highlights": [
-          "Problem: 12 test users averaged 2 AM sleep time, 90-minute smartphone usage before bed causing sleep deprivation. Increasingly late sleep times due to SNS/games.",
-          "Action: Implemented app usage restriction after midnight with Screen Time API (handled 40% of development). Visualized daily/weekly/monthly usage patterns with Swift Charts. Improved UX twice with gradual notification and suggestion approach reflecting test user feedback about \"forced blocking stress\".",
-          "Result: 45% reduction in screen usage after midnight for test users (90min → 50min). 80% satisfaction with \"NFC tag screen lock\". Secured behavioral change induction UX and data feedback design experience."
-        ],
-        "role": "iOS Developer (Team Project / Development Lead)",
-        "duration": "2025.09"
-      },
       "Rootrip": {
         "description": "Travel planning and productivity app using MapKit and PencilKit. iPad OS app development based on MVVM architecture.",
         "features": [
@@ -293,62 +229,41 @@
         "role": "iOS Developer (Team Project / Development Lead)",
         "duration": "2025.07 - 2025.08"
       },
-      "WAY GYM": {
-        "description": "Location-based territory conquest game app. Apple Developer Academy @ POSTECH Challenge 3 project.",
-        "features": [
-          "Real-time location tracking and territory conquest mechanism",
-          "Map-based gamification",
-          "User competition and ranking system",
-          "Territory expansion strategy gameplay"
-        ],
+      "SmartEdge": {
+        "description": "macOS menu-bar app that turns the MacBook notch into a micro-workspace (music, calendar, file shelf, Pomodoro). Free + Pro IAP on the Mac App Store.",
         "highlights": [
-          "Problem: 1 test user averaged 30 minutes weekly exercise time, high exercise barriers due to \"exercise is boring\", \"lack of time\", \"game addiction\".",
-          "Action: Implemented real-time territory coloring mechanism for walked areas with CoreLocation + MapKit (handled PM and design). Optimized battery consumption with CLLocationManager (40% reduction through location update cycle adjustment). Participated in character design while managing 6-person team project as PM and character designer.",
-          "Result: 35% average increase in weekly movement distance for test users. 85% satisfaction with \"going out to play games\". Secured healthcare domain gamification UX and battery optimization experience."
-        ],
-        "role": "Project Manager (Team Project - 3 people / PM and Design Lead)",
-        "duration": "2025.06 - 2025.07"
+          "Problem: Checking music, sharing files and viewing schedules each required switching apps; the notch was dead space, and always-on-top UI collides with macOS system constraints (sandbox, TCC, window levels).",
+          "Action: Combined AppKit window-level control with SwiftUI; resolved kernel-level sandbox blocking of Apple Events via targeted exception entitlements; made drag & drop work by dynamically lowering the window level; built a free + Pro IAP model with StoreKit 2 and shipped worldwide in KO/EN.",
+          "Result: Passed Mac App Store review and shipped; operating v1.1 with global hotkeys and multi-file sharing — completed the full planning → development → review → monetization → operations cycle solo."
+        ]
       },
-      "MyLoveCoffee (myCafe)": {
-        "description": "Location-based cafe search and review platform. Map-based web application using Kakao Map API.",
-        "features": [
-          "Current location-based nearby cafe search and filtering",
-          "Cafe review writing/editing and Best Reviewer TOP 10 selection",
-          "Kakao Mobility API integration for car navigation",
-          "Nationwide regional cafe search functionality",
-          "Remix.js + Prisma + SQLite full-stack implementation"
-        ],
+      "DisplayCut": {
+        "description": "macOS window management utility with 6 layout presets and 10 hotkeys, arranging all active windows within a second via the Accessibility API.",
         "highlights": [
-          "Problem: 20 test users used average 3 apps for \"finding atmospheric cafes\", spending average 10 minutes on search time.",
-          "Action: Implemented current location-based cafe search and filtering with Kakao Map API integration (handled 100% of development). Secured type safety with TypeScript and designed full-stack architecture with Remix.js + Prisma + SQLite. Implemented cafe review CRUD and Best Reviewer TOP 10 aggregation logic. Completed mobile/desktop responsive UI with Tailwind CSS.",
-          "Result: 85% satisfaction with \"map + review integration makes selection enjoyable\". Location-based search and map API experience from this project became direct foundation for subsequent iOS MapKit projects (Show(X), Rootrip)."
-        ],
-        "role": "Full-stack Developer (Personal Project)",
-        "duration": "2024.06"
-      },
-      "React-shop": {
-        "description": "React-based shopping mall project. Modern web development using Vite + Tailwind CSS.",
-        "features": [
-          "React component-based shopping mall UI",
-          "Fast development environment using Vite",
-          "Responsive design implementation with Tailwind CSS",
-          "Vercel deployment automation"
-        ],
-        "highlights": [
-          "Problem: Needed project to practice component design, state management, and routing at actual service level during React learning.",
-          "Action: Implemented product list, detail, cart, filter/sort functionality with React + Vite + Tailwind CSS (handled 100% of development). Secured reusability by separating 15+ components into small units. Practiced global state management with useState/useContext. Set up Vercel deployment automation.",
-          "Result: Applied React component-based architecture and state management concepts in practice. This experience accelerated SwiftUI View hierarchical structure and @State/@ObservedObject learning by 3x. Secured foundation for naturally transitioning web declarative UI experience to iOS."
-        ],
-        "role": "Frontend Developer (Personal Project)",
-        "duration": "2024.04"
+          "Problem: Multi-window work consumed ~15 minutes a day on window arrangement; Mission Control usage stayed under 20%.",
+          "Action: Implemented 6 layout presets with SwiftUI + AppKit; used the Accessibility API to arrange all active windows within 1 second; designed 10 hotkeys for keyboard-only control.",
+          "Result: Reduced daily window-arrangement time by 80% (15 → 3 min); built deep understanding of the macOS Accessibility API and window management mechanics."
+        ]
       }
+    },
+    "projectDescriptions": {
+      "Show(X)": "Indoor map app for Showcase 2025. Navigation and information app for Apple Developer Academy event participants.",
+      "kip!": "On-device AI-based screenshot auto-organization productivity app. Local AI processing with privacy protection.",
+      "ReToU (오늘의 넌)": "Smart daily routine and habit tracking app using SwiftUI's declarative UI patterns.",
+      "Rootrip": "Travel route planning app with PencilKit drawing integration on MapKit."
+    },
+    "projectConnections": {
+      "Show(X)": "Applied web map API experience to MapKit learning.",
+      "kip!": "Extended React component reusability concept to SwiftUI View Modifier. Applied web UX patterns to native apps.",
+      "ReToU (오늘의 넌)": "Applied React state management patterns to SwiftUI data flow.",
+      "Rootrip": "Combined web map interaction experience with native drawing capabilities."
     },
     "emphasisText": "React/Vue.js experience is integrated into all iOS projects"
   },
   "contact": {
     "title": "Ready to work together?",
     "description": {
-      "line1": "Partner with a T-shaped developer who brings web expertise to iOS development.",
+      "line1": "Work with an iOS/macOS developer proven by shipped, live products.",
       "line2": "Open to new opportunities and exciting collaborations."
     },
     "buttons": {
@@ -369,13 +284,12 @@
       "achievements": "Key Achievements"
     },
     "summary": {
-      "text1": "Began web frontend development in 2024, completing React/TypeScript full-stack projects before transitioning to iOS development through Apple Developer Academy @POSTECH in 2025. Published 4 apps on the App Store within 6 months (2 personal, 2 team projects), with a total portfolio of 8 iOS apps and 2 web projects.",
-      "text2": "Key Achievements: 8 iOS apps developed with SwiftUI and UIKit | First approved Apple Indoor Map implementation in Korea | macOS window management service development | On-device AI and location-based service implementation"
+      "text1": "Shipped 7 iOS/macOS apps in two years; SmartEdge (v1.1) and ReToU (v2.0) are live products I design, build, release and maintain end-to-end. Trained in development, design, planning and collaboration at Apple Developer Academy @POSTECH, and led development on Show(X), earning Korea's first Apple Indoor Map approval.",
+      "text2": "Key achievements: 7 app releases (incl. review/rejection handling) | Korea's first Apple Indoor Map approval | App Store Navigation #37 · Productivity #66 | StoreKit 2 monetization in live operation | on-device AI and location-based services"
     },
     "skillCategories": {
       "ios": "iOS Development:",
-      "web": "Web Frontend:",
-      "tools": "Styling & Tools:"
+      "tools": "Release & Infra:"
     },
     "education": [
       {
@@ -406,7 +320,7 @@
       }
     ],
     "contact": {
-      "location": "Pohang, South Korea"
+      "location": "Yangju, South Korea"
     },
     "achievements": [
       "Published 2 team project apps on App Store (Show(X), kip!) - Over 200 downloads",
@@ -414,7 +328,7 @@
       "First domestic approval and development case of Apple Maps Indoor Map (Show(X))",
       "3rd place in Junction 2025 hackathon track - AI-based wildfire detection system development",
       "Experience developing 8 iOS apps (6 SwiftUI, 2 UIKit)",
-      "Fast technology transition from web to iOS (based on declarative UI patterns)"
+      "Live operation of SmartEdge & ReToU — release, maintenance and version updates (v1.1/v2.0)"
     ],
     "footer": {
       "portfolio": "Portfolio:",
