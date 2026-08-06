@@ -113,7 +113,7 @@ export default function Home() {
             <img
               src={`${process.env.NODE_ENV === 'production' ? '/iOS-Portfolio' : ''}/images/profile.jpg`}
               alt={ko ? '정송헌 프로필 사진' : 'Portrait of Songheon Jeong'}
-              className="hidden sm:block w-20 h-20 rounded-2xl object-cover object-top border border-ios-gray-100 dark:border-ios-gray-700"
+              className="hidden sm:block w-32 h-32 rounded-2xl object-cover object-top border border-ios-gray-100 dark:border-ios-gray-700"
             />
             <div>
               <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight">
@@ -128,7 +128,7 @@ export default function Home() {
                 )}
               </p>
               <div className="flex flex-wrap gap-x-5 gap-y-1.5 mt-4 text-[13px] text-ios-gray-500 dark:text-ios-gray-400">
-                <span>{ko ? '포항, 대한민국' : 'Pohang, South Korea'}</span>
+                <span>{ko ? '양주, 대한민국' : 'Yangju, South Korea'}</span>
                 <a href="mailto:gmlwns5504@naver.com" className="border-b border-ios-gray-200 hover:text-ios-gray-900 dark:hover:text-white hover:border-ios-gray-400">gmlwns5504@naver.com</a>
                 <a href="https://github.com/whatdoIsa" target="_blank" rel="noopener noreferrer" className="border-b border-ios-gray-200 hover:text-ios-gray-900 dark:hover:text-white hover:border-ios-gray-400">github.com/whatdoIsa</a>
               </div>
