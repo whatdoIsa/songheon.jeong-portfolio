@@ -140,7 +140,7 @@ export default function CaseDoc({ slug }) {
           {cs.troubleshooting.map((ts, i) => (
             <div key={i}>
               <DocH2 no={no()}>
-                {ko ? '트러블슈팅 — ' : 'Troubleshooting — '}
+                {ko ? '트러블슈팅 — ' : 'Troubleshooting: '}
                 {pick(ts.title)}
               </DocH2>
               <Callout label={ko ? '문제 발견' : 'Found'}>{pick(ts.found)}</Callout>

@@ -19,7 +19,7 @@
       "line1": "Leveraging web frontend experience in declarative UI patterns,",
       "line2": "I'm a T-shaped iOS developer specializing in SwiftUI and UIKit."
     },
-    "intro": "Hello, I'm Dean (Jeong SongHeon).",
+    "intro": "Hello, I'm Songheon Jeong (Dean).",
     "values": {
       "declarative": "Declarative UI Master",
       "learning": "Fast Learning Ability",
@@ -33,7 +33,7 @@
   },
   "skills": {
     "title": "How Web Experience Accelerates iOS Development",
-    "subtitle": "More than just \"knowing both platforms\" —",
+    "subtitle": "More than just \"knowing both platforms.\"",
     "subtitleHighlight": "web development experience significantly accelerates iOS learning",
     "subtitleEnd": ".",
     "categories": {
@@ -172,7 +172,7 @@
           "App Store Navigation Chart #37"
         ],
         "highlights": [
-          "Problem: GPS fails indoors — wayfinding questions from 200+ attendees bottlenecked operations.",
+          "Problem: GPS fails indoors, so wayfinding questions from 200+ attendees bottlenecked operations.",
           "Action: earned Korea's first Apple Indoor Map approval via floor/zone/booth GeoJSON modeling; solely built the indoor-map module (50%), 5 in-event updates.",
           "Result: on-site inquiries down 40% · App Store Navigation chart #37."
         ],
@@ -189,7 +189,7 @@
           "App Store Productivity #66"
         ],
         "highlights": [
-          "Problem: ~5 minutes to find anything in 300+ screenshots — 70% rejected cloud AI over privacy.",
+          "Problem: ~5 minutes to find anything in 300+ screenshots, and 70% rejected cloud AI over privacy.",
           "Action: built an on-device Vision + Apple Intelligence classification pipeline (40% of dev, 85% accuracy) with a no-server SwiftData architecture.",
           "Result: organizing time down 60% (5→2 min) · 95% satisfaction · Productivity chart #66."
         ],
@@ -206,11 +206,11 @@
           "Light/dark mode support and local storage"
         ],
         "highlights": [
-          "Problem: 8 of 10 users drop journaling within 3 days — input burden vs. reflective value.",
+          "Problem: 8 of 10 users drop journaling within 3 days; the input burden outweighs the reflective value.",
           "Action: designed a 30-second one-question flow (100%), the v2.0 'emotion seal' redesign, login-free CloudKit backup + Face ID lock.",
           "Result: 70% 30-day retention (3× typical) · operated through v2.0 for a year."
         ],
-        "role": "Solo project — planning, development & design 100%",
+        "role": "Solo project. Planning, development and design, 100%.",
         "duration": "2025.04 - 2025.06"
       },
       "Rootrip": {
@@ -223,7 +223,7 @@
         ],
         "highlights": [
           "Problem: ~20 minutes juggling map, notes and schedule apps to grasp a route.",
-          "Action: owned the PencilKit drawing system — canvas→MapKit coordinate conversion, closed-shape detection, undo/redo, persistence.",
+          "Action: owned the PencilKit drawing system: canvas→MapKit coordinate conversion, closed-shape detection, undo/redo, persistence.",
           "Result: route-planning time down 60% (20→8 min) · 90% satisfaction."
         ],
         "role": "Team of 6 / owned the PencilKit drawing system",
@@ -232,11 +232,11 @@
       "SmartEdge": {
         "description": "macOS menu-bar app that turns the MacBook notch into a micro-workspace (music, calendar, file shelf, Pomodoro). Free + Pro IAP on the Mac App Store.",
         "highlights": [
-          "Problem: constant app-switching for music, schedule and files — the notch sat unused.",
+          "Problem: constant app-switching for music, schedule and files, while the notch sat unused.",
           "Action: built the notch UI with AppKit window-level control + SwiftUI, resolving sandbox/TCC constraints; shipped KO/EN with a StoreKit 2 free+Pro model.",
-          "Result: live on the Mac App Store at v1.1 — full cycle from planning to operations, solo."
+          "Result: live on the Mac App Store at v1.1, a full cycle from planning to operations, solo."
         ],
-        "role": "Solo project — planning, development, design, release & ops 100%"
+        "role": "Solo project. Planning, development, design, release and operations, 100%."
       }
     },
     "projectDescriptions": {
@@ -265,7 +265,7 @@
     }
   },
   "resume": {
-    "title": "Jeong SongHeon (Dean)",
+    "title": "Songheon Jeong (Dean)",
     "subtitle": "iOS Developer Creating Apps That Seamlessly Integrate into Daily Life",
     "download": "Save as PDF",
     "downloadHint": "Click to download PDF file immediately",
@@ -277,7 +277,7 @@
       "achievements": "Key Achievements"
     },
     "summary": {
-      "text1": "Carried 7 apps from planning to release in two years — SmartEdge (macOS) and ReToU (iOS) are live services I still update and operate myself. As development lead I earned Korea's first-ever Apple Indoor Map approval and took the app to #37 on the App Store navigation chart. Design, review handling, monetization, operations — I've run the full app lifecycle both solo and in teams.",
+      "text1": "Carried 7 apps from planning to release in two years. SmartEdge (macOS) and ReToU (iOS) are live services I still update and operate myself. As development lead I earned Korea's first-ever Apple Indoor Map approval and took the app to #37 on the App Store navigation chart. Across design, review handling, monetization and operations, I've run the full app lifecycle both solo and in teams.",
       "text2": "Key achievements: 7 app releases (incl. review/rejection handling) | Korea's first Apple Indoor Map approval (dev lead) | App Store Navigation #37 · Productivity #66 | designed SmartEdge's free + paid Pro (in-app purchase) model, selling on the Mac App Store | ReToU 30-day retention 70% (3× typical journaling apps)"
     },
     "skillCategories": {
@@ -288,7 +288,7 @@
       {
         "name": "Apple Developer Academy @ POSTECH",
         "period": "2025.03 ~ 2025.12",
-        "description": "Intensive Apple-ecosystem program — development, design, communication, planning",
+        "description": "Intensive Apple-ecosystem program covering development, design, communication and planning",
         "details": [
           "Completed 6 challenge projects (Show(X), kip!, Rootrip and more) · ran showcase operations for 200+ attendees"
         ]
@@ -296,7 +296,7 @@
       {
         "name": "Zerobase Frontend School",
         "period": "2024.02 ~ 2024.09",
-        "description": "React/TypeScript web development — component architecture, team collaboration"
+        "description": "React/TypeScript web development: component architecture, team collaboration"
       },
       {
         "name": "Silla University, Computer Education",
@@ -311,25 +311,26 @@
       {
         "name": "Military service",
         "period": "2021.03 ~ 2022.09",
-        "description": "Republic of Korea Army — honorably discharged as sergeant"
+        "description": "Republic of Korea Army, honorably discharged as sergeant"
       }
     ],
     "contact": {
       "location": "Yangju, South Korea"
     },
     "achievements": [
-      "Carried 7 apps from planning to release — SmartEdge (v1.1) and ReToU (v2.0) in live operation and maintenance",
+      "Carried 7 apps from planning to release; SmartEdge (v1.1) and ReToU (v2.0) in live operation and maintenance",
       "Korea's first Apple Indoor Map approval and development (Show(X), development lead)",
       "App Store Navigation chart #37 (Show(X)) · Productivity chart #66 (kip!)",
-      "Designed SmartEdge's free + paid Pro (in-app purchase) model — selling on the Mac App Store"
+      "Designed SmartEdge's free + paid Pro (in-app purchase) model, now selling on the Mac App Store"
     ],
     "footer": {
       "portfolio": "Portfolio:",
       "downloadDescription": "Click 'Save as PDF' (top right) and choose 'Save as PDF' in the print dialog."
-    }
+    },
+    "copyright": "© 2025 Songheon Jeong. All rights reserved."
   },
   "footer": {
-    "copyright": "© 2025 Jung Song-Heon (Dean). All rights reserved.",
+    "copyright": "© 2025 Songheon Jeong. All rights reserved.",
     "madeWith": "Built with Next.js"
   }
 }
