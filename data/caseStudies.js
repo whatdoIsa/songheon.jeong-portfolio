@@ -399,7 +399,9 @@ export const caseStudies = [
     },
     stack: ['SwiftUI', 'SwiftData · CloudKit', 'WidgetKit', 'StoreKit 2', 'Swift Package (엔진 분리)'],
     shots: [],
-    links: {},
+    links: {
+      appstore: { url: 'https://apps.apple.com/kr/app/seed-%ED%88%AC%EC%9E%90-%EC%97%B0%EC%8A%B5%EC%9E%A5/id6789554674', label: { ko: 'App Store', en: 'App Store' } },
+    },
     problem: {
       ko: '',
       en: '',
