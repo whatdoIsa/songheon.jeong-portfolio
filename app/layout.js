@@ -7,7 +7,11 @@ import { I18nProvider } from '@/lib/i18n';
 const SITE_DESCRIPTION =
   'SwiftUI로 iOS·macOS 앱을 설계하고 App Store 출시와 운영까지 책임지는 개발자 정송헌의 포트폴리오입니다. 앱 개발, QA, 배포, 유지보수와 AI 개발 워크플로 경험을 소개합니다.';
 
+const SITE_URL = 'https://whatdoisa.github.io/iOS-Portfolio/';
+const OG_IMAGE = 'https://whatdoisa.github.io/iOS-Portfolio/og.png';
+
 export const metadata = {
+  metadataBase: new URL(SITE_URL),
   title: '정송헌 (Dean) | iOS·macOS Developer',
   description: SITE_DESCRIPTION,
   keywords: [
@@ -34,6 +38,14 @@ export const metadata = {
     type: 'website',
     locale: 'ko_KR',
     siteName: 'Dean Portfolio',
+    url: SITE_URL,
+    images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: '정송헌 (Dean) — iOS·macOS Developer' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: '정송헌 (Dean) | iOS·macOS Developer',
+    description: SITE_DESCRIPTION,
+    images: [OG_IMAGE],
   },
   robots: {
     index: true,
