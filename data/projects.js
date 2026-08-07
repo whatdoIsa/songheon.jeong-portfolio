@@ -43,7 +43,7 @@ export const projects = [
     highlights: [
       'Problem: 200+ participants at Showcase event struggled with indoor navigation and booth locations, creating burden on guidance staff and dispersed event experience.',
       'Action: Implemented floor/zone/booth level data modeling with MapKit Indoor Positioning API and GeoJSON-based custom overlays. Independently developed indoor map module in SwiftUI (handled 50% of total development), iterated 5 updates for improvement, and completed Korean/English localization through Figma-based collaboration with 6 planners and designers.',
-      'Result: 40% reduction in on-site guidance inquiries during Showcase period, achieved Korea\'s first approval for Apple Indoor Map. Secured indoor navigation domain expertise through 5 updates. Achieved App Store Navigation Chart #37.'
+      'Result: 40% reduction in on-site guidance inquiries during Showcase period (200+ attendees), achieved Korea\'s first approval for Apple Indoor Map. Secured indoor navigation domain expertise through 5 updates. Achieved App Store Navigation Chart #37.'
     ]
   },
   {
@@ -75,7 +75,7 @@ export const projects = [
     highlights: [
       'Problem: 15 test users averaged 300+ saved screenshots, taking average 5 minutes to find needed information. Cloud AI had 70% rejection rate due to privacy concerns. 68% frequently forgot and missed saved information.',
       'Action: Implemented on-device image classification pipeline with Apple Intelligence Writing Tools API and Vision framework (handled 40% of total development) achieving 85% accuracy. Optimized asynchronous processing with SwiftUI Combine. Designed complete privacy-assured architecture with SwiftData-based local storage.',
-      'Result: 60% reduction in screenshot organization time for test users (5min → 2min). 95% satisfaction with "no server transmission, feels secure". Secured balance between on-device AI design, performance, and privacy. Introduced Gemini & GPT for Apple Intelligence unavailable cases. Achieved App Store Productivity #66.'
+      'Result: 60% reduction in screenshot organization time for 15 test users (5min → 2min). 95% satisfaction with "no server transmission, feels secure". Secured balance between on-device AI design, performance, and privacy. Introduced Gemini & GPT for Apple Intelligence unavailable cases. Achieved App Store Productivity #66.'
     ]
   },
   {
@@ -104,7 +104,7 @@ export const projects = [
     highlights: [
       'Problem: 8 out of 10 test users "couldn\'t sustain diary writing for more than 3 days due to burden", emotion check apps led to dropout with "can\'t recall reasons after 30 days".',
       'Action: Designed UX with minimal input structure of "daily 1 question + emotion selection" (handled 100% of development) providing burden-free input experience with average 30-second writing time. Implemented date-wise and emotion-wise statistical visualization with Swift Charts. Ensured complete privacy with Face ID security and local storage. Reflected test user feedback 3 times for UI improvements.',
-      'Result: Achieved 70% 30-day retention rate (3x compared to existing diary apps). 85% satisfaction with "can see emotional patterns". Secured local data-based wellbeing app UX design and implementation experience.'
+      'Result: Achieved 70% 30-day retention rate (early cohort; 3x existing diary apps). 85% satisfaction (10 test users) with "can see emotional patterns". Secured local data-based wellbeing app UX design and implementation experience.'
     ]
   },
   {
@@ -131,7 +131,7 @@ export const projects = [
     highlights: [
       'Problem: 8 test users spent 20 minutes understanding routes by switching between average 3 apps (map/memo/schedule) when planning trips.',
       'Action: Implemented direct drawing interaction on maps by combining MapKit + PencilKit (handled PencilKit + MapKit development). Designed StrokeData model for drawing data save/restore. Separated map state/schedule/bookmarks with MVVM architecture, achieved multi-device sync with Firebase Firestore integration.',
-      'Result: 60% reduction in route planning time for test users (20min → 8min). 90% satisfaction with "intuitive planning while viewing map". Secured complex domain (map, drawing, schedule) state management and Firebase integration experience.'
+      'Result: 60% reduction in route planning time for 8 test users (20min → 8min). 90% satisfaction with "intuitive planning while viewing map". Secured complex domain (map, drawing, schedule) state management and Firebase integration experience.'
     ]
   },
 ];

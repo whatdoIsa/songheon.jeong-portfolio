@@ -174,7 +174,7 @@
         "highlights": [
           "Problem: GPS fails indoors, so wayfinding questions from 200+ attendees bottlenecked operations.",
           "Action: earned Korea's first Apple Indoor Map approval via floor/zone/booth GeoJSON modeling; solely built the indoor-map module (50%), 5 in-event updates.",
-          "Result: on-site inquiries down 40% · App Store Navigation chart #37."
+          "Result: on-site inquiries down 40% (200+ attendees) · App Store Navigation chart #37."
         ],
         "role": "Team of 6 / development lead (50%)",
         "duration": "2025.09 - 2025.11"
@@ -191,7 +191,7 @@
         "highlights": [
           "Problem: ~5 minutes to find anything in 300+ screenshots, and 70% rejected cloud AI over privacy.",
           "Action: built an on-device Vision + Apple Intelligence classification pipeline (40% of dev, 85% accuracy) with a no-server SwiftData architecture.",
-          "Result: organizing time down 60% (5→2 min) · 95% satisfaction · Productivity chart #66."
+          "Result: organizing time down 60% (5→2 min) · 95% satisfaction (15 testers) · Productivity chart #66."
         ],
         "role": "Team of 6 / 1 of 3 developers (40%)",
         "duration": "2025.09 - 2025.11"
@@ -208,7 +208,7 @@
         "highlights": [
           "Problem: 8 of 10 users drop journaling within 3 days; the input burden outweighs the reflective value.",
           "Action: designed a 30-second one-question flow (100%), the v2.0 'emotion seal' redesign, login-free CloudKit backup + Face ID lock.",
-          "Result: 70% 30-day retention (3× typical) · operated through v2.0 for a year."
+          "Result: 70% 30-day retention (early cohort · 3× typical) · operated through v2.0 for a year."
         ],
         "role": "Solo project. Planning, development and design, 100%.",
         "duration": "2025.04 - 2025.06"
@@ -224,7 +224,7 @@
         "highlights": [
           "Problem: ~20 minutes juggling map, notes and schedule apps to grasp a route.",
           "Action: owned the PencilKit drawing system: canvas→MapKit coordinate conversion, closed-shape detection, undo/redo, persistence.",
-          "Result: route-planning time down 60% (20→8 min) · 90% satisfaction."
+          "Result: route-planning time down 60% (20→8 min) · 90% satisfaction (8 testers)."
         ],
         "role": "Team of 6 / owned the PencilKit drawing system",
         "duration": "2025.07 - 2025.08"
