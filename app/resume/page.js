@@ -242,8 +242,8 @@ export default function Resume() {
         </footer>
       </div>
 
-      {/* PDF 저장 버튼 (인쇄 시 숨김) */}
-      <div className="fixed top-20 right-4 print:hidden">
+      {/* PDF 저장 버튼 (인쇄 시 숨김) — 모바일: 하단 우측 플로팅 / 데스크톱: 상단 우측. z-50으로 항상 최상위. */}
+      <div className="fixed z-50 right-4 bottom-6 sm:bottom-auto sm:top-20 print:hidden">
         <button
           onClick={handleDownloadPDF}
           className="bg-ios-gray-900 text-white dark:bg-white dark:text-ios-gray-900 px-5 py-2.5 rounded-xl shadow-lg text-sm font-bold hover:opacity-85 transition-opacity"
