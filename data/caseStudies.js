@@ -194,7 +194,7 @@ export const caseStudies = [
       },
     ],
     resultTiles: [
-      { big: { ko: '-40%', en: '-40%' }, small: { ko: '행사 기간 현장 안내 문의', en: 'On-site guidance inquiries' } },
+      { big: { ko: '-40%', en: '-40%' }, small: { ko: '현장 안내 문의 (참가자 200+명)', en: 'On-site inquiries (200+ attendees)' } },
       { big: { ko: '국내 최초', en: 'Korea-first' }, small: { ko: 'Apple Indoor Map 승인', en: 'Apple Indoor Map approval' } },
       { big: { ko: '#37', en: '#37' }, small: { ko: 'App Store 내비게이션 차트', en: 'App Store navigation chart' } },
     ],
@@ -282,7 +282,7 @@ export const caseStudies = [
     ],
     resultTiles: [
       { big: { ko: '-60%', en: '-60%' }, small: { ko: '정리 시간 (5분 → 2분)', en: 'Organizing time (5 → 2 min)' } },
-      { big: { ko: '95%', en: '95%' }, small: { ko: '"안심된다" 만족도', en: '"Feels safe" satisfaction' } },
+      { big: { ko: '95%', en: '95%' }, small: { ko: '"안심된다" 만족도 (테스트 15명)', en: '"Feels safe" (15 testers)' } },
       { big: { ko: '#66', en: '#66' }, small: { ko: 'App Store 생산성 차트', en: 'App Store productivity chart' } },
     ],
   },
@@ -375,8 +375,8 @@ export const caseStudies = [
       },
     ],
     resultTiles: [
-      { big: { ko: '70%', en: '70%' }, small: { ko: '30일 지속률 (기존 대비 3배)', en: '30-day retention (3× typical)' } },
-      { big: { ko: '85%', en: '85%' }, small: { ko: '"패턴이 보인다" 만족도', en: '"I see patterns" satisfaction' } },
+      { big: { ko: '70%', en: '70%' }, small: { ko: '30일 지속률 · 초기 코호트 (기존 3배)', en: '30-day retention · early cohort (3× typical)' } },
+      { big: { ko: '85%', en: '85%' }, small: { ko: '"패턴이 보인다" 만족도 (테스트 10명)', en: '"I see patterns" (10 testers)' } },
       { big: { ko: 'v2.0', en: 'v2.0' }, small: { ko: '1년간 지속 운영·개선', en: 'A year of live operation' } },
     ],
   },
@@ -441,8 +441,8 @@ export const caseStudies = [
     },
     actions: { ko: [], en: [] },
     result: {
-      ko: '경로 계획 시간 60% 단축 (20분 → 8분) · "지도를 보며 직관적으로 계획된다" 만족도 90%.',
-      en: 'Route-planning time down 60% (20 → 8 min); 90% satisfaction on "planning feels intuitive on the map."',
+      ko: '테스트 사용자 8명 기준 — 경로 계획 시간 60% 단축 (20분 → 8분) · "지도를 보며 직관적으로 계획된다" 만족도 90%.',
+      en: 'With 8 test users — route-planning time down 60% (20 → 8 min); 90% satisfaction on "planning feels intuitive on the map."',
     },
     architecture: null,
     troubleshooting: [],
