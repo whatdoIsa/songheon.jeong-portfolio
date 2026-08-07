@@ -28,6 +28,7 @@ export const caseStudies = [
     links: {
       appstore: { url: 'https://apps.apple.com/kr/app/smartedge/id6787634027?mt=12', label: { ko: 'App Store', en: 'App Store' } },
       intro: { url: 'https://www.arcseed.kr/ko/products/smartedge', label: { ko: '소개 페이지', en: 'Product page' } },
+      github: { url: 'https://github.com/whatdoIsa/SmartEdge', label: { ko: 'GitHub', en: 'GitHub' } },
     },
     problem: {
       ko: '음악 확인·파일 공유·일정 확인마다 각각 다른 앱으로 전환하는 컨텍스트 스위칭 비용. 노치는 매일 보면서도 아무 기능이 없는 공간 — 그러나 "항상 최상위에 떠 있는 UI"는 macOS 시스템 제약(샌드박스·TCC·윈도우 레벨)과 정면으로 충돌하는 영역.',
@@ -401,6 +402,7 @@ export const caseStudies = [
     shots: [],
     links: {
       appstore: { url: 'https://apps.apple.com/kr/app/seed-%ED%88%AC%EC%9E%90-%EC%97%B0%EC%8A%B5%EC%9E%A5/id6789554674', label: { ko: 'App Store', en: 'App Store' } },
+      github: { url: 'https://github.com/whatdoIsa/SEED', label: { ko: 'GitHub', en: 'GitHub' } },
     },
     problem: {
       ko: '',

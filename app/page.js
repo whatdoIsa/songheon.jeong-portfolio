@@ -103,9 +103,9 @@ export default function Home() {
 
   // 출시·운영 현황 (G) — 출시 여부·운영 여부·담당 범위를 사실대로. 링크는 유효한 것만.
   const operations = [
-    { name: 'SmartEdge', platform: 'macOS', scopeKo: '개인 100%', scopeEn: 'Solo 100%', released: true, operating: true, appstore: 'https://apps.apple.com/kr/app/smartedge/id6787634027?mt=12', github: null },
+    { name: 'SmartEdge', platform: 'macOS', scopeKo: '개인 100%', scopeEn: 'Solo 100%', released: true, operating: true, appstore: 'https://apps.apple.com/kr/app/smartedge/id6787634027?mt=12', github: 'https://github.com/whatdoIsa/SmartEdge' },
     { name: 'ReToU', platform: 'iOS', scopeKo: '개인 100%', scopeEn: 'Solo 100%', released: true, operating: true, appstore: 'https://apps.apple.com/kr/app/re-tou/id6745058969', github: 'https://github.com/whatdoIsa/ReToU' },
-    { name: 'SEED', platform: 'iOS', scopeKo: '개인 100%', scopeEn: 'Solo 100%', released: true, operating: true, appstore: 'https://apps.apple.com/kr/app/seed-%ED%88%AC%EC%9E%90-%EC%97%B0%EC%8A%B5%EC%9E%A5/id6789554674', github: null },
+    { name: 'SEED', platform: 'iOS', scopeKo: '개인 100%', scopeEn: 'Solo 100%', released: true, operating: true, appstore: 'https://apps.apple.com/kr/app/seed-%ED%88%AC%EC%9E%90-%EC%97%B0%EC%8A%B5%EC%9E%A5/id6789554674', github: 'https://github.com/whatdoIsa/SEED' },
     { name: 'Show(X)', platform: 'iOS', scopeKo: '팀 6인 · 개발 리드(50%)', scopeEn: 'Team of 6 · lead (50%)', released: true, operating: false, appstore: 'https://apps.apple.com/kr/app/showx/id6755496321', github: null },
     { name: 'kip!', platform: 'iOS', scopeKo: '팀 6인 · 개발 40%', scopeEn: 'Team of 6 · 40% of dev', released: true, operating: false, appstore: 'https://apps.apple.com/kr/app/kip/id6754709167', github: null },
     { name: 'Rootrip', platform: 'iPadOS', scopeKo: '팀 6인 · PencilKit 전담', scopeEn: 'Team of 6 · owned PencilKit', released: false, operating: false, appstore: null, github: null },

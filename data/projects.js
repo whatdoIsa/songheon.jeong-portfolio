@@ -7,7 +7,7 @@ export const projects = [
     thumbnail: '/images/projects/smartedge/music.jpg',
     description: 'macOS menu-bar app that turns the MacBook notch into a micro-workspace (music, calendar, file shelf, Pomodoro). Free + Pro IAP on the App Store.',
     techStack: ['SwiftUI', 'AppKit', 'App Sandbox', 'StoreKit 2', 'EventKit'],
-    github: null,
+    github: 'https://github.com/whatdoIsa/SmartEdge',
     appstore: 'https://apps.apple.com/kr/app/smartedge/id6787634027?mt=12',
     duration: '2025.12 - 현재',
     role: 'Personal Project (Planning, Development, Design, Release & Ops 100%)',
