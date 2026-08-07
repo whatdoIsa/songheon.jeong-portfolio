@@ -162,6 +162,15 @@
       "result": "Result:"
     },
     "projectDetails": {
+      "SEED": {
+        "description": "A stock-learning app that trains investing habits in a fully synthetic market — no stock picks, no profit promises, no ads, no sign-up. On the App Store.",
+        "highlights": [
+          "Problem: beginners have no safe space to practice order books, fees and price limits without risking real money, while pick/return-promising apps push speculation over learning.",
+          "Action: designed with no picks, no return promises, no ads and no signup; isolated the trading rules (order-book matching, fees, price limits) into a Swift package engine verified by 102 unit tests, plus a 12-lesson curriculum, widgets, iCloud backup and StoreKit 2 — solo.",
+          "Result: launched on the App Store (Aug 2026) — a full-size product whose trading engine is isolated as a testable package for regression stability."
+        ],
+        "role": "Solo project. Planning, development and design, 100%."
+      },
       "Show(X)": {
         "description": "Indoor map app for Showcase 2025. Navigation and information app for Apple Developer Academy event participants.",
         "features": [

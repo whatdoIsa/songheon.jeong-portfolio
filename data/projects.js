@@ -18,6 +18,24 @@ export const projects = [
     ]
   },
   {
+    id: 5,
+    title: 'SEED',
+    category: 'iOS',
+    type: 'SwiftUI',
+    thumbnail: '/images/icons/seed.png',
+    description: 'A stock-learning app that trains investing habits in a fully synthetic market — no stock picks, no profit promises, no ads, no sign-up. On the App Store.',
+    techStack: ['SwiftUI', 'SwiftData', 'CloudKit', 'WidgetKit', 'StoreKit 2', 'Swift Package'],
+    github: 'https://github.com/whatdoIsa/SEED',
+    appstore: 'https://apps.apple.com/kr/app/seed-%ED%88%AC%EC%9E%90-%EC%97%B0%EC%8A%B5%EC%9E%A5/id6789554674',
+    duration: '2026.08 - 현재',
+    role: 'Personal Project (Planning, Development, Design 100%)',
+    highlights: [
+      'Problem: Beginners have no safe place to practice reading order books, fees and price limits without risking real money, while recommendation and return-promising apps push speculation over learning.',
+      'Action: Built on a no-picks, no-return-promise, no-ads, no-signup philosophy; isolated the trading rules (order-book matching, fees, price limits) into a separate Swift package engine verified by 102 unit tests, and shipped a 12-lesson curriculum, WidgetKit widgets, SwiftData/CloudKit iCloud backup and StoreKit 2 — solo.',
+      'Result: Launched on the App Store (Aug 2026); a full-size product whose trading engine is isolated as a testable package for regression stability, owned end to end.'
+    ]
+  },
+  {
     id: 2,
     title: 'Show(X)',
     category: 'iOS',
