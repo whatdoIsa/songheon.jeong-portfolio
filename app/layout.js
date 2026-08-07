@@ -12,11 +12,10 @@ const OG_IMAGE = 'https://whatdoisa.github.io/iOS-Portfolio/og.png';
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),
-  title: '정송헌 (Dean) | iOS·macOS Developer',
+  title: '정송헌 (Dean) | iOS Developer',
   description: SITE_DESCRIPTION,
   keywords: [
     'iOS Developer',
-    'macOS Developer',
     'SwiftUI',
     'UIKit',
     'AppKit',
@@ -33,17 +32,17 @@ export const metadata = {
   creator: 'Dean',
   publisher: 'Dean',
   openGraph: {
-    title: '정송헌 (Dean) | iOS·macOS Developer',
+    title: '정송헌 (Dean) | iOS Developer',
     description: SITE_DESCRIPTION,
     type: 'website',
     locale: 'ko_KR',
     siteName: 'Dean Portfolio',
     url: SITE_URL,
-    images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: '정송헌 (Dean) — iOS·macOS Developer' }],
+    images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: '정송헌 (Dean) — iOS Developer' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: '정송헌 (Dean) | iOS·macOS Developer',
+    title: '정송헌 (Dean) | iOS Developer',
     description: SITE_DESCRIPTION,
     images: [OG_IMAGE],
   },

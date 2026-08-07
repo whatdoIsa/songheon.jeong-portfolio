@@ -160,7 +160,7 @@ export default function Home() {
             <div>
               <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight">
                 {ko ? '정송헌' : 'Songheon Jeong (Dean)'}
-                <span className="text-sm font-semibold text-ios-gray-400 ml-2.5">iOS·macOS Developer</span>
+                <span className="text-sm font-semibold text-ios-gray-400 ml-2.5">iOS Developer</span>
               </h1>
               <p className="mt-2.5 text-[15px] font-semibold text-ios-gray-800 dark:text-ios-gray-100 max-w-xl">
                 {ko

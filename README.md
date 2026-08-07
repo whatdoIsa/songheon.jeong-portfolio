@@ -1,6 +1,6 @@
-# 정송헌 (Dean) — iOS·macOS Developer Portfolio
+# 정송헌 (Dean) — iOS Developer Portfolio
 
-SwiftUI로 제품을 설계하고 App Store 출시와 운영까지 책임지는 iOS/macOS 개발자 정송헌의 포트폴리오입니다.
+SwiftUI로 제품을 설계하고 App Store 출시와 운영까지 책임지는 iOS 개발자 정송헌의 포트폴리오입니다.
 
 개인·팀 프로젝트에서 여러 앱을 출시했고, 현재도 **SmartEdge**(macOS)와 **ReToU**(iOS)를
 직접 업데이트하며 운영하고 있습니다. 빠른 구현뿐 아니라 심사 대응, 사용자 피드백,
