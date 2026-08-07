@@ -3,7 +3,7 @@
 import { useTranslation } from '@/lib/i18n';
 import { AppIcon } from './CaseCard';
 
-// 보조 프로젝트용 컴팩트 카드 (Rootrip · DisplayCut)
+// 보조 프로젝트용 컴팩트 카드 (SEED · Rootrip)
 export default function MiniCard({ cs }) {
   const { locale } = useTranslation();
   const L = locale === 'en' ? 'en' : 'ko';
