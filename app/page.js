@@ -17,16 +17,16 @@ export default function Home() {
   // 채용공고 요건을 첫 화면에서 10초 안에 보여주는 증거 5종 (기술명만이 아니라 실제 프로젝트로 연결)
   const evidence = ko
     ? [
-        ['SwiftUI 제품 개발', 'SmartEdge·Show(X)·kip!·ReToU를 SwiftUI로 설계. macOS는 AppKit 결합.'],
-        ['App Store 출시·업데이트', 'SmartEdge v1.1 · ReToU v2.0 · Show(X) · kip! 심사 통과·운영. 리젝 대응 경험.'],
-        ['QA·현장 안정화', 'Show(X) 행사 중 5회 반복 업데이트, SmartEdge 실기기 QA·시스템 제약 진단.'],
+        ['SwiftUI 제품 개발', 'Show(X)·kip!·ReToU·SEED를 SwiftUI로 설계·출시.'],
+        ['App Store 출시·업데이트', 'ReToU v2.0 · SEED · Show(X) · kip! 심사 통과·운영. 리젝 대응 경험.'],
+        ['QA·현장 안정화', 'Show(X) 행사 중 5회 반복 업데이트, 실기기 QA·심사 리젝 대응 경험.'],
         ['Claude Code 개발·검증', '요구사항→구현→빌드/테스트→diff 직접 리뷰까지 AI 도구를 검증과 함께 사용.'],
         ['Firebase·로컬 우선 아키텍처', 'Rootrip Firestore 동기화, ReToU·kip! SwiftData 로컬 우선 저장.'],
       ]
     : [
-        ['SwiftUI product work', 'SmartEdge, Show(X), kip!, ReToU designed in SwiftUI; AppKit for macOS.'],
-        ['App Store ship & update', 'SmartEdge v1.1, ReToU v2.0, Show(X), kip! reviewed and operated; rejection handling.'],
-        ['QA & field stabilization', '5 in-event updates on Show(X); on-device QA and system-constraint diagnosis on SmartEdge.'],
+        ['SwiftUI product work', 'Show(X), kip!, ReToU, SEED designed and shipped in SwiftUI.'],
+        ['App Store ship & update', 'ReToU v2.0, SEED, Show(X), kip! reviewed and operated; rejection handling.'],
+        ['QA & field stabilization', '5 in-event updates on Show(X); on-device QA and App Store review handling.'],
         ['Claude Code + verification', 'AI used with checks: requirements → build → run tests → review every diff myself.'],
         ['Firebase / local-first', 'Firestore sync in Rootrip; SwiftData local-first storage in ReToU and kip!.'],
       ];
@@ -35,7 +35,7 @@ export default function Home() {
     { big: ko ? '7개' : '7', small: ko ? '완주한 앱 (App Store 출시 5 포함)' : 'apps finished (5 on the App Store)', accent: true },
     { big: ko ? '국내 최초¹' : 'Korea-first¹', small: ko ? 'Apple Indoor Map 승인 (Show(X))' : 'Apple Indoor Map approval (Show(X))', accent: false },
     { big: '#37 · #66²', small: ko ? '내비게이션·생산성 차트' : 'Navigation · productivity charts', accent: true },
-    { big: ko ? '3개 라이브' : '3 live', small: ko ? '직접 운영 중 (SmartEdge·ReToU·SEED)' : 'in live operation (SmartEdge·ReToU·SEED)', accent: false },
+    { big: ko ? '2개 라이브' : '2 live', small: ko ? '직접 운영 중 (ReToU·SEED)' : 'in live operation (ReToU·SEED)', accent: false },
   ];
 
   const skillCols = [
@@ -45,7 +45,7 @@ export default function Home() {
         ? [
             ['SwiftUI', '앱 7개 완주 (App Store 출시 5)'],
             ['UIKit · AppKit', '메뉴바 앱, 윈도우 레벨 제어'],
-            ['App Sandbox · TCC 권한', '샌드박스·권한 제약 대응 (SmartEdge)'],
+            ['App Sandbox · TCC 권한', '샌드박스·권한·윈도우 레벨 제약 대응'],
             ['MapKit', 'Indoor Positioning, GeoJSON'],
             ['PencilKit', '좌표계 변환, 드로잉 영속성'],
             ['Apple Intelligence · Vision', '온디바이스 분류 파이프라인'],
@@ -66,15 +66,15 @@ export default function Home() {
       items: ko
         ? [
             ['QA·안정화 사이클', '실기기 QA, 현장 관찰 기반 5회 업데이트'],
-            ['시스템 제약 해결 경험', '샌드박스·TCC·윈도우 레벨 (SmartEdge)'],
+            ['시스템 제약 해결 경험', '샌드박스·TCC·윈도우 레벨 제약 대응'],
             ['AI 개발 도구 워크플로우', 'Claude Code 기반 개발·검증 자동화'],
-            ['버전 운영·유지보수', 'SmartEdge v1.1 · ReToU v2.0 라이브 운영'],
+            ['버전 운영·유지보수', 'ReToU v2.0 · SEED 라이브 운영'],
           ]
         : [
             ['QA & stabilization cycles', 'device QA, 5 field-driven updates'],
-            ['System-constraint problem solving', 'sandbox · TCC · window levels (SmartEdge)'],
+            ['System-constraint problem solving', 'sandbox · TCC · window levels'],
             ['AI-assisted dev workflow', 'build & verify pipeline on Claude Code'],
-            ['Version ops & maintenance', 'SmartEdge v1.1 · ReToU v2.0 live'],
+            ['Version ops & maintenance', 'ReToU v2.0 · SEED live'],
           ],
     },
     {
@@ -102,9 +102,7 @@ export default function Home() {
   ];
 
   // 출시·운영 현황 (G) — 출시 여부·운영 여부·담당 범위를 사실대로. 링크는 유효한 것만.
-  const operations = [
-    { name: 'SmartEdge', platform: 'macOS', scopeKo: '개인 100%', scopeEn: 'Solo 100%', released: true, operating: true, appstore: 'https://apps.apple.com/kr/app/smartedge/id6787634027?mt=12', github: 'https://github.com/whatdoIsa/SmartEdge' },
-    { name: 'ReToU', platform: 'iOS', scopeKo: '개인 100%', scopeEn: 'Solo 100%', released: true, operating: true, appstore: 'https://apps.apple.com/kr/app/re-tou/id6745058969', github: 'https://github.com/whatdoIsa/ReToU' },
+  const operations = [    { name: 'ReToU', platform: 'iOS', scopeKo: '개인 100%', scopeEn: 'Solo 100%', released: true, operating: true, appstore: 'https://apps.apple.com/kr/app/re-tou/id6745058969', github: 'https://github.com/whatdoIsa/ReToU' },
     { name: 'SEED', platform: 'iOS', scopeKo: '개인 100%', scopeEn: 'Solo 100%', released: true, operating: true, appstore: 'https://apps.apple.com/kr/app/seed-%ED%88%AC%EC%9E%90-%EC%97%B0%EC%8A%B5%EC%9E%A5/id6789554674', github: 'https://github.com/whatdoIsa/SEED' },
     { name: 'Show(X)', platform: 'iOS', scopeKo: '팀 6인 · 개발 리드(50%)', scopeEn: 'Team of 6 · lead (50%)', released: true, operating: false, appstore: 'https://apps.apple.com/kr/app/showx/id6755496321', github: null },
     { name: 'kip!', platform: 'iOS', scopeKo: '팀 6인 · 개발 40%', scopeEn: 'Team of 6 · 40% of dev', released: true, operating: false, appstore: 'https://apps.apple.com/kr/app/kip/id6754709167', github: null },
@@ -116,8 +114,8 @@ export default function Home() {
     ? ['요구사항·실패 조건 정의', '구현 단위 분리', '빌드·정적 오류 확인', '정상·예외·경계 점검', '실기기 테스트', 'App Store 심사 대응', '운영 피드백 → 수정·버전 업데이트']
     : ['Define requirements & failure cases', 'Split into small units', 'Build & static-error check', 'Normal/exception/boundary checks', 'Real-device testing', 'App Store review handling', 'Feedback → fix & version update'];
   const qaBasis = ko
-    ? '실제 근거: SmartEdge 실기기 QA·심사 대응, Show(X) 현장 관찰 5회 업데이트, ReToU 피드백 3회 반영.'
-    : 'From real work: SmartEdge device QA & review, 5 in-event Show(X) updates, 3 ReToU feedback rounds.';
+    ? '실제 근거: Show(X) 현장 관찰 5회 업데이트, ReToU 피드백 3회 반영, 실기기 QA·심사 리젝 대응.'
+    : 'From real work: 5 in-event Show(X) updates, 3 ReToU feedback rounds, on-device QA and App Store review handling.';
   const aiFlow = ko
     ? ['요구사항 정리', '범위·영향 파일 분석', '작은 단위 구현', 'build/test 실행', 'diff 직접 검토', '아키텍처·예외 검증', '실기기 QA', '커밋/PR']
     : ['Frame requirements', 'Scope & impacted files', 'Implement in small units', 'Run build/test', 'Review the diff myself', 'Verify architecture & edge cases', 'On-device QA', 'Commit/PR'];
@@ -169,9 +167,9 @@ export default function Home() {
               </p>
               <p className="mt-2 text-[14px] text-ios-gray-600 dark:text-ios-gray-300 max-w-xl">
                 {ko ? (
-                  <>개인·팀 프로젝트에서 <b className="text-ios-gray-900 dark:text-white">여러 앱을 출시</b>했고, 지금도 SmartEdge와 ReToU를 직접 업데이트하고 있습니다. 빠른 구현뿐 아니라 <b className="text-ios-gray-900 dark:text-white">심사·사용자 피드백·버전 업데이트·제품 안정성</b>까지 개발자의 책임이라고 생각합니다. 화려하게 타오르기보다 은근하게 오래 끓는 편이라, 맡은 일은 수단과 방법을 가리지 않고 끝을 봅니다.</>
+                  <>개인·팀 프로젝트에서 <b className="text-ios-gray-900 dark:text-white">여러 앱을 출시</b>했고, 지금도 ReToU와 SEED를 직접 업데이트하고 있습니다. 빠른 구현뿐 아니라 <b className="text-ios-gray-900 dark:text-white">심사·사용자 피드백·버전 업데이트·제품 안정성</b>까지 개발자의 책임이라고 생각합니다. 화려하게 타오르기보다 은근하게 오래 끓는 편이라, 맡은 일은 수단과 방법을 가리지 않고 끝을 봅니다.</>
                 ) : (
-                  <>I have <b className="text-ios-gray-900 dark:text-white">shipped several apps</b> across solo and team projects, and I still update SmartEdge and ReToU myself. I treat not just fast implementation but <b className="text-ios-gray-900 dark:text-white">App Store review, user feedback, version updates and product stability</b> as the developer&apos;s responsibility. I run slow and steady rather than flashy, and I find whatever it takes to finish what I take on.</>
+                  <>I have <b className="text-ios-gray-900 dark:text-white">shipped several apps</b> across solo and team projects, and I still update ReToU and SEED myself. I treat not just fast implementation but <b className="text-ios-gray-900 dark:text-white">App Store review, user feedback, version updates and product stability</b> as the developer&apos;s responsibility. I run slow and steady rather than flashy, and I find whatever it takes to finish what I take on.</>
                 )}
               </p>
               <div className="flex flex-wrap gap-x-5 gap-y-1.5 mt-4 text-[13px] text-ios-gray-500 dark:text-ios-gray-400">

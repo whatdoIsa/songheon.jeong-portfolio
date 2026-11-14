@@ -236,15 +236,6 @@
         "role": "Team of 6 / owned the PencilKit drawing system",
         "duration": "2025.07 - 2025.08"
       },
-      "SmartEdge": {
-        "description": "macOS menu-bar app that turns the MacBook notch into a micro-workspace (music, calendar, file shelf, Pomodoro). Free + Pro IAP on the App Store.",
-        "highlights": [
-          "Problem: constant app-switching for music, schedule and files, while the notch sat unused.",
-          "Action: built the notch UI with AppKit window-level control + SwiftUI, resolving sandbox/TCC constraints; shipped KO/EN with a StoreKit 2 free+Pro model.",
-          "Result: live on the App Store at v1.1, a full cycle from planning to operations, solo."
-        ],
-        "role": "Solo project. Planning, development, design, release and operations, 100%."
-      },
       "SCM 챗봇 PoC": {
         "title": "SCM Natural-Language Query Chatbot PoC — Answer-Accuracy Study",
         "role": "Personal project · 100%",

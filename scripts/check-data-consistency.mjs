@@ -14,7 +14,6 @@ const page = readFileSync(join(root, 'app/page.js'), 'utf8');
 
 // 이력서(projects.js)와 케이스(caseStudies.js) 양쪽에 동일하게 유지해야 하는 출시작 링크.
 const SHIPPED = {
-  SmartEdge: 'https://apps.apple.com/kr/app/smartedge/id6787634027?mt=12',
   'Show(X)': 'https://apps.apple.com/kr/app/showx/id6755496321',
   'kip!': 'https://apps.apple.com/kr/app/kip/id6754709167',
   ReToU: 'https://apps.apple.com/kr/app/re-tou/id6745058969',

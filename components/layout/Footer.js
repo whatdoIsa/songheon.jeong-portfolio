@@ -26,8 +26,8 @@ export default function Footer() {
             </div>
             <p className="text-ios-gray-600 dark:text-ios-gray-400 text-sm">
               {locale === 'en'
-                ? '7 apps built, 5 on the App Store. SmartEdge · ReToU · SEED live.'
-                : '앱 7개 완주, App Store 5 — SmartEdge · ReToU · SEED 운영 중.'}
+                ? '7 apps built, 5 on the App Store. ReToU · SEED live.'
+                : '앱 7개 완주, App Store 5 — ReToU · SEED 운영 중.'}
             </p>
           </div>
 

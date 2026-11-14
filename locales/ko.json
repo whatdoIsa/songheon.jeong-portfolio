@@ -236,15 +236,6 @@
         "duration": "2025.04 - 2025.06",
         "title": "ReToU — 라이브 운영 중인 서비스"
       },
-      "SmartEdge": {
-        "description": "맥 노치를 음악·캘린더·파일 보관함·뽀모도로 허브로 바꾸는 macOS 메뉴바 앱. 무료 + Pro(일회성 구매) 모델로 App Store 판매 중.",
-        "highlights": [
-          "Problem: 음악·일정·파일마다 앱을 오가는 전환 비용 — 노치는 매일 보지만 아무 기능이 없는 공간.",
-          "Action: AppKit 윈도우 레벨 제어 + SwiftUI로 노치 확장형 UI 구현, 샌드박스·TCC 제약 해결. StoreKit 2 무료+Pro 모델로 한/영 출시.",
-          "Result: App Store 출시 후 v1.1 운영 중 — 기획→개발→심사→수익화→운영 전 사이클 완주."
-        ],
-        "role": "개인 프로젝트 — 기획·개발·디자인·출시·운영 100%"
-      },
       "SCM 챗봇 PoC": {
         "title": "SCM 자연어 질의 챗봇 PoC — 응답 정확도 향상 연구",
         "role": "개인 프로젝트 · 100%",
