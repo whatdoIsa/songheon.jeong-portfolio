@@ -1,21 +1,28 @@
 'use client';
 
 import { FaEnvelope, FaGithub, FaLinkedin, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
-import { projects } from '@/data/projects';
 import { useRef, useEffect, useState } from 'react';
 import { useTranslation } from '@/lib/i18n';
 
 export default function Resume() {
   const { t, locale } = useTranslation();
-  const [resumeData, setResumeData] = useState({ education: [], achievements: [], projectDetails: {} });
+  const [resumeData, setResumeData] = useState({ career: [], education: [], etc: [], achievements: [], projectDetails: {} });
   // 전화번호는 정적 HTML·번들에 평문으로 남지 않도록 base64로 두고 마운트 후 디코드해
   // 렌더링하며(수집 봇 차단), 화면에서는 숨긴 채 인쇄(PDF 저장) 시에만 표시한다.
   const [phone, setPhone] = useState('');
   useEffect(() => {
     setPhone(atob('MDEwLTI1MTQtMjQyNg=='));
   }, []);
-  // iOS·iPadOS·macOS 프로젝트 (웹 제외).
-  const iosProjects = projects.filter(p => ['iOS', 'iPadOS', 'macOS'].includes(p.category));
+  // 이력서에 싣는 프로젝트 — 순서·기간·기술스택만 여기서 정의하고
+  // 제목·역할·설명·하이라이트는 로케일(projectDetails[key])에서 가져온다.
+  const resumeProjects = [
+    { key: 'SCM 챗봇 PoC', duration: '2026.11', techStack: ['Java 21', 'Spring Boot 3.5', 'PostgreSQL 16', 'MyBatis', 'React+TypeScript+Vite', '로컬 LLM(Ollama)'] },
+    { key: 'kip!', duration: '2025.09 - 현재', techStack: ['SwiftUI', 'Vision', 'Apple Intelligence', 'SwiftData'] },
+    { key: 'SEED', duration: '2026.08 - 현재', techStack: ['Swift Package', 'SwiftData', 'CloudKit', 'StoreKit 2'] },
+    { key: '웹 포트폴리오', duration: '2025 - 현재', techStack: ['React 18', 'Next.js 14', 'Tailwind CSS', 'Framer Motion', 'GitHub Actions'] },
+    { key: 'Show(X)', duration: '2025.09 - 2025.11', techStack: ['SwiftUI', 'MapKit', 'Indoor Positioning', 'SwiftData'] },
+    { key: 'ReToU (오늘의 넌)', duration: '2025.04 - 현재', techStack: ['SwiftUI', 'CloudKit', 'Face ID', 'Charts'] },
+  ];
   const ko = (locale || 'ko') === 'ko';
   const resumeRef = useRef(null);
 
@@ -32,13 +39,15 @@ export default function Resume() {
         }
         
         setResumeData({
+          career: localeData.default.resume?.career || [],
           education: localeData.default.resume?.education || [],
+          etc: localeData.default.resume?.etc || [],
           achievements: localeData.default.resume?.achievements || [],
           projectDetails: localeData.default.projects?.projectDetails || {}
         });
       } catch (error) {
         console.error('Failed to load resume data:', error);
-        setResumeData({ education: [], achievements: [], projectDetails: {} });
+        setResumeData({ career: [], education: [], etc: [], achievements: [], projectDetails: {} });
       }
     };
     
@@ -52,7 +61,7 @@ export default function Resume() {
     // 인쇄 대화상자는 document.title을 파일명으로 쓴다. print() 직후 즉시 복원하면
     // 대화상자가 열리기 전에 원래 제목으로 돌아가 버리므로, afterprint에서 복원한다.
     const previousTitle = document.title;
-    document.title = ko ? '[iOS 개발자] 정송헌_이력서' : '[iOS Developer] SongheonJeong_Resume';
+    document.title = ko ? '정송헌_이력서' : 'SongheonJeong_Resume';
     const restore = () => {
       document.title = previousTitle;
       window.removeEventListener('afterprint', restore);
@@ -121,6 +130,22 @@ export default function Resume() {
           </p>
         </section>
 
+        {/* Experience / Career */}
+        <section className="mb-8 page-break-avoid">
+          <h2 className="text-2xl font-bold mb-4 border-b border-gray-300 pb-2">{t('resume.sections.career')}</h2>
+          <div className="space-y-4">
+            {resumeData.career.map((job, index) => (
+              <div key={index} className="page-break-avoid">
+                <div className="flex justify-between items-start mb-1">
+                  <h3 className="font-bold">{job.name}</h3>
+                  <span className="text-sm text-gray-600">{job.period}</span>
+                </div>
+                {job.description && <p className="text-gray-700">{job.description}</p>}
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* Skills — 카테고리별 구분 */}
         <section className="mb-8 page-break-avoid">
           <h2 className="text-2xl font-bold mb-4 border-b border-gray-300 pb-2">{t('resume.sections.skills')}</h2>
@@ -128,20 +153,18 @@ export default function Resume() {
             <tbody>
               {((locale || 'ko') === 'en'
                 ? [
-                    ['Language · UI', 'Swift · SwiftUI · UIKit · AppKit'],
-                    ['Data · Sync', 'SwiftData · CloudKit · Firebase'],
-                    ['System · Platform', 'App Sandbox · TCC · WidgetKit · Face ID · EventKit'],
-                    ['Maps · AI', 'MapKit (Indoor Positioning) · PencilKit · Apple Intelligence · Vision'],
-                    ['Release · Monetization', 'StoreKit 2 (IAP) · App Store Connect · ASO'],
-                    ['Collaboration · Tools', 'Git · GitHub Actions · Figma · Claude Code'],
+                    ['Web · Full-stack', 'React · TypeScript · Vite · Next.js 14 · Spring Boot 3.5 · Java 21 · REST API'],
+                    ['Data', 'PostgreSQL · MyBatis · SQL · Data modeling'],
+                    ['AI', 'Local LLM (Ollama) · Prompt engineering · Tool routing · Evaluation (golden set) · On-device classification (Vision · Apple Intelligence)'],
+                    ['Engineering', 'Git · GitHub Actions (CI/CD) · Unit · integration tests · Docker'],
+                    ['Apple platforms', 'Swift · SwiftUI · SwiftData · StoreKit 2'],
                   ]
                 : [
-                    ['언어 · UI', 'Swift · SwiftUI · UIKit · AppKit'],
-                    ['데이터 · 동기화', 'SwiftData · CloudKit · Firebase'],
-                    ['시스템 · 플랫폼', 'App Sandbox · TCC · WidgetKit · Face ID · EventKit'],
-                    ['지도 · AI', 'MapKit (Indoor Positioning) · PencilKit · Apple Intelligence · Vision'],
-                    ['배포 · 수익화', 'StoreKit 2 (인앱 구매) · App Store Connect · ASO'],
-                    ['협업 · 도구', 'Git · GitHub Actions · Figma · Claude Code'],
+                    ['웹 · 풀스택', 'React · TypeScript · Vite · Next.js 14 · Spring Boot 3.5 · Java 21 · REST API'],
+                    ['데이터', 'PostgreSQL · MyBatis · SQL · 데이터 모델링'],
+                    ['AI', '로컬 LLM(Ollama) · 프롬프트 엔지니어링 · 도구 라우팅 · 평가체계(골든셋) · 온디바이스 분류(Vision · Apple Intelligence)'],
+                    ['엔지니어링', 'Git · GitHub Actions(CI/CD) · 단위·통합 테스트 · Docker'],
+                    ['Apple 플랫폼', 'Swift · SwiftUI · SwiftData · StoreKit 2'],
                   ]
               ).map(([category, items]) => (
                 <tr key={category} className="border-b border-gray-100 last:border-0">
@@ -158,47 +181,45 @@ export default function Resume() {
           <h2 className="text-2xl font-bold mb-4 border-b border-gray-300 pb-2">{t('resume.sections.projects')}</h2>
 
           <div className="space-y-6">
-            {iosProjects.map((project, index) => (
-              <div key={project.id} className={`page-break-avoid ${index !== iosProjects.length - 1 ? 'border-b border-gray-200 pb-4' : ''}`}>
-                <div className="flex justify-between items-start mb-2">
-                  <h3 className="text-lg font-bold">{project.title}</h3>
-                  <span className="text-sm text-gray-600">{project.duration}</span>
+            {resumeProjects.map((project, index) => {
+              const det = (resumeData.projectDetails && resumeData.projectDetails[project.key]) || {};
+              const title = det.title || project.key;
+              const highlights = (det.highlights || []).slice(0, 4);
+              return (
+                <div key={project.key} className={`page-break-avoid ${index !== resumeProjects.length - 1 ? 'border-b border-gray-200 pb-4' : ''}`}>
+                  <div className="flex justify-between items-start mb-2">
+                    <h3 className="text-lg font-bold">{title}</h3>
+                    <span className="text-sm text-gray-600">{project.duration}</span>
+                  </div>
+                  {det.role && <p className="text-sm text-gray-600 mb-2">{det.role}</p>}
+                  <p className="text-gray-800 mb-2">{det.description}</p>
+                  <div className="mb-2">
+                    <span className="text-sm font-semibold">Tech Stack: </span>
+                    <span className="text-sm text-gray-700">{project.techStack.join(', ')}</span>
+                  </div>
+                  {highlights.length > 0 && (
+                    <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
+                      {highlights.map((highlight, idx) => {
+                        // 콜론(:) 앞 라벨을 굵게 표시
+                        if (!highlight || typeof highlight !== 'string') {
+                          return <li key={idx}>-</li>;
+                        }
+                        const parts = highlight.split(/(:)/);
+                        const label = parts[0] || '';
+                        const colon = parts[1] || '';
+                        const content = parts.slice(2).join('') || '';
+                        return (
+                          <li key={idx}>
+                            <span className="font-bold text-base">{label}{colon}</span>
+                            {content}
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  )}
                 </div>
-                <p className="text-sm text-gray-600 mb-2">{(resumeData.projectDetails && resumeData.projectDetails[project.title]?.role) || project.role}</p>
-                <p className="text-gray-800 mb-2">
-                  {resumeData.projectDetails && resumeData.projectDetails[project.title] 
-                    ? resumeData.projectDetails[project.title].description 
-                    : project.description
-                  }
-                </p>
-                <div className="mb-2">
-                  <span className="text-sm font-semibold">Tech Stack: </span>
-                  <span className="text-sm text-gray-700">{project.techStack.join(', ')}</span>
-                </div>
-                <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
-                  {((resumeData.projectDetails && resumeData.projectDetails[project.title] 
-                    ? resumeData.projectDetails[project.title].highlights 
-                    : project.highlights) || []).slice(0, 3).map((highlight, idx) => {
-                    // Problem:, Action:, Result: 부분을 굵게 표시
-                    if (!highlight || typeof highlight !== 'string') {
-                      return <li key={idx}>-</li>;
-                    }
-                    
-                    const parts = highlight.split(/(:)/);
-                    const label = parts[0] || ''; // Problem, Action, Result
-                    const colon = parts[1] || ''; // :
-                    const content = parts.slice(2).join('') || ''; // 나머지 내용
-
-                    return (
-                      <li key={idx}>
-                        <span className="font-bold text-base">{label}{colon}</span>
-                        {content}
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </section>
 
@@ -224,6 +245,24 @@ export default function Resume() {
             ))}
           </div>
         </section>
+
+        {/* Other / 기타 */}
+        {resumeData.etc && resumeData.etc.length > 0 && (
+          <section className="mb-8 page-break-avoid">
+            <h2 className="text-2xl font-bold mb-4 border-b border-gray-300 pb-2">{t('resume.sections.etc')}</h2>
+            <div className="space-y-4">
+              {resumeData.etc.map((item, index) => (
+                <div key={index} className="page-break-avoid">
+                  <div className="flex justify-between items-start mb-1">
+                    <h3 className="font-bold">{item.name}</h3>
+                    <span className="text-sm text-gray-600">{item.period}</span>
+                  </div>
+                  {item.description && <p className="text-gray-700">{item.description}</p>}
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
 
         {/* Key Achievements */}
         <section className="mb-8 page-break-avoid">

@@ -163,16 +163,16 @@
     },
     "projectDetails": {
       "SEED": {
-        "description": "A stock-learning app that trains investing habits in a fully synthetic market — no stock picks, no profit promises, no ads, no sign-up. On the App Store.",
+        "description": "Isolated constraint logic (order-book matching, fees, price limits) into a separate package engine, with 102 unit tests for regression stability.",
         "highlights": [
-          "Problem: beginners have no safe space to practice order books, fees and price limits without risking real money, while pick/return-promising apps push speculation over learning.",
-          "Action: designed with no picks, no return promises, no ads and no signup; isolated the trading rules (order-book matching, fees, price limits) into a Swift package engine verified by 102 unit tests, plus a 12-lesson curriculum, widgets, iCloud backup and StoreKit 2 — solo.",
-          "Result: launched on the App Store (Aug 2026) — a full-size product whose trading engine is isolated as a testable package for regression stability."
+          "Design: constraint modeling + verification-centric design — the mindset closest to an SCM optimization engine.",
+          "Result: separated the trading engine into a testable module and shipped a full-size product solo."
         ],
-        "role": "Solo project. Planning, development and design, 100%."
+        "role": "Personal project · 100%",
+        "title": "SEED — Rule-based Trading Simulation Engine"
       },
       "Show(X)": {
-        "description": "Indoor map app for Showcase 2025. Navigation and information app for Apple Developer Academy event participants.",
+        "description": "Modeled floors, zones and booths as GeoJSON to earn Korea's first Apple Indoor Map approval; built the indoor-map module solo.",
         "features": [
           "Indoor map-based booth location and route guidance",
           "Exhibition search with category-based filtering",
@@ -181,15 +181,14 @@
           "App Store Navigation Chart #37"
         ],
         "highlights": [
-          "Problem: GPS fails indoors, so wayfinding questions from 200+ attendees bottlenecked operations.",
-          "Action: earned Korea's first Apple Indoor Map approval via floor/zone/booth GeoJSON modeling; solely built the indoor-map module (50%), 5 in-event updates.",
-          "Result: on-site inquiries down 40% (200+ attendees) · App Store Navigation chart #37."
+          "Result: 40% fewer on-site guidance inquiries (200+ attendees) · App Store Navigation chart #37."
         ],
-        "role": "Team of 6 / development lead (50%)",
-        "duration": "2025.09 - 2025.11"
+        "role": "Team of 6 · dev lead",
+        "duration": "2025.09 - 2025.11",
+        "title": "Show(X) — Indoor Wayfinding · On-site Operations"
       },
       "kip!": {
-        "description": "On-device AI-based screenshot auto-organization productivity app. Local AI processing with privacy protection.",
+        "description": "A second-brain app that classifies and searches screenshots and notes with on-device AI. Local processing with no server transmission guarantees privacy.",
         "features": [
           "Quick save with Share Sheet integration",
           "Automatic date/time/memo extraction with on-device AI",
@@ -198,15 +197,15 @@
           "App Store Productivity #66"
         ],
         "highlights": [
-          "Problem: ~5 minutes to find anything in 300+ screenshots, and 70% rejected cloud AI over privacy.",
-          "Action: built an on-device Vision + Apple Intelligence classification pipeline (40% of dev, 85% accuracy) with a no-server SwiftData architecture.",
-          "Result: organizing time down 60% (5→2 min) · 95% satisfaction (15 testers) · Productivity chart #66."
+          "My role (40% of dev): owned model-answer quality and classification-accuracy improvement — tuned prompts, post-processing and the classification pipeline to reach 85% classification accuracy.",
+          "Result: 95% satisfaction among 15 initial testers → now 10,000+ cumulative users · App Store Productivity chart #66."
         ],
-        "role": "Team of 6 / 1 of 3 developers (40%)",
-        "duration": "2025.09 - 2025.11"
+        "role": "Team of 6 · my share = 40% of development",
+        "duration": "2025.09 - 2025.11",
+        "title": "kip! — On-device AI Second Brain"
       },
       "ReToU (오늘의 넌)": {
-        "description": "Daily one-line emotional reflection and self-reflection iOS app. Wellbeing application for organizing mind through daily emotional records.",
+        "description": "An emotional-reflection app with a 30-second, one-question-a-day input UX. Login-free CloudKit backup + Face ID.",
         "features": [
           "Consistent recording habit formation with once-daily reflection",
           "Multilingual support for Korean and English",
@@ -215,12 +214,11 @@
           "Light/dark mode support and local storage"
         ],
         "highlights": [
-          "Problem: 8 of 10 users drop journaling within 3 days; the input burden outweighs the reflective value.",
-          "Action: designed a 30-second one-question flow (100%), the v2.0 'emotion seal' redesign, login-free CloudKit backup + Face ID lock.",
-          "Result: 70% 30-day retention (early cohort · 3× typical) · operated through v2.0 for a year."
+          "Result: 70% 30-day retention (3x baseline) · operated for over a year through v2.0."
         ],
-        "role": "Solo project. Planning, development and design, 100%.",
-        "duration": "2025.04 - 2025.06"
+        "role": "Personal project · 100%",
+        "duration": "2025.04 - 2025.06",
+        "title": "ReToU — Live Service in Operation"
       },
       "Rootrip": {
         "description": "Travel planning and productivity app using MapKit and PencilKit. iPad OS app development based on MVVM architecture.",
@@ -246,6 +244,23 @@
           "Result: live on the App Store at v1.1, a full cycle from planning to operations, solo."
         ],
         "role": "Solo project. Planning, development, design, release and operations, 100%."
+      },
+      "SCM 챗봇 PoC": {
+        "title": "SCM Natural-Language Query Chatbot PoC — Answer-Accuracy Study",
+        "role": "Personal project · 100%",
+        "description": "A chatbot where a local LLM turns Korean SCM questions into SQL / clarify / refuse, the server validates it, and it runs on a read-only account to answer. The real deliverable is not the UI but the accuracy-measurement system and improvement record.",
+        "highlights": [
+          "Evaluation first: golden set frozen with SHA-256, graded by execution result value (reproducible at temperature 0 · seed 42). The grader itself verified at 30/30 by injecting correct answers.",
+          "Cause classification → knowledge injection: baseline 7/30 → adding a reference date, metric dictionary and examples reached 22/30 on the basic set (period aggregation 0/8 → 7/8).",
+          "Core improvement: moved metric calculation that prompts could not fix into server fixed-queries (tools) + a router → frozen holdout of 20 items 13 → 16, all tool-path metric questions correct (7/7).",
+          "Honest record: kept the SQL-validation/retry version even though it dropped; confirmed by measurement that 100% number post-verification pass does not equal correctness. Independent code review and red-teaming in parallel."
+        ]
+      },
+      "웹 포트폴리오": {
+        "title": "Personal Web Portfolio (Next.js)",
+        "role": "Personal project · 100%",
+        "description": "Designed and built directly with React · Next.js 14 (App Router) · Tailwind, with automated static deployment via GitHub Actions and i18n. Currently in operation.",
+        "highlights": []
       }
     },
     "projectDescriptions": {
@@ -275,19 +290,21 @@
   },
   "resume": {
     "title": "Songheon Jeong (Dean)",
-    "subtitle": "iOS Developer Creating Apps That Seamlessly Integrate into Daily Life",
+    "subtitle": "Software engineer who takes products from concept to operations — AI · web oriented",
     "download": "Save as PDF",
     "downloadHint": "Click to download PDF file immediately",
     "sections": {
       "summary": "Summary",
       "skills": "Technical Skills",
-      "projects": "Projects",
-      "education": "Education & Training",
-      "achievements": "Key Achievements"
+      "projects": "Key Projects · Research",
+      "education": "Education",
+      "achievements": "Key Achievements",
+      "career": "Experience",
+      "etc": "Other"
     },
     "summary": {
-      "text1": "Carried 7 apps to completion (5 shipped on the App Store). SmartEdge (macOS) and ReToU (iOS) are live services I still update and operate myself. As development lead I earned Korea's first-ever Apple Indoor Map approval and took the app to #37 on the App Store navigation chart. Across design, review handling, monetization and operations, I've run the full app lifecycle both solo and in teams.",
-      "text2": "Key achievements: 7 apps built · 5 shipped on the App Store (incl. review/rejection handling) | Korea's first Apple Indoor Map approval (dev lead) | App Store Navigation #37 · Productivity #66 | designed SmartEdge's free + paid Pro (in-app purchase) model, selling on the App Store | ReToU 30-day retention 70% (3× typical journaling apps)"
+      "text1": "I have taken 7 products end to end from planning to launch and operations (5 shipped on the App Store, 2 in active operation). Most recently I built a Korean SCM query → SQL chatbot PoC as a full-stack app on Spring · PostgreSQL · React, establishing a \"measure accuracy first\" discipline: I freeze a golden set and grade by execution result value, classify wrong answers by cause to improve prompts and architecture step by step, and record even the experiments that did not work.",
+      "text2": "Building on improving model-answer and classification accuracy in on-device AI apps and on React · Next.js web development, I want to solve data- and rule-driven problems like supply chains by producing measurable improvements under complex constraints."
     },
     "skillCategories": {
       "ios": "iOS Development:",
@@ -297,46 +314,57 @@
       {
         "name": "Apple Developer Academy @ POSTECH",
         "period": "2025.03 ~ 2025.12",
-        "description": "Intensive Apple-ecosystem program covering development, design, communication and planning",
-        "details": [
-          "Completed 6 challenge projects (Show(X), kip!, Rootrip and more) · ran showcase operations for 200+ attendees"
-        ]
+        "description": "Intensive Apple-ecosystem program — completed 6 challenge projects and ran showcase operations for 200+ attendees."
       },
       {
-        "name": "Zerobase Frontend School",
+        "name": "Zero-base Frontend School",
         "period": "2024.02 ~ 2024.09",
-        "description": "React/TypeScript web development: component architecture, team collaboration"
+        "description": "React · TypeScript web development — component architecture and team-project collaboration."
       },
       {
-        "name": "Silla University, Computer Education",
+        "name": "Silla University, Dept. of Computer Education (B.S.)",
         "period": "2019.03 ~ 2025.02",
-        "description": "B.S. | GPA 3.46/4.5"
+        "description": "Graduated · GPA 3.46 / 4.5"
       },
       {
-        "name": "University of Victoria, Canada (language program)",
+        "name": "University of Victoria, Canada — Language Program (Scholarship)",
         "period": "2019.12 ~ 2020.02",
-        "description": "Scholarship selection | conversational English"
-      },
-      {
-        "name": "Military service",
-        "period": "2021.03 ~ 2022.09",
-        "description": "Republic of Korea Army, honorably discharged as sergeant"
+        "description": "Conversational English."
       }
     ],
     "contact": {
       "location": "Yangju, South Korea"
     },
     "achievements": [
-      "7 apps built · 5 shipped on the App Store; SmartEdge (v1.1) and ReToU (v2.0) in live operation and maintenance",
-      "Korea's first Apple Indoor Map approval and development (Show(X), development lead)",
-      "App Store Navigation chart #37 (Show(X)) · Productivity chart #66 (kip!)",
-      "Designed SmartEdge's free + paid Pro (in-app purchase) model, now selling on the App Store"
+      "Shipped 7 products end to end · 5 on the App Store (incl. review/rejection handling) — ReToU · SEED in active operation",
+      "SCM query chatbot PoC — built a frozen golden-set evaluation system; moving metric computation into tools raised the frozen holdout from 13 to 16, with all tool-path metric questions correct",
+      "kip! on-device AI — owned classification-accuracy improvement (40% of development), 10,000+ cumulative users",
+      "Korea's first Apple Indoor Map approval (Show(X), dev lead) · Navigation chart #37 · Productivity chart #66"
     ],
     "footer": {
       "portfolio": "Portfolio:",
       "downloadDescription": "Click 'Save as PDF' (top right) and choose 'Save as PDF' in the print dialog."
     },
-    "copyright": "© 2025 Songheon Jeong. All rights reserved."
+    "copyright": "© 2025 Songheon Jeong. All rights reserved.",
+    "career": [
+      {
+        "name": "goorm — Business Operations Manager",
+        "period": "2026.08 ~ Present",
+        "description": "Business operations at a cloud-based development and education platform company."
+      },
+      {
+        "name": "Arcseed — Solo Development Studio (Founder)",
+        "period": "2025.06 ~ Present",
+        "description": "A one-person studio owning planning, development, design, release, monetization and operations. Currently operating ReToU and SEED, and expanding into new AI · web products."
+      }
+    ],
+    "etc": [
+      {
+        "name": "Military Service — ROK Army, honorable discharge (Sergeant)",
+        "period": "2021.03 ~ 2022.09",
+        "description": ""
+      }
+    ]
   },
   "footer": {
     "copyright": "© 2025 Songheon Jeong. All rights reserved.",
