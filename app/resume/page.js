@@ -16,7 +16,7 @@ export default function Resume() {
   // 이력서에 싣는 프로젝트 — 순서·기간·기술스택만 여기서 정의하고
   // 제목·역할·설명·하이라이트는 로케일(projectDetails[key])에서 가져온다.
   const resumeProjects = [
-    { key: 'SCM 챗봇 PoC', duration: '2026.11', techStack: ['Java 21', 'Spring Boot 3.5', 'PostgreSQL 16', 'MyBatis', 'React+TypeScript+Vite', '로컬 LLM(Ollama)'] },
+    { key: '자연어 챗봇 PoC', duration: '2026.11', techStack: ['Java 21', 'Spring Boot 3.5', 'PostgreSQL 16', 'MyBatis', 'React+TypeScript+Vite', '로컬 LLM(Ollama)'] },
     { key: 'kip!', duration: '2025.09 - 현재', techStack: ['SwiftUI', 'Vision', 'Apple Intelligence', 'SwiftData'] },
     { key: 'SEED', duration: '2026.08 - 현재', techStack: ['Swift Package', 'SwiftData', 'CloudKit', 'StoreKit 2'] },
     { key: '웹 포트폴리오', duration: '2025 - 현재', techStack: ['React 18', 'Next.js 14', 'Tailwind CSS', 'Framer Motion', 'GitHub Actions'] },

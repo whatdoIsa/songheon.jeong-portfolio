@@ -3,9 +3,9 @@
 
 export const caseStudies = [
   {
-    slug: 'scm-chatbot',
-    name: 'SCM 질의 챗봇',
-    nameEn: 'SCM Query Chatbot',
+    slug: 'chatbot',
+    name: '자연어 질의 챗봇',
+    nameEn: 'Natural-Language Query Chatbot',
     icon: { text: 'SQL', bg: '#111827', color: '#FFFFFF' },
     platform: 'Web · AI',
     featured: true,
@@ -17,15 +17,15 @@ export const caseStudies = [
       en: 'Solo project. Planning, backend, frontend and evaluation, 100%.',
     },
     oneLiner: {
-      ko: '한국어 SCM 질문을 로컬 LLM이 SQL로 바꿔 답하는 풀스택 챗봇. 핵심은 "정확도를 측정하고 단계적으로 끌어올린 과정"이다.',
-      en: 'A full-stack chatbot where a local LLM turns Korean SCM questions into SQL. The core is measuring accuracy and raising it step by step.',
+      ko: '한국어 질문을 로컬 LLM이 SQL로 바꿔 답하는 풀스택 챗봇. 핵심은 "정확도를 측정하고 단계적으로 끌어올린 과정"이다.',
+      en: 'A full-stack chatbot where a local LLM turns Korean questions into SQL. The core is measuring accuracy and raising it step by step.',
     },
     stack: ['Java 21', 'Spring Boot 3.5', 'PostgreSQL 16', 'MyBatis', 'React · TypeScript · Vite', '로컬 LLM(Ollama)'],
     shots: [],
     links: {},
     problem: {
-      ko: 'LLM이 한국어 SCM 질문을 SQL로 바꿀 때 정확도가 낮았고, 더 큰 문제는 "무엇이 맞는지"조차 측정되지 않아 개선의 기준이 없었다는 점이다.',
-      en: 'The LLM was inaccurate at turning Korean SCM questions into SQL, and the bigger problem was that "what counts as correct" was never measured, so there was no baseline to improve against.',
+      ko: 'LLM이 한국어 질문을 SQL로 바꿀 때 정확도가 낮았고, 더 큰 문제는 "무엇이 맞는지"조차 측정되지 않아 개선의 기준이 없었다는 점이다.',
+      en: 'The LLM was inaccurate at turning Korean questions into SQL, and the bigger problem was that "what counts as correct" was never measured, so there was no baseline to improve against.',
     },
     actions: {
       ko: [
@@ -118,8 +118,8 @@ export const caseStudies = [
       ],
     },
     result: {
-      ko: '제약 규칙을 테스트 가능한 엔진으로 분리해 풀 사이즈 프로덕트를 1인으로 완주·운영 중. 규칙·제약을 모델링하고 검증으로 지키는, 공급망 최적화와 가장 가까운 사고방식을 담았다.',
-      en: 'A full-size product shipped and operated solo by isolating the constraint rules into a testable engine — modeling rules and holding them with tests, the mindset closest to supply-chain optimization.',
+      ko: '제약 규칙을 테스트 가능한 엔진으로 분리해 풀 사이즈 프로덕트를 1인으로 완주·운영 중. 규칙·제약을 모델링하고 검증으로 지키는, 규칙·제약이 많은 최적화에 가장 가까운 사고방식을 담았다.',
+      en: 'A full-size product shipped and operated solo by isolating the constraint rules into a testable engine — modeling rules and holding them with tests, the mindset closest to rule-and-constraint-heavy optimization.',
     },
     architecture: {
       lines: [

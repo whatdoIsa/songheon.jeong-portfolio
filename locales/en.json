@@ -165,7 +165,7 @@
       "SEED": {
         "description": "Isolated constraint logic (order-book matching, fees, price limits) into a separate package engine, with 102 unit tests for regression stability.",
         "highlights": [
-          "Design: constraint modeling + verification-centric design — the mindset closest to an SCM optimization engine.",
+          "Design: constraint modeling + verification-centric design — the mindset closest to a rule-and-constraint-heavy optimization problem.",
           "Result: separated the trading engine into a testable module and shipped a full-size product solo."
         ],
         "role": "Personal project · 100%",
@@ -236,10 +236,10 @@
         "role": "Team of 6 / owned the PencilKit drawing system",
         "duration": "2025.07 - 2025.08"
       },
-      "SCM 챗봇 PoC": {
-        "title": "SCM Natural-Language Query Chatbot PoC — Answer-Accuracy Study",
+      "자연어 챗봇 PoC": {
+        "title": "Natural-Language Query Chatbot PoC — Answer-Accuracy Study",
         "role": "Personal project · 100%",
-        "description": "A chatbot where a local LLM turns Korean SCM questions into SQL / clarify / refuse, the server validates it, and it runs on a read-only account to answer. The real deliverable is not the UI but the accuracy-measurement system and improvement record.",
+        "description": "A chatbot where a local LLM turns Korean questions into SQL / clarify / refuse, the server validates it, and it runs on a read-only account to answer. The real deliverable is not the UI but the accuracy-measurement system and improvement record.",
         "highlights": [
           "Evaluation first: golden set frozen with SHA-256, graded by execution result value (reproducible at temperature 0 · seed 42). The grader itself verified at 30/30 by injecting correct answers.",
           "Cause classification → knowledge injection: baseline 7/30 → adding a reference date, metric dictionary and examples reached 22/30 on the basic set (period aggregation 0/8 → 7/8).",
@@ -294,8 +294,8 @@
       "etc": "Other"
     },
     "summary": {
-      "text1": "I have taken 7 products end to end from planning to launch and operations (5 shipped on the App Store, 2 in active operation). Most recently I built a Korean SCM query → SQL chatbot PoC as a full-stack app on Spring · PostgreSQL · React, establishing a \"measure accuracy first\" discipline: I freeze a golden set and grade by execution result value, classify wrong answers by cause to improve prompts and architecture step by step, and record even the experiments that did not work.",
-      "text2": "Building on improving model-answer and classification accuracy in on-device AI apps and on React · Next.js web development, I want to solve data- and rule-driven problems like supply chains by producing measurable improvements under complex constraints."
+      "text1": "I have taken 7 products end to end from planning to launch and operations (5 shipped on the App Store, 2 in active operation). Most recently I built a Korean natural-language → SQL chatbot PoC as a full-stack app on Spring · PostgreSQL · React, establishing a \"measure accuracy first\" discipline: I freeze a golden set and grade by execution result value, classify wrong answers by cause to improve prompts and architecture step by step, and record even the experiments that did not work.",
+      "text2": "Building on improving model-answer and classification accuracy in on-device AI apps and on React · Next.js web development, I want to solve data- and rule-driven problems by producing measurable improvements under complex constraints."
     },
     "skillCategories": {
       "ios": "iOS Development:",
@@ -328,7 +328,7 @@
     },
     "achievements": [
       "Shipped 7 products end to end · 5 on the App Store (incl. review/rejection handling) — ReToU · SEED in active operation",
-      "SCM query chatbot PoC — built a frozen golden-set evaluation system; moving metric computation into tools raised the frozen holdout from 13 to 16, with all tool-path metric questions correct",
+      "natural-language query chatbot PoC — built a frozen golden-set evaluation system; moving metric computation into tools raised the frozen holdout from 13 to 16, with all tool-path metric questions correct",
       "kip! on-device AI — owned classification-accuracy improvement (40% of development), 10,000+ cumulative users",
       "Korea's first Apple Indoor Map approval (Show(X), dev lead) · Navigation chart #37 · Productivity chart #66"
     ],

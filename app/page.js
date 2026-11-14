@@ -18,14 +18,14 @@ export default function Home() {
   const evidence = ko
     ? [
         ['iOS 앱 개발·출시', 'Show(X)·kip!·ReToU·SEED를 SwiftUI로 설계·App Store 출시·운영.'],
-        ['웹 · 풀스택', 'React·Next.js로 이 포트폴리오를 직접 구축, SCM 질의 챗봇 PoC를 Spring·PostgreSQL·React 풀스택으로 구현.'],
+        ['웹 · 풀스택', 'React·Next.js로 이 포트폴리오를 직접 구축, 자연어 질의 챗봇 PoC를 Spring·PostgreSQL·React 풀스택으로 구현.'],
         ['AI · 데이터', '온디바이스 분류(kip!)와 로컬 LLM 질의 챗봇 — 프롬프트·평가체계로 정확도를 측정하며 개선.'],
         ['품질 · 검증', '골든셋 동결 평가, 실기기 QA, Show(X) 현장 5회 업데이트, App Store 심사·리젝 대응.'],
         ['AI 도구 검증 워크플로', '요구사항→구현→빌드/테스트→diff 직접 리뷰. 생성 코드는 검증 후에만 병합.'],
       ]
     : [
         ['iOS apps shipped', 'Show(X), kip!, ReToU, SEED designed in SwiftUI and shipped/operated on the App Store.'],
-        ['Web · full-stack', 'Built this portfolio in React/Next.js; implemented the SCM query chatbot PoC full-stack on Spring, PostgreSQL and React.'],
+        ['Web · full-stack', 'Built this portfolio in React/Next.js; implemented the natural-language query chatbot PoC full-stack on Spring, PostgreSQL and React.'],
         ['AI · data', 'On-device classification (kip!) and a local-LLM query chatbot — accuracy measured and improved via prompts and an evaluation harness.'],
         ['Quality · verification', 'Frozen-golden-set evaluation, on-device QA, 5 in-event Show(X) updates, App Store review/rejection handling.'],
         ['AI dev workflow', 'Requirements → build → run tests → review every diff; generated code merged only after verification.'],
@@ -65,7 +65,7 @@ export default function Home() {
         ? [
             ['React · TypeScript', '프론트엔드 스쿨 수료 · 챗봇 PoC 프론트엔드'],
             ['Next.js 14 · Tailwind', '이 포트폴리오 직접 설계·구축·정적 배포'],
-            ['Spring Boot · Java 21', 'SCM 챗봇 PoC 백엔드 (REST API)'],
+            ['Spring Boot · Java 21', '자연어 챗봇 PoC 백엔드 (REST API)'],
             ['PostgreSQL · MyBatis · SQL', '스키마 모델링, 읽기 전용 실행·검증'],
             ['GitHub Actions (CI/CD)', '빌드·정적 배포 자동화'],
             ['로컬 LLM(Ollama) 연동', '프롬프트·도구 라우팅·평가체계'],
@@ -73,7 +73,7 @@ export default function Home() {
         : [
             ['React · TypeScript', 'frontend school; chatbot PoC frontend'],
             ['Next.js 14 · Tailwind', 'this portfolio — designed, built, static-deployed'],
-            ['Spring Boot · Java 21', 'SCM chatbot PoC backend (REST API)'],
+            ['Spring Boot · Java 21', 'natural-language chatbot PoC backend (REST API)'],
             ['PostgreSQL · MyBatis · SQL', 'schema modeling, read-only execution & validation'],
             ['GitHub Actions (CI/CD)', 'build & static deploy automation'],
             ['Local LLM (Ollama)', 'prompting, tool routing, evaluation harness'],
