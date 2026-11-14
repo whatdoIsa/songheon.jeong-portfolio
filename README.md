@@ -6,7 +6,7 @@
 직접 업데이트하며 운영하고 있습니다. 빠른 구현뿐 아니라 심사 대응, 사용자 피드백,
 버전 업데이트, 제품 안정성까지 개발자의 책임으로 봅니다.
 
-- 라이브: https://whatdoisa.github.io/iOS-Portfolio/
+- 라이브: https://whatdoisa.github.io/songheon.jeong-portfolio/
 - 이력서: `/resume`
 
 ## 기술 스택 (이 사이트)

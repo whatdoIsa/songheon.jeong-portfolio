@@ -151,7 +151,7 @@ export default function Home() {
             className="grid sm:grid-cols-[auto_1fr] gap-6 pt-12 pb-8 items-start"
           >
             <img
-              src={`${process.env.NODE_ENV === 'production' ? '/iOS-Portfolio' : ''}/images/profile.jpg`}
+              src={`${process.env.NODE_ENV === 'production' ? '/songheon.jeong-portfolio' : ''}/images/profile.jpg`}
               alt={ko ? '정송헌 프로필 사진' : 'Portrait of Songheon Jeong'}
               className="hidden sm:block w-32 h-32 rounded-2xl object-cover object-top border border-ios-gray-100 dark:border-ios-gray-700"
             />

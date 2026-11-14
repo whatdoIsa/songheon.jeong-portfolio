@@ -6,8 +6,8 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: isProd ? '/iOS-Portfolio' : '',
-  assetPrefix: isProd ? '/iOS-Portfolio/' : '',
+  basePath: isProd ? '/songheon.jeong-portfolio' : '',
+  assetPrefix: isProd ? '/songheon.jeong-portfolio/' : '',
 };
 
 module.exports = nextConfig;

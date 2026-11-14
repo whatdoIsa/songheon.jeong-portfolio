@@ -21,7 +21,7 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const basePath = process.env.NODE_ENV === 'production' ? '/iOS-Portfolio' : '';
+  const basePath = process.env.NODE_ENV === 'production' ? '/songheon.jeong-portfolio' : '';
 
   const navLinks = [
     { name: t('nav.about'), href: `${basePath}/#about` },

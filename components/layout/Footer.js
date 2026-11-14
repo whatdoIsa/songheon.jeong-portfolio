@@ -7,7 +7,7 @@ import { useTranslation } from '@/lib/i18n';
 
 export default function Footer() {
   const { t, locale } = useTranslation();
-  const basePath = process.env.NODE_ENV === 'production' ? '/iOS-Portfolio' : '';
+  const basePath = process.env.NODE_ENV === 'production' ? '/songheon.jeong-portfolio' : '';
   const socialLinks = [
     { icon: FaGithub, href: 'https://github.com/whatdoIsa', label: 'GitHub' },
     { icon: FaLinkedin, href: 'https://www.linkedin.com/in/송헌-정-04a44b331/', label: 'LinkedIn' },

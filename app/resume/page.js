@@ -80,7 +80,7 @@ export default function Resume() {
             <div className="flex-shrink-0">
               <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-gray-800 shadow-lg">
                 <img
-                  src={`${process.env.NODE_ENV === 'production' ? '/iOS-Portfolio' : ''}/images/profile.jpg`}
+                  src={`${process.env.NODE_ENV === 'production' ? '/songheon.jeong-portfolio' : ''}/images/profile.jpg`}
                   alt="Dean 정송헌"
                   className="object-cover w-full h-full"
                 />
@@ -276,7 +276,7 @@ export default function Resume() {
 
         {/* Footer */}
         <footer className="mt-12 pt-6 border-t border-gray-300 text-center text-sm text-gray-600">
-          <p>{t('resume.footer.portfolio')} <a href="https://whatdoisa.github.io/iOS-Portfolio/" className="text-blue-600 hover:underline">whatdoisa.github.io/iOS-Portfolio</a></p>
+          <p>{t('resume.footer.portfolio')} <a href="https://whatdoisa.github.io/songheon.jeong-portfolio/" className="text-blue-600 hover:underline">whatdoisa.github.io/songheon.jeong-portfolio</a></p>
           <p className="mt-2">{t('resume.footer.downloadDescription')}</p>
         </footer>
       </div>

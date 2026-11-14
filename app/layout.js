@@ -7,7 +7,7 @@ import { I18nProvider } from '@/lib/i18n';
 const SITE_DESCRIPTION =
   '제품을 기획부터 출시·운영까지 책임지는 프로덕트 엔지니어 정송헌의 포트폴리오입니다. iOS 앱(SwiftUI·App Store)과 웹·풀스택(React·Next.js·Spring·PostgreSQL), 온디바이스·LLM AI 경험을 소개합니다.';
 
-const SITE_URL = 'https://whatdoisa.github.io/iOS-Portfolio/';
+const SITE_URL = 'https://whatdoisa.github.io/songheon.jeong-portfolio/';
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),
