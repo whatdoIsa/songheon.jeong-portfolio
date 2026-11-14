@@ -56,7 +56,7 @@ export default function Navbar() {
             whileTap={{ scale: 0.95 }}
           >
             <span className="text-ios-gray-900 dark:text-white">정송헌</span>
-            <span className="text-sm font-medium text-ios-gray-400 ml-2">iOS Developer</span>
+            <span className="text-sm font-medium text-ios-gray-400 ml-2">프로덕트 엔지니어</span>
           </motion.a>
 
           {/* 데스크톱 네비게이션 */}

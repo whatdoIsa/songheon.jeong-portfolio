@@ -17,18 +17,18 @@ export default function Home() {
   // 채용공고 요건을 첫 화면에서 10초 안에 보여주는 증거 5종 (기술명만이 아니라 실제 프로젝트로 연결)
   const evidence = ko
     ? [
-        ['SwiftUI 제품 개발', 'Show(X)·kip!·ReToU·SEED를 SwiftUI로 설계·출시.'],
-        ['App Store 출시·업데이트', 'ReToU v2.0 · SEED · Show(X) · kip! 심사 통과·운영. 리젝 대응 경험.'],
-        ['QA·현장 안정화', 'Show(X) 행사 중 5회 반복 업데이트, 실기기 QA·심사 리젝 대응 경험.'],
-        ['Claude Code 개발·검증', '요구사항→구현→빌드/테스트→diff 직접 리뷰까지 AI 도구를 검증과 함께 사용.'],
-        ['Firebase·로컬 우선 아키텍처', 'Rootrip Firestore 동기화, ReToU·kip! SwiftData 로컬 우선 저장.'],
+        ['iOS 앱 개발·출시', 'Show(X)·kip!·ReToU·SEED를 SwiftUI로 설계·App Store 출시·운영.'],
+        ['웹 · 풀스택', 'React·Next.js로 이 포트폴리오를 직접 구축, SCM 질의 챗봇 PoC를 Spring·PostgreSQL·React 풀스택으로 구현.'],
+        ['AI · 데이터', '온디바이스 분류(kip!)와 로컬 LLM 질의 챗봇 — 프롬프트·평가체계로 정확도를 측정하며 개선.'],
+        ['품질 · 검증', '골든셋 동결 평가, 실기기 QA, Show(X) 현장 5회 업데이트, App Store 심사·리젝 대응.'],
+        ['AI 도구 검증 워크플로', '요구사항→구현→빌드/테스트→diff 직접 리뷰. 생성 코드는 검증 후에만 병합.'],
       ]
     : [
-        ['SwiftUI product work', 'Show(X), kip!, ReToU, SEED designed and shipped in SwiftUI.'],
-        ['App Store ship & update', 'ReToU v2.0, SEED, Show(X), kip! reviewed and operated; rejection handling.'],
-        ['QA & field stabilization', '5 in-event updates on Show(X); on-device QA and App Store review handling.'],
-        ['Claude Code + verification', 'AI used with checks: requirements → build → run tests → review every diff myself.'],
-        ['Firebase / local-first', 'Firestore sync in Rootrip; SwiftData local-first storage in ReToU and kip!.'],
+        ['iOS apps shipped', 'Show(X), kip!, ReToU, SEED designed in SwiftUI and shipped/operated on the App Store.'],
+        ['Web · full-stack', 'Built this portfolio in React/Next.js; implemented the SCM query chatbot PoC full-stack on Spring, PostgreSQL and React.'],
+        ['AI · data', 'On-device classification (kip!) and a local-LLM query chatbot — accuracy measured and improved via prompts and an evaluation harness.'],
+        ['Quality · verification', 'Frozen-golden-set evaluation, on-device QA, 5 in-event Show(X) updates, App Store review/rejection handling.'],
+        ['AI dev workflow', 'Requirements → build → run tests → review every diff; generated code merged only after verification.'],
       ];
 
   const facts = [
@@ -40,63 +40,63 @@ export default function Home() {
 
   const skillCols = [
     {
-      title: 'iOS · macOS',
+      title: 'iOS · Apple 플랫폼',
       items: ko
         ? [
             ['SwiftUI', '앱 7개 완주 (App Store 출시 5)'],
             ['UIKit · AppKit', '메뉴바 앱, 윈도우 레벨 제어'],
-            ['App Sandbox · TCC 권한', '샌드박스·권한·윈도우 레벨 제약 대응'],
             ['MapKit', 'Indoor Positioning, GeoJSON'],
             ['PencilKit', '좌표계 변환, 드로잉 영속성'],
-            ['Apple Intelligence · Vision', '온디바이스 분류 파이프라인'],
+            ['Apple Intelligence · Vision', '온디바이스 분류 파이프라인 (kip!)'],
             ['SwiftData · CloudKit · StoreKit 2', '로컬 우선 저장·백업·수익화'],
           ]
         : [
             ['SwiftUI', '7 apps built (5 on the App Store)'],
             ['UIKit · AppKit', 'menu-bar apps, window-level control'],
-            ['App Sandbox · TCC', 'shipping within sandbox/permission constraints'],
             ['MapKit', 'Indoor Positioning, GeoJSON'],
             ['PencilKit', 'coordinate conversion, drawing persistence'],
-            ['Apple Intelligence · Vision', 'on-device classification pipeline'],
+            ['Apple Intelligence · Vision', 'on-device classification pipeline (kip!)'],
             ['SwiftData · CloudKit · StoreKit 2', 'local-first storage, backup, monetization'],
           ],
     },
     {
-      title: 'Quality · AI Workflow',
+      title: '웹 · 풀스택 · 데이터',
       items: ko
         ? [
-            ['QA·안정화 사이클', '실기기 QA, 현장 관찰 기반 5회 업데이트'],
-            ['시스템 제약 해결 경험', '샌드박스·TCC·윈도우 레벨 제약 대응'],
-            ['AI 개발 도구 워크플로우', 'Claude Code 기반 개발·검증 자동화'],
-            ['버전 운영·유지보수', 'ReToU v2.0 · SEED 라이브 운영'],
+            ['React · TypeScript', '프론트엔드 스쿨 수료 · 챗봇 PoC 프론트엔드'],
+            ['Next.js 14 · Tailwind', '이 포트폴리오 직접 설계·구축·정적 배포'],
+            ['Spring Boot · Java 21', 'SCM 챗봇 PoC 백엔드 (REST API)'],
+            ['PostgreSQL · MyBatis · SQL', '스키마 모델링, 읽기 전용 실행·검증'],
+            ['GitHub Actions (CI/CD)', '빌드·정적 배포 자동화'],
+            ['로컬 LLM(Ollama) 연동', '프롬프트·도구 라우팅·평가체계'],
           ]
         : [
-            ['QA & stabilization cycles', 'device QA, 5 field-driven updates'],
-            ['System-constraint problem solving', 'sandbox · TCC · window levels'],
-            ['AI-assisted dev workflow', 'build & verify pipeline on Claude Code'],
-            ['Version ops & maintenance', 'ReToU v2.0 · SEED live'],
+            ['React · TypeScript', 'frontend school; chatbot PoC frontend'],
+            ['Next.js 14 · Tailwind', 'this portfolio — designed, built, static-deployed'],
+            ['Spring Boot · Java 21', 'SCM chatbot PoC backend (REST API)'],
+            ['PostgreSQL · MyBatis · SQL', 'schema modeling, read-only execution & validation'],
+            ['GitHub Actions (CI/CD)', 'build & static deploy automation'],
+            ['Local LLM (Ollama)', 'prompting, tool routing, evaluation harness'],
           ],
     },
     {
-      title: 'Product · Ops',
+      title: 'AI · 품질 · 운영',
       items: ko
         ? [
-            ['앱 7개 완주 · App Store 출시 5', '심사·리젝 대응·유지보수 경험'],
-            ['사용자 인터뷰·피드백 반복 개선', '5회+ 반영'],
-            ['StoreKit 2 수익화 · ASO', ''],
-            ['GitHub · GitHub Actions (CI)', ''],
-            ['Firebase', ''],
-            ['Figma 기반 디자이너 협업', ''],
-            ['KO·EN 로컬라이제이션', '영어 회화 가능'],
+            ['온디바이스 AI 분류', 'Vision·Apple Intelligence (kip! 정확도 85%)'],
+            ['LLM 정확도 개선', '골든셋 동결 채점 · 원인 분류 · 도구 라우팅'],
+            ['QA·안정화 사이클', '실기기 QA, 현장 관찰 기반 5회 업데이트'],
+            ['AI 개발 도구 워크플로우', 'Claude Code 기반 개발·검증 자동화'],
+            ['앱 7개 완주 · App Store 출시 5', '심사·리젝 대응·유지보수'],
+            ['Figma 협업 · KO·EN', '영어 회화 가능'],
           ]
         : [
-            ['7 apps built · 5 shipped', 'incl. review, rejection handling & maintenance'],
-            ['User-interview-driven iteration', '5+ feedback rounds shipped'],
-            ['StoreKit 2 monetization · ASO', ''],
-            ['GitHub · GitHub Actions (CI)', ''],
-            ['Firebase', ''],
-            ['Designer collaboration in Figma', ''],
-            ['KO·EN localization', 'conversational English'],
+            ['On-device AI classification', 'Vision · Apple Intelligence (kip!, 85% accuracy)'],
+            ['LLM accuracy improvement', 'frozen-set grading, cause classification, tool routing'],
+            ['QA & stabilization', 'device QA, 5 field-driven updates'],
+            ['AI-assisted dev workflow', 'build & verify pipeline on Claude Code'],
+            ['7 apps built · 5 shipped', 'review, rejection handling, maintenance'],
+            ['Figma collaboration · KO·EN', 'conversational English'],
           ],
     },
   ];
@@ -158,12 +158,12 @@ export default function Home() {
             <div>
               <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight">
                 {ko ? '정송헌' : 'Songheon Jeong (Dean)'}
-                <span className="text-sm font-semibold text-ios-gray-400 ml-2.5">iOS Developer</span>
+                <span className="text-sm font-semibold text-ios-gray-400 ml-2.5">프로덕트 엔지니어</span>
               </h1>
               <p className="mt-2.5 text-[15px] font-semibold text-ios-gray-800 dark:text-ios-gray-100 max-w-xl">
                 {ko
-                  ? 'SwiftUI로 앱을 설계하고, App Store에 출시하고, 운영까지 책임져 온 iOS 개발자입니다.'
-                  : 'An iOS developer who designs apps in SwiftUI, ships them to the App Store, and owns them through operations.'}
+                  ? '제품을 기획부터 설계·출시·운영까지 책임지는 프로덕트 엔지니어입니다. iOS 앱과 웹·풀스택을 모두 만듭니다.'
+                  : 'A product engineer who takes products from planning through design, launch and operations — building both iOS apps and full-stack web.'}
               </p>
               <p className="mt-2 text-[14px] text-ios-gray-600 dark:text-ios-gray-300 max-w-xl">
                 {ko ? (

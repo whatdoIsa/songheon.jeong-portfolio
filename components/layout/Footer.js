@@ -22,7 +22,7 @@ export default function Footer() {
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <SiSwift className="text-ios-orange text-2xl" />
-              <span className="text-lg font-bold">정송헌 · iOS Developer</span>
+              <span className="text-lg font-bold">정송헌 · 프로덕트 엔지니어</span>
             </div>
             <p className="text-ios-gray-600 dark:text-ios-gray-400 text-sm">
               {locale === 'en'

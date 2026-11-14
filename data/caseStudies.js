@@ -3,6 +3,78 @@
 
 export const caseStudies = [
   {
+    slug: 'scm-chatbot',
+    name: 'SCM 질의 챗봇',
+    nameEn: 'SCM Query Chatbot',
+    icon: { text: 'SQL', bg: '#111827', color: '#FFFFFF' },
+    platform: 'Web · AI',
+    featured: true,
+    period: '2026.11',
+    status: { ko: 'PoC · 연구', en: 'PoC · study' },
+    badge: { ko: '정확도 개선 연구', en: 'Accuracy study' },
+    role: {
+      ko: '개인 프로젝트 — 기획·백엔드·프론트·평가 100%',
+      en: 'Solo project. Planning, backend, frontend and evaluation, 100%.',
+    },
+    oneLiner: {
+      ko: '한국어 SCM 질문을 로컬 LLM이 SQL로 바꿔 답하는 풀스택 챗봇. 핵심은 "정확도를 측정하고 단계적으로 끌어올린 과정"이다.',
+      en: 'A full-stack chatbot where a local LLM turns Korean SCM questions into SQL. The core is measuring accuracy and raising it step by step.',
+    },
+    stack: ['Java 21', 'Spring Boot 3.5', 'PostgreSQL 16', 'MyBatis', 'React · TypeScript · Vite', '로컬 LLM(Ollama)'],
+    shots: [],
+    links: {},
+    problem: {
+      ko: 'LLM이 한국어 SCM 질문을 SQL로 바꿀 때 정확도가 낮았고, 더 큰 문제는 "무엇이 맞는지"조차 측정되지 않아 개선의 기준이 없었다는 점이다.',
+      en: 'The LLM was inaccurate at turning Korean SCM questions into SQL, and the bigger problem was that "what counts as correct" was never measured, so there was no baseline to improve against.',
+    },
+    actions: {
+      ko: [
+        '정답을 값으로 채점하는 평가 체계부터 구축 — 질문 세트를 SHA-256으로 동결하고 SQL 문자열이 아닌 실행 결과값으로 채점(temperature 0·seed 42로 재현성 확보). 스키마만 준 기준선은 30문항 중 7문항 정답이었다.',
+        '오답을 원인별로 분류해 가장 많던 날짜 해석·지표 정의 오류에 기준일·지표 사전·예시를 주입 — 기본 세트가 7 → 22/30으로 올랐다(기간 집계 유형 0/8 → 7/8).',
+        '프롬프트로는 고쳐지지 않던 지표 계산을 서버 고정 쿼리(도구)+라우터로 이관 — 모델은 도구와 인자만 고르고 계산은 서버가 수행. 구현 전 동결한 홀드아웃 20문항이 13 → 16, 도구 경로로 간 지표 질문은 전수 정답(7/7)이었다.',
+      ],
+      en: [
+        'Built a result-value grader first: froze the question set with SHA-256 and graded by execution result value, not SQL text (reproducible at temperature 0 / seed 42). A schema-only baseline scored 7 of 30.',
+        'Classified wrong answers by cause and injected a reference date, metric dictionary and examples for the most common date/metric errors — the basic set rose 7 → 22/30 (period-aggregation type 0/8 → 7/8).',
+        'Moved metric calculations that prompting could not fix into server fixed-queries (tools) + a router — the model only picks the tool and arguments while the server computes. A holdout of 20 questions frozen before implementation went 13 → 16, with every tool-routed metric question correct (7/7).',
+      ],
+    },
+    result: {
+      ko: '정확도를 감이 아니라 숫자로 끌어올린 과정을 남겼다. 오히려 점수가 떨어진 변경(SQL 검증·재시도)과 "숫자 후검증 통과율 100%가 정답을 뜻하지 않는다"는 것까지 그대로 기록해, 성능 개선과 한계를 함께 증거로 보유한다.',
+      en: 'The accuracy gains are documented as numbers, not hunches. Even the change that lowered scores (SQL validation + retry) and the finding that "100% number-post-check pass does not mean correct" are recorded as-is, so the improvements and their limits are both evidenced.',
+    },
+    architecture: {
+      lines: [
+        '한국어 질문',
+        '↓ 라우터 (SQL 생성 · 되묻기 · 거부 · 지표 도구)',
+        'SQL 경로: 생성 → 검증 → 읽기 전용 실행   |   지표 경로: 서버 고정 쿼리',
+        '↓',
+        '실행 결과값 채점 (동결 골든셋 · temp0 · seed42)',
+      ],
+    },
+    decision: {
+      context: { ko: '"일평균 = 기간 합 ÷ 일수"라고 프롬프트에 적어도 모델이 계속 AVG(qty)로 계산해 틀렸다.', en: 'Even with "daily average = period sum ÷ days" in the prompt, the model kept computing AVG(qty) and getting it wrong.' },
+      decision: { ko: '지표 계산을 모델에서 떼어내 서버의 고정 쿼리(도구)로 옮기고, 모델은 도구 선택과 인자만 담당하게 했다.', en: 'Pulled metric computation out of the model into server-side fixed queries (tools); the model only chooses the tool and its arguments.' },
+      alternatives: { ko: '지표 정의를 더 자세히 적기 / 더 큰 모델로 교체 / RAG 도입.', en: 'Write metric definitions in more detail, swap in a larger model, or add RAG.' },
+      tradeoff: { ko: '질문당 LLM 호출이 1~4회로 늘어 응답이 1.1~1.7배 느려지지만, 틀리던 계산이 정확해진다.', en: 'LLM calls per question rise to 1–4, making responses 1.1–1.7× slower, but the previously wrong calculations become correct.' },
+      result: { ko: '동결 홀드아웃 13 → 16, 도구 경로 지표 질문 전수 정답(7/7).', en: 'Frozen holdout 13 → 16, every tool-routed metric question correct (7/7).' },
+    },
+    troubleshooting: [
+      {
+        title: { ko: '프롬프트로 안 되던 계산을 아키텍처로 옮기다', en: 'Solving in architecture what prompting could not' },
+        found: { ko: '"일평균을 AVG(qty)로 쓰지 말라"고 프롬프트에 적어도 세 버전 모두 AVG(qty)를 썼다.', en: 'Despite "do not use AVG(qty) for the daily average" in the prompt, all three versions used AVG(qty).' },
+        analysis: { ko: '틀리는 지점이 계산식 자체였고, 틀린 계산은 오류 없이 실행되므로 재시도로도 잡히지 않았다.', en: 'The error was in the formula itself, and a wrong calculation runs without error, so retries never caught it.' },
+        fix: { ko: '지표 계산을 서버 고정 쿼리(도구)로 이관하고 모델은 도구·인자만 선택하게 했다. 지표 정의는 회사마다 고정이라 코드로 두는 것이 맞다는 판단.', en: 'Moved metric computation to server fixed-queries (tools) with the model only selecting tool and arguments — metric definitions are company-fixed, so they belong in code.' },
+        learned: { ko: '프롬프트로 안 되는 건 아키텍처로 푼다. 단, 도구 경로에서 "재주문점 질문을 재주문-필요 도구로 보내는" 새 오답도 생겨, 측정 없이는 개선을 확신할 수 없음을 확인했다.', en: 'What prompting cannot fix, architecture can — but new errors appeared too (routing a "reorder point" question to the "needs reorder" tool), confirming you cannot be sure of an improvement without measuring it.' },
+      },
+    ],
+    resultTiles: [
+      { big: { ko: '7 → 22', en: '7 → 22' }, small: { ko: '기본 세트(30문항) 정답 · 지식 주입 후', en: 'Basic set (30) correct · after knowledge injection' } },
+      { big: { ko: '13 → 16', en: '13 → 16' }, small: { ko: '동결 홀드아웃 20문항 · 지표 도구화 후', en: 'Frozen holdout (20) · after tool routing' } },
+      { big: { ko: '7/7', en: '7/7' }, small: { ko: '도구 경로 지표 질문 전수 정답', en: 'All tool-routed metric questions correct' } },
+    ],
+  },
+  {
     slug: 'showx',
     name: 'Show(X)',
     icon: { img: '/images/icons/showx.png', text: 'X', bg: '#3182F6', color: '#FFFFFF' },
