@@ -75,6 +75,84 @@ export const caseStudies = [
     ],
   },
   {
+    slug: 'seed',
+    name: 'SEED',
+    icon: { img: '/images/icons/seed.png', text: 'S', bg: '#6B4EFF', color: '#FFFFFF' },
+    platform: 'iOS',
+    featured: true,
+    period: '2026 –',
+    status: { ko: '출시 · 운영 중', en: 'Live' },
+    badge: { ko: '엔진 단위 테스트 102', en: '102 engine unit tests' },
+    role: {
+      ko: '개인 프로젝트 — 기획·개발·디자인 100%',
+      en: 'Solo project. Planning, development and design, 100%.',
+    },
+    oneLiner: {
+      ko: '가상 합성 시장에서 투자 습관을 훈련하는 주식 학습 앱. 종목 추천·수익 보장 없이, 광고·가입 없이 — "연습으로 지표를 보는 눈을 기른다"는 철학을 제품 전체에 관철.',
+      en: 'A stock-learning app that trains investing habits in a fully synthetic market with no stock picks, no profit promises, no ads and no sign-up — practice builds the eye for the numbers.',
+    },
+    stack: ['SwiftUI', 'Swift Package (엔진 분리)', 'SwiftData · CloudKit', 'WidgetKit', 'StoreKit 2'],
+    shots: [
+      { src: '/images/projects/seed/market.png', caption: { ko: '시장 — 진짜 돈 0원으로 매매 연습', en: 'Market: practice trading with zero real money' } },
+      { src: '/images/projects/seed/lesson.png', caption: { ko: '레슨 — 직접 해보는 12편 커리큘럼', en: 'Lessons: a hands-on 12-part curriculum' } },
+      { src: '/images/projects/seed/review.png', caption: { ko: '복기 — 나쁜 습관을 짚어주는 피드백', en: 'Review: feedback that flags bad habits' } },
+    ],
+    links: {
+      appstore: { url: 'https://apps.apple.com/kr/app/seed-%ED%88%AC%EC%9E%90-%EC%97%B0%EC%8A%B5%EC%9E%A5/id6789554674', label: { ko: 'App Store', en: 'App Store' } },
+      github: { url: 'https://github.com/whatdoIsa/SEED', label: { ko: 'GitHub', en: 'GitHub' } },
+    },
+    problem: {
+      ko: '초보자가 실제 돈을 걸지 않고 호가·수수료·상하한가 같은 매매 규칙을 안전하게 연습할 곳이 없다. 추천과 수익을 약속하는 앱들은 학습보다 투기를 부추긴다.',
+      en: 'Beginners have nowhere safe to practice trading rules — order books, fees, price limits — without risking real money, and apps that promise picks and profits push speculation over learning.',
+    },
+    actions: {
+      ko: [
+        "'종목 추천·수익 약속·광고·가입 없음, 완전한 가상 시장'이라는 원칙을 기획 단계에서 못 박고, 12편 학습 커리큘럼과 연습 흐름을 설계했다.",
+        '호가창 매칭·수수료·상하한가 같은 거래 제도 로직을 별도 Swift 패키지 엔진으로 분리하고, 단위 테스트 102개로 회귀 안정성을 확보했다.',
+        'SwiftData·CloudKit 로컬 우선 저장과 iCloud 백업, WidgetKit 위젯, StoreKit 2까지 1인으로 설계·출시·운영했다.',
+      ],
+      en: [
+        'Fixed the principles up front — no picks, no profit promises, no ads, no sign-up, a fully synthetic market — and designed a 12-lesson curriculum and practice flow around them.',
+        'Isolated the trading-rule logic (order-book matching, fees, price limits) into a separate Swift package engine, with 102 unit tests for regression stability.',
+        'Built local-first SwiftData/CloudKit storage with iCloud backup, WidgetKit widgets and StoreKit 2 — designed, shipped and operated solo.',
+      ],
+    },
+    result: {
+      ko: '제약 규칙을 테스트 가능한 엔진으로 분리해 풀 사이즈 프로덕트를 1인으로 완주·운영 중. 규칙·제약을 모델링하고 검증으로 지키는, 공급망 최적화와 가장 가까운 사고방식을 담았다.',
+      en: 'A full-size product shipped and operated solo by isolating the constraint rules into a testable engine — modeling rules and holding them with tests, the mindset closest to supply-chain optimization.',
+    },
+    architecture: {
+      lines: [
+        'SwiftUI 뷰 (시장 · 레슨 · 복기)',
+        '↓',
+        '거래 엔진 (Swift Package) — 호가 매칭 · 수수료 · 상하한가',
+        '↓ 단위 테스트 102',
+        'SwiftData · CloudKit 로컬 저장 / iCloud 백업',
+      ],
+    },
+    decision: {
+      context: { ko: '거래 제도 로직이 뷰에 섞이면 수수료·상하한가 규칙을 바꿀 때마다 회귀가 터졌다.', en: 'With trading-rule logic mixed into the views, every change to fees or price limits risked regressions.' },
+      decision: { ko: '거래 규칙을 별도 Swift 패키지 엔진으로 분리하고 단위 테스트로 고정했다.', en: 'Isolated the trading rules into a separate Swift package engine, pinned by unit tests.' },
+      alternatives: { ko: '뷰모델에 로직 유지 / 서버에서 계산.', en: 'Keep the logic in view models, or compute it on a server.' },
+      tradeoff: { ko: '패키지 분리와 테스트 작성 비용이 들지만, 규칙 변경 회귀를 테스트로 차단한다.', en: 'Splitting the package and writing tests costs effort, but regressions from rule changes are caught by tests.' },
+      result: { ko: '단위 테스트 102개로 거래 엔진 회귀 안정성을 확보하고 1인으로 완주했다.', en: '102 unit tests secured regression stability for the trading engine, completed solo.' },
+    },
+    troubleshooting: [
+      {
+        title: { ko: '거래 제도 로직을 UI에서 떼어내다', en: 'Separating trading rules from the UI' },
+        found: { ko: '호가 매칭·수수료·상하한가 규칙이 뷰 코드에 섞여 있어 변경할 때마다 예기치 못한 회귀가 발생했다.', en: 'Order-book, fee and price-limit rules were tangled into view code, so each change caused unexpected regressions.' },
+        analysis: { ko: '제약 로직은 입력→출력이 결정적이라 UI와 분리해 단위 테스트로 고정할 수 있는 영역이었다.', en: 'The constraint logic is deterministic input→output, so it could be separated from the UI and pinned with unit tests.' },
+        fix: { ko: '거래 엔진을 별도 Swift 패키지로 분리하고 호가·수수료·상하한가 규칙에 단위 테스트 102개를 붙여 회귀를 잡았다.', en: 'Moved the trading engine into a separate Swift package and added 102 unit tests over the order-book/fee/price-limit rules to catch regressions.' },
+        learned: { ko: '규칙이 많은 도메인일수록 로직을 UI에서 떼어 테스트 가능한 모듈로 두는 것이 안정성의 핵심이다.', en: 'The more rule-heavy the domain, the more stability comes from pulling logic out of the UI into a testable module.' },
+      },
+    ],
+    resultTiles: [
+      { big: { ko: '102', en: '102' }, small: { ko: '거래 엔진 단위 테스트', en: 'Trading-engine unit tests' } },
+      { big: { ko: '12편', en: '12' }, small: { ko: '학습 커리큘럼', en: 'Lesson curriculum' } },
+      { big: { ko: '1인', en: 'Solo' }, small: { ko: '기획·개발·디자인·출시 완주', en: 'Planned, built, designed, shipped' } },
+    ],
+  },
+  {
     slug: 'showx',
     name: 'Show(X)',
     icon: { img: '/images/icons/showx.png', text: 'X', bg: '#3182F6', color: '#FFFFFF' },
@@ -254,7 +332,7 @@ export const caseStudies = [
     nameEn: 'ReToU',
     icon: { img: '/images/icons/retou.png', text: '乚', bg: '#8B6F52', color: '#FFFFFF' },
     platform: 'iOS',
-    featured: true,
+    featured: false,
     period: '2025.04 –',
     status: { ko: '출시 · v2.0 운영 중', en: 'Live · v2.0' },
     badge: { ko: '30일 지속률 70%', en: '70% 30-day retention' },
@@ -340,42 +418,6 @@ export const caseStudies = [
       { big: { ko: '85%', en: '85%' }, small: { ko: '"패턴이 보인다" 만족도 (테스트 10명)', en: '"I see patterns" (10 testers)' } },
       { big: { ko: 'v2.0', en: 'v2.0' }, small: { ko: '1년간 지속 운영·개선', en: 'A year of live operation' } },
     ],
-  },
-
-  {
-    slug: 'seed',
-    name: 'SEED',
-    icon: { img: '/images/icons/seed.png', text: 'S', bg: '#6B4EFF', color: '#FFFFFF' },
-    platform: 'iOS',
-    featured: false,
-    period: '2026 –',
-    status: { ko: '출시 · 운영 중', en: 'Live' },
-    role: {
-      ko: '개인 프로젝트 — 기획·개발·디자인 100%',
-      en: 'Solo project. Planning, development and design, 100%.',
-    },
-    oneLiner: {
-      ko: '가상 합성 시장에서 투자 습관을 훈련하는 주식 학습 앱. 종목 추천·수익 보장 없이, 광고·가입 없이 — "연습으로 지표를 보는 눈을 기른다"는 철학을 제품 전체에 관철.',
-      en: 'A stock-learning app that trains investing habits in a fully synthetic market with no stock picks, no profit promises, no ads and no sign-up. One philosophy carried through the whole product: practice builds the eye for the numbers.',
-    },
-    stack: ['SwiftUI', 'SwiftData · CloudKit', 'WidgetKit', 'StoreKit 2', 'Swift Package (엔진 분리)'],
-    shots: [],
-    links: {
-      appstore: { url: 'https://apps.apple.com/kr/app/seed-%ED%88%AC%EC%9E%90-%EC%97%B0%EC%8A%B5%EC%9E%A5/id6789554674', label: { ko: 'App Store', en: 'App Store' } },
-      github: { url: 'https://github.com/whatdoIsa/SEED', label: { ko: 'GitHub', en: 'GitHub' } },
-    },
-    problem: {
-      ko: '',
-      en: '',
-    },
-    actions: { ko: [], en: [] },
-    result: {
-      ko: '호가창 매칭·수수료·상하한가 등 거래 제도 로직을 별도 Swift 패키지 엔진으로 분리하고 단위 테스트 102개로 검증. 12편 학습 커리큘럼과 위젯·iCloud 백업까지 갖춘 풀 사이즈 프로덕트.',
-      en: 'Split the trading engine (order-book matching, fees, price limits) into its own Swift package verified by 102 unit tests; a full-size product with a 12-lesson curriculum, widgets and iCloud backup.',
-    },
-    architecture: null,
-    troubleshooting: [],
-    resultTiles: [],
   },
 
   {
